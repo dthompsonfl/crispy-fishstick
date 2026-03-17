@@ -218,12 +218,12 @@ export function AuditModal() {
                 className="space-y-6"
               >
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl space-y-1">
-                    <p className="text-xs uppercase tracking-wider text-red-500 font-semibold">Likely Conversion Leak</p>
+                  <div className="p-4 bg-signal-danger/10 border border-signal-danger/20 rounded-xl space-y-1">
+                    <p className="text-xs uppercase tracking-wider text-signal-danger font-semibold">Likely Conversion Leak</p>
                     <p className="text-foreground font-medium">{result.leak}</p>
                   </div>
-                  <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl space-y-1">
-                     <p className="text-xs uppercase tracking-wider text-green-500 font-semibold">First Best Fix</p>
+                  <div className="p-4 bg-signal-success/10 border border-signal-success/20 rounded-xl space-y-1">
+                     <p className="text-xs uppercase tracking-wider text-signal-success font-semibold">First Best Fix</p>
                     <p className="text-foreground font-medium">{result.fix}</p>
                   </div>
                 </div>

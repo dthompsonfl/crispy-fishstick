@@ -47,7 +47,7 @@ export default async function SavedBuildPage(props: SavedBuildPageProps) {
            {isExpired ? (
              <Badge variant="destructive" className="text-lg px-4 py-1">Expired</Badge>
            ) : (
-             <Badge variant="outline" className="text-lg px-4 py-1 border-green-500 text-green-500">
+             <Badge variant="outline" className="text-lg px-4 py-1 border-signal-success text-signal-success">
                <Clock className="w-4 h-4 mr-2" />
                Valid for {formatDistanceToNow(build.expiresAt)}
              </Badge>
@@ -93,7 +93,7 @@ export default async function SavedBuildPage(props: SavedBuildPageProps) {
                </CardHeader>
                <CardContent>
                   <div className="space-y-4">
-                     <div className="flex items-center gap-2 text-green-500">
+                     <div className="flex items-center gap-2 text-signal-success">
                         <CheckCircle className="w-5 h-5" />
                         <span className="font-medium">Configuration Validated</span>
                      </div>

@@ -11,7 +11,7 @@ export function SpeedMeter({ score = 98 }: { score?: number }) {
            <path
              d="M 10 50 A 40 40 0 0 1 90 50"
              fill="none"
-             stroke={score > 89 ? "#10b981" : score > 50 ? "#f59e0b" : "#ef4444"}
+             stroke={score > 89 ? "var(--signal-success)" : score > 50 ? "var(--signal-warning)" : "var(--signal-danger)"}
              strokeWidth="10"
              strokeDasharray="126"
              strokeDashoffset={126 - (126 * score / 100)}
@@ -27,7 +27,7 @@ export function SpeedMeter({ score = 98 }: { score?: number }) {
       </div>
 
       <div className="text-center">
-         <div className={`text-4xl font-bold font-mono ${score > 89 ? "text-emerald-500" : score > 50 ? "text-amber-500" : "text-red-500"}`}>
+         <div className={`text-4xl font-bold font-mono ${score > 89 ? "text-signal-success" : score > 50 ? "text-signal-warning" : "text-signal-danger"}`}>
             {score}
          </div>
          <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">

@@ -3,9 +3,9 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
-export function ThemeToggle({ className, ...props }: React.ComponentProps<"button">) {
+export function ThemeToggle({ className, ...props }: React.ComponentProps<typeof Button>) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
@@ -15,26 +15,25 @@ export function ThemeToggle({ className, ...props }: React.ComponentProps<"butto
 
   if (!mounted) {
     return (
-      <button
-        className={cn(
-          "inline-flex items-center justify-center rounded-full w-10 h-10 hover:bg-accent transition-colors",
-          className
-        )}
+      <Button
+        variant="ghost"
+        size="icon"
+        className={className}
         aria-label="Toggle theme"
+        disabled
         {...props}
       >
         <Sun className="h-5 w-5" />
-      </button>
+      </Button>
     );
   }
 
   return (
-    <button
+    <Button
+      variant="ghost"
+      size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={cn(
-        "inline-flex items-center justify-center rounded-full w-10 h-10 hover:bg-accent transition-colors",
-        className
-      )}
+      className={className}
       aria-label="Toggle theme"
       {...props}
     >
@@ -43,6 +42,6 @@ export function ThemeToggle({ className, ...props }: React.ComponentProps<"butto
       ) : (
         <Moon className="h-5 w-5" />
       )}
-    </button>
+    </Button>
   );
 }

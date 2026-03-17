@@ -28,13 +28,13 @@ export function VcpuCoreExplainer() {
 
           <TabsContent value="vcpu" className="p-6 space-y-4">
             <div className="flex gap-1 justify-center py-8">
-              <div className="w-16 h-32 bg-blue-500/40 border-2 border-dashed border-blue-500 rounded flex items-center justify-center text-xs text-center p-1">
+              <div className="w-16 h-32 bg-signal-info/40 border-2 border-dashed border-signal-info rounded flex items-center justify-center text-xs text-center p-1">
                 Thread A<br/>(Your App)
               </div>
               <div className="w-4 h-32 flex items-center justify-center text-muted-foreground">
                 vs
               </div>
-              <div className="w-16 h-32 bg-red-500/40 border-2 border-dashed border-red-500 rounded flex items-center justify-center text-xs text-center p-1">
+              <div className="w-16 h-32 bg-signal-danger/40 border-2 border-dashed border-signal-danger rounded flex items-center justify-center text-xs text-center p-1">
                 Thread B<br/>(Neighbor)
               </div>
             </div>
@@ -45,11 +45,11 @@ export function VcpuCoreExplainer() {
 
           <TabsContent value="core" className="p-6 space-y-4">
             <div className="flex justify-center py-8">
-              <div className="w-40 h-32 bg-green-500/20 border-2 border-green-500 rounded flex flex-col items-center justify-center p-2">
-                <span className="font-bold text-green-500 mb-2">Physical Core</span>
+              <div className="w-40 h-32 bg-signal-success/20 border-2 border-signal-success rounded flex flex-col items-center justify-center p-2">
+                <span className="font-bold text-signal-success mb-2">Physical Core</span>
                 <div className="flex gap-2 w-full justify-center">
-                  <div className="w-12 h-16 bg-green-500/40 rounded flex items-center justify-center text-[10px]">Thread 1</div>
-                  <div className="w-12 h-16 bg-green-500/40 rounded flex items-center justify-center text-[10px]">Thread 2</div>
+                  <div className="w-12 h-16 bg-signal-success/40 rounded flex items-center justify-center text-[10px]">Thread 1</div>
+                  <div className="w-12 h-16 bg-signal-success/40 rounded flex items-center justify-center text-[10px]">Thread 2</div>
                 </div>
               </div>
             </div>

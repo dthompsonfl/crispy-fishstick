@@ -35,7 +35,13 @@ fi     # <--- Syntax error: Unmatched 'fi'
 **Issue:** The CI pipeline runs tests and linting but *stops there*. There is no CD (Continuous Deployment) job.
 **Business Risk:** Deployment is manual, slow, and error-prone. No audit trail of who deployed what and when.
 
----
+*   **Status:** 🔴 CRITICAL
+*   **Issue:** No `Dockerfile` or `docker-compose.yml` found.
+*   **Impact:**
+    *   "Works on my machine" syndrome.
+    *   Production environment (`bootstrap-ubuntu22.sh`) drifts from Development.
+    *   Cannot easily scale horizontally (Orchestration requires containers).
+*   **Remediation:** Create a multi-stage `Dockerfile` optimized for Next.js standalone output.
 
 ## 🟡 HIGH IMPACT GAPS
 
@@ -51,7 +57,14 @@ fi     # <--- Syntax error: Unmatched 'fi'
 **Issue:** No configuration for Datadog, Prometheus, or ELK stack agents.
 **Remediation:** Add monitoring agent configuration to the (missing) Docker setup.
 
----
+*   **Status:** 🟠 MEDIUM
+*   **Issue:**
+    *   CI (`.github/workflows/ci.yml`) exists but lacks a **CD (Deployment)** stage.
+    *   Deployment is manual (`ssh user@host 'bash bootstrap.sh'`).
+    *   Lighthouse CI step relies on `sleep 10` which is race-condition prone.
+*   **Remediation:** Add a `deploy` job that pushes the Docker image to a registry (ECR/GHCR) and triggers a rollout (e.g., via SSH or K8s).
+
+## 4. Monitoring & Logging
 
 ## 🟠 MEDIUM IMPACT GAPS
 

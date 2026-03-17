@@ -61,7 +61,9 @@
    - **Fix:** Throw error in production if secret is missing.
    - **Estimated Time:** 0.5 hours
 
----
+## `package.json`: Dependencies
+
+**PATH:** `/package.json`
 
 ## `scripts/bootstrap-ubuntu22.sh`
 **PATH:** `/scripts/bootstrap-ubuntu22.sh`
@@ -83,7 +85,7 @@
    - **Fix:** Add `rehype-sanitize` plugin.
    - **Estimated Time:** 1 hour
 
----
+**PATH:** `/lib/dal.ts`
 
 ## `prisma/schema.prisma`
 **PATH:** `/prisma/schema.prisma`

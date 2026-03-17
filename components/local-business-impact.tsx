@@ -31,7 +31,7 @@ export function LocalBusinessImpact() {
             <div>
               <div className="flex items-start justify-between mb-6">
                  <Quote className="h-8 w-8 text-primary/20" />
-                 <TrendingUp className="h-5 w-5 text-green-500" />
+                 <TrendingUp className="h-5 w-5 text-signal-success" />
               </div>
               <h3 className="text-4xl font-bold mb-2 tracking-tight">{item.stat}</h3>
               <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-6">{item.label}</p>

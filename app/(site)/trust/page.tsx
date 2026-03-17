@@ -109,7 +109,7 @@ export default function TrustCenterPage() {
              "Handoff Documentation Provided"
            ].map((item) => (
              <div key={item} className="flex items-center gap-3 p-4 border border-border/50 rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-500" />
+                <CheckCircle className="w-5 h-5 text-signal-success" />
                 <span>{item}</span>
              </div>
            ))}
@@ -117,8 +117,8 @@ export default function TrustCenterPage() {
       </section>
 
       {/* 4. Red Flags */}
-      <section className="p-8 rounded-3xl bg-red-500/5 border border-red-500/10 space-y-6">
-        <h2 className="text-2xl font-bold flex items-center gap-3 text-red-500">
+      <section className="p-8 rounded-3xl bg-signal-danger/5 border border-signal-danger/10 space-y-6">
+        <h2 className="text-2xl font-bold flex items-center gap-3 text-signal-danger">
           <AlertTriangle className="w-6 h-6" />
           Red Flags to Watch For
         </h2>
@@ -127,15 +127,15 @@ export default function TrustCenterPage() {
         </p>
         <ul className="space-y-4">
            <li className="flex gap-3">
-              <span className="text-red-500 font-bold">•</span>
+              <span className="text-signal-danger font-bold">•</span>
               <span className="text-foreground/80"><strong>No Admin Access:</strong> If a vendor won&apos;t give you full admin access to your own site or hosting, run. They are holding you hostage.</span>
            </li>
            <li className="flex gap-3">
-              <span className="text-red-500 font-bold">•</span>
+              <span className="text-signal-danger font-bold">•</span>
               <span className="text-foreground/80"><strong>Vague Pricing:</strong> &quot;It depends&quot; is fine for an estimate, but you need a fixed project fee or a clear hourly rate with a cap.</span>
            </li>
            <li className="flex gap-3">
-              <span className="text-red-500 font-bold">•</span>
+              <span className="text-signal-danger font-bold">•</span>
               <span className="text-foreground/80"><strong>No Deliverables List:</strong> If they can&apos;t list exactly what you are paying for (e.g., &quot;Home page, About page, Contact form&quot;), you will likely be disappointed.</span>
            </li>
         </ul>

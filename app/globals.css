@@ -42,6 +42,15 @@
   --color-signal-success: var(--signal-success);
   --color-signal-success-foreground: var(--signal-success-foreground);
 
+  --color-signal-warning: var(--signal-warning);
+  --color-signal-warning-foreground: var(--signal-warning-foreground);
+
+  --color-signal-danger: var(--signal-danger);
+  --color-signal-danger-foreground: var(--signal-danger-foreground);
+
+  --color-signal-info: var(--signal-info);
+  --color-signal-info-foreground: var(--signal-info-foreground);
+
   --color-surface-50: var(--surface-50);
   --color-surface-100: var(--surface-100);
   --color-surface-200: var(--surface-200);
@@ -141,6 +150,15 @@
     --signal-success: oklch(0.69 0.17 142.5);
     --signal-success-foreground: oklch(0.98 0 0);
 
+    --signal-warning: oklch(0.75 0.15 60);
+    --signal-warning-foreground: oklch(0.98 0 0);
+
+    --signal-danger: oklch(0.63 0.22 29);
+    --signal-danger-foreground: oklch(0.98 0 0);
+
+    --signal-info: oklch(0.60 0.15 250);
+    --signal-info-foreground: oklch(0.98 0 0);
+
     --destructive: oklch(0.63 0.22 29);
     --destructive-foreground: oklch(0.98 0 0);
 
@@ -191,6 +209,15 @@
     /* Signal Green for Dark Mode */
     --signal-success: oklch(0.69 0.17 142.5);
     --signal-success-foreground: oklch(0.14 0.01 261);
+
+    --signal-warning: oklch(0.75 0.15 60);
+    --signal-warning-foreground: oklch(0.14 0.01 261);
+
+    --signal-danger: oklch(0.63 0.22 29);
+    --signal-danger-foreground: oklch(0.98 0 0);
+
+    --signal-info: oklch(0.60 0.15 250);
+    --signal-info-foreground: oklch(0.14 0.01 261);
 
     --destructive: oklch(0.39 0.15 29);
     --destructive-foreground: oklch(0.98 0 0);
