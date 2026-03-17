@@ -21,11 +21,11 @@ export function EstimatorOutput({ result, onReset }: EstimatorOutputProps) {
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <Card className="border-green-500/20 shadow-2xl shadow-green-500/5">
-        <CardHeader className="bg-green-500/10 pb-6 border-b border-green-500/10">
+      <Card className="border-signal-success/20 shadow-2xl shadow-signal-success/5">
+        <CardHeader className="bg-signal-success/10 pb-6 border-b border-signal-success/10">
           <div className="flex justify-between items-center">
-            <CardTitle className="text-2xl text-green-600 dark:text-green-400">Recommended Specification</CardTitle>
-            <Badge variant="outline" className="bg-background text-foreground border-green-500/50">
+            <CardTitle className="text-2xl text-signal-success">Recommended Specification</CardTitle>
+            <Badge variant="outline" className="bg-background text-foreground border-signal-success/50">
                Confidence: High
             </Badge>
           </div>

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Code, Layers, Database, Box } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Services & Packages",
@@ -95,13 +98,18 @@ export default function ServicesPage() {
         {/* SMB PACKAGES */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 max-w-5xl mx-auto">
           {packages.map((pkg) => (
-             <div
+             <Card
                key={pkg.title}
-               className={`relative p-8 rounded-3xl border flex flex-col ${pkg.highlight ? 'bg-secondary/10 border-primary/50 shadow-lg shadow-primary/5' : 'bg-card border-border'}`}
+               className={cn(
+                 "relative flex flex-col p-8",
+                 pkg.highlight ? "bg-secondary/10 border-primary/50 shadow-lg shadow-primary/5" : "bg-card border-border"
+               )}
              >
                 {pkg.highlight && (
-                   <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl uppercase tracking-wider">
-                      Most Popular
+                   <div className="absolute top-0 right-0">
+                      <Badge variant="default" className="rounded-bl-xl rounded-tr-lg rounded-tl-none rounded-br-none px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                        Most Popular
+                      </Badge>
                    </div>
                 )}
                 <div className="mb-6">
@@ -114,17 +122,21 @@ export default function ServicesPage() {
                 <ul className="space-y-4 mb-8">
                    {pkg.features.map((f) => (
                       <li key={f} className="flex items-start gap-3 text-sm">
-                         <div className="mt-1 min-w-4 h-4 rounded-full bg-green-500/20 text-green-600 flex items-center justify-center">
+                         <div className="mt-1 min-w-4 h-4 rounded-full bg-signal-success/20 text-signal-success flex items-center justify-center">
                             <Box className="w-2.5 h-2.5" />
                          </div>
                          <span>{f}</span>
                       </li>
                    ))}
                 </ul>
-                <Button className={`w-full h-12 text-lg rounded-xl ${pkg.highlight ? 'default' : 'variant-outline'}`} asChild>
+                <Button
+                    className="w-full h-12 text-lg rounded-xl"
+                    variant={pkg.highlight ? "default" : "outline"}
+                    asChild
+                >
                    <Link href="/contact">{pkg.cta}</Link>
                 </Button>
-             </div>
+             </Card>
           ))}
         </div>
 
@@ -139,9 +151,9 @@ export default function ServicesPage() {
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <div
+              <Card
                 key={service.title}
-                className="group bg-card rounded-2xl p-6 border border-border hover:border-foreground/20 transition-all duration-300 hover:shadow-lg"
+                className="group p-6 hover:border-foreground/20 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="mb-6">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-secondary group-hover:bg-foreground/5 transition-colors">
@@ -165,7 +177,7 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Card>
             );
           })}
         </div>

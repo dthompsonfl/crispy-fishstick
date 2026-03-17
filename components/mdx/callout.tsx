@@ -8,9 +8,9 @@ interface CalloutProps {
 
 export function Callout({ type = "neutral", children }: CalloutProps) {
   const styles = {
-    info: "bg-blue-500/10 border-blue-500/20 text-blue-700 dark:text-blue-300",
-    warning: "bg-amber-500/10 border-amber-500/20 text-amber-700 dark:text-amber-300",
-    success: "bg-emerald-500/10 border-emerald-500/20 text-emerald-700 dark:text-emerald-300",
+    info: "bg-signal-info/10 border-signal-info/20 text-signal-info",
+    warning: "bg-signal-warning/10 border-signal-warning/20 text-signal-warning",
+    success: "bg-signal-success/10 border-signal-success/20 text-signal-success",
     neutral: "bg-secondary/50 border-border text-foreground",
   };
 
