@@ -1,95 +1,108 @@
 # COMPLETE FILE AUDIT
 
 **DATE:** 2025-05-15
-**AUDITOR:** Jules (Senior Principal Engineer)
+**SCOPE:** Critical Files Analysis
 
 ---
 
-## `app/layout.tsx`: Root Layout
+## `proxy.ts` (Middleware)
+**PATH:** `/proxy.ts`
 
+### Issues Found:
+1. **Line 57:** Security Matcher Bypass - **Severity: CRITICAL**
+   - **Impact:** API routes (`/api/*`) are explicitly excluded from the middleware. They receive NO security headers (CSP, HSTS) and NO authentication checks from this layer.
+   - **Fix:**
+     ```typescript
+     // Remove 'api' from the negative lookahead
+     matcher: ['/((?!_next/static|_next/image|favicon.ico|...).*)'],
+     ```
+   - **Estimated Time:** 1 hour
+
+---
+
+## `app/api/admin/users/route.ts`
+**PATH:** `/app/api/admin/users/route.ts`
+
+### Issues Found:
+1. **Line 19:** Force Dynamic - **Severity: HIGH**
+   - **Impact:** `export const dynamic = "force-dynamic";` disables caching for this route. While acceptable for admin APIs, if copied to public routes, it degrades performance.
+   - **Fix:** Use only when necessary.
+   - **Estimated Time:** 0.5 hours
+
+2. **Line 46-48:** Manual Security Implementation - **Severity: HIGH**
+   - **Impact:** Manually calling `assertSameOrigin` and `verifyCsrfToken` is error-prone.
+   - **Fix:** Use `adminMutation` wrapper.
+   - **Estimated Time:** 2 hours (refactor)
+
+3. **Line 63:** Weak Password Hashing - **Severity: MEDIUM**
+   - **Impact:** `bcrypt.hash(password, 10)` is too weak for 2025 standards.
+   - **Fix:** `bcrypt.hash(password, 14)`
+   - **Estimated Time:** 1 hour
+
+---
+
+## `app/layout.tsx`
 **PATH:** `/app/layout.tsx`
 
 ### Issues Found:
-1.  **Line 55:** `export const dynamic = "force-dynamic";` - Severity: CRITICAL
-    -   **Impact:** Disables all caching and static generation. TTFB increases by 200-500ms.
-    -   **Fix:** Remove this line. Handle nonce generation in Middleware/Headers.
-    -   **Estimated Time:** 4 hours
+1. **Line 48:** Global Force Dynamic - **Severity: CRITICAL**
+   - **Impact:** `export const dynamic = "force-dynamic";` forces the entire application (including marketing pages) to render server-side on every request.
+   - **Fix:** Delete this line immediately.
+   - **Estimated Time:** 0.5 hours
 
-## `scripts/bootstrap-ubuntu22.sh`: Deployment Script
+---
 
-**PATH:** `/scripts/bootstrap-ubuntu22.sh`
-
-### Issues Found:
-1.  **Line 742:** `exit 1` - Severity: CRITICAL
-    -   **Impact:** Deployment script intentionally kills itself during execution.
-    -   **Fix:** Remove the `exit 1` and fix the `if/fi` nesting.
-    -   **Estimated Time:** 1 hour
-
-## `prisma/schema.prisma`: Database Schema
-
-**PATH:** `/prisma/schema.prisma`
+## `lib/auth.config.ts`
+**PATH:** `/lib/auth.config.ts`
 
 ### Issues Found:
-1.  **Line 6:** `provider = "sqlite"` - Severity: CRITICAL
-    -   **Impact:** Non-scalable, file-locking database in production.
-    -   **Fix:** Change to `postgresql` and update connection string.
-    -   **Estimated Time:** 8 hours (migration testing).
+1. **Line 35:** Hardcoded Fallback Secret - **Severity: CRITICAL**
+   - **Impact:** Returns `"dev-secret-fallback-for-development-only"` if secret is missing.
+   - **Fix:** Throw error in production if secret is missing.
+   - **Estimated Time:** 0.5 hours
 
 ## `package.json`: Dependencies
 
 **PATH:** `/package.json`
 
-### Issues Found:
-1.  **Dependencies:** `gsap`, `framer-motion`, `@splinetool/runtime` - Severity: HIGH
-    -   **Impact:** Massive bundle size (>500KB unused JS).
-    -   **Fix:** Remove `gsap` and `@splinetool`. Refactor components to use `framer-motion` only.
-    -   **Estimated Time:** 16 hours
-
-## `proxy.ts`: Middleware
-
-**PATH:** `/proxy.ts`
+## `scripts/bootstrap-ubuntu22.sh`
+**PATH:** `/scripts/bootstrap-ubuntu22.sh`
 
 ### Issues Found:
-1.  **Line 48:** `userRoles.includes("Admin")` - Severity: HIGH
-    -   **Impact:** Brittle, case-sensitive string matching for security.
-    -   **Fix:** Import constants/Enums for roles.
-    -   **Estimated Time:** 2 hours
-
-2.  **Line 27:** `Math.random().toString(36)` - Severity: MEDIUM
-    -   **Impact:** Weak randomness for security nonce.
-    -   **Fix:** Use `crypto.randomUUID()` exclusively (polyfill if needed).
-    -   **Estimated Time:** 1 hour
-
-## `lib/auth.ts`: Authentication Logic
-
-**PATH:** `/lib/auth.ts`
-
-### Issues Found:
-1.  **Line 28:** Rate Limit Mock returns `success: true` - Severity: CRITICAL
-    -   **Impact:** Security bypass if Redis fails.
-    -   **Fix:** Implement in-memory counter fallback.
-    -   **Estimated Time:** 3 hours
-
-## `lib/dal.ts`: Data Access Layer
-
-**PATH:** `/lib/dal.ts`
-
-### Issues Found:
-1.  **Line 135:** `if (params.tenantId) where.tenantId = params.tenantId` - Severity: CRITICAL
-    -   **Impact:** Missing `tenantId` param returns ALL data.
-    -   **Fix:** Ensure `where.tenantId` is set to `params.tenantId` even if undefined (checking logic), or throw error if context is ambiguous.
-    -   **Estimated Time:** 4 hours
-
-## `app/api/admin/users/route.ts`: Admin API
-
-**PATH:** `/app/api/admin/users/route.ts`
-
-### Issues Found:
-1.  **Line 73:** `catch (error: any)` - Severity: LOW
-    -   **Impact:** Poor type safety.
-    -   **Fix:** Type the error or check `instanceof`.
-    -   **Estimated Time:** 1 hour
+1. **Line 538:** Syntax Error & Unconditional Exit - **Severity: BLOCKER**
+   - **Impact:** Script fails to run. `exit 1` is placed in the main execution flow, not an error block, and there is a dangling `fi`.
+   - **Fix:** Rewrite the logic flow.
+   - **Estimated Time:** 2 hours
 
 ---
 
-**TOTAL ESTIMATED REMEDIATION TIME:** ~40 Hours (1 Full Week for 1 Senior Engineer)
+## `components/admin/content/content-form.tsx`
+**PATH:** `/components/admin/content/content-form.tsx`
+
+### Issues Found:
+1. **Line 227:** Unsanitized Markdown Rendering - **Severity: CRITICAL**
+   - **Impact:** Stored XSS via `<ReactMarkdown>{field.value}</ReactMarkdown>`.
+   - **Fix:** Add `rehype-sanitize` plugin.
+   - **Estimated Time:** 1 hour
+
+**PATH:** `/lib/dal.ts`
+
+## `prisma/schema.prisma`
+**PATH:** `/prisma/schema.prisma`
+
+### Issues Found:
+1. **Line 6:** SQLite Provider - **Severity: HIGH**
+   - **Impact:** Not suitable for production concurrency.
+   - **Fix:** Change to `postgresql`.
+   - **Estimated Time:** 4 hours (migration & config)
+
+---
+
+## `lib/auth.ts`
+**PATH:** `/lib/auth.ts`
+
+### Issues Found:
+1. **Line 24:** Rate Limit Fail Open - **Severity: HIGH**
+   - **Impact:** If Redis fails, rate limiting is disabled.
+   - **Fix:** Fail closed (deny login) or implement in-memory fallback with strict limits.
+   - **Estimated Time:** 2 hours
