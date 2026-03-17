@@ -5,3 +5,6 @@
 ## 2026-01-20 - Feedback for Sensitive Actions
 **Learning:** Security-critical actions like copying backup codes often lack visual confirmation, leaving users uncertain if the action succeeded.
 **Action:** Added toast notifications for successful copy actions in MFA settings to provide immediate, accessible feedback.
+## 2025-05-23 - Mobile Navigation Accessibility
+**Learning:** Custom navigation components (like `MobileBottomNav`) often miss standard accessibility attributes (`aria-current`) and focus indicators, making them difficult to use for keyboard/screen-reader users.
+**Action:** Always ensure custom nav links include `aria-current="page"` when active and use standard `focus-visible` utility classes (e.g., `focus-visible:ring-2`) to maintain consistent keyboard navigation experiences.

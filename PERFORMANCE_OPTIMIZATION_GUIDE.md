@@ -1,59 +1,64 @@
 # PERFORMANCE OPTIMIZATION GUIDE
 
-## ⚡ Bundle Analysis & Bloat
-
-### 1. Duplicate Animation Libraries (Waste: ~150KB+)
-**Issue:** The project includes both `framer-motion` (approx 50KB gzipped) and `gsap` (approx 60KB+ gzipped depending on plugins). Both serve similar purposes (complex animations).
-**Recommendation:** Standardize on one. `framer-motion` is more "React-native", while `GSAP` is more powerful for timeline sequencing.
-**Action:** Remove `gsap` if possible, or `framer-motion` if GSAP is the primary driver.
-**Files:** `package.json`
-
-### 2. Heavy 3D Runtime
-**Issue:** `@splinetool/react-spline` and `@splinetool/runtime` are included. These runtimes are extremely heavy (>500KB - 1MB parsed).
-**Impact:** Significant Time-To-Interactive (TTI) delay on pages using 3D elements.
-**Action:** Lazy load the Spline component using `next/dynamic` with `ssr: false`.
-```tsx
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-  loading: () => <div>Loading 3D...</div>
-})
-```
+**DATE:** 2025-05-15
+**AUDITOR:** Senior Principal Engineer
+**TARGET:** < 200ms TTFB, < 1.5s LCP
 
 ---
 
-## 🐢 Database & Backend Bottlenecks
+## 🔴 CRITICAL PERFORMANCE KILLERS
 
-### 1. Synchronous Email Loop in Cron
-**Location:** `app/api/cron/contract-reminders/route.ts`
-**Issue:** The route fetches all expiring contracts and iterates through them, `await`ing `sendEmail` for each one.
+### 1. Global Dynamic Rendering Force
+**Impact:** **Catastrophic (0% Cache Hit Rate)**
+**Location:** `app/layout.tsx`
+**Issue:** `export const dynamic = "force-dynamic";`
+**Analysis:** This line forces *every single page* in the application to skip the build cache and render on the server for every request.
+**Metric:** TTFB will be 500ms-1s+ instead of <50ms (CDN edge).
+**Fix:** Remove this line. Use `dynamic = "force-dynamic"` ONLY on specific API routes or pages that absolutely require it.
 ```typescript
-for (const contract of expiringContracts) {
-  await sendEmail({...}); // API call per iteration
-}
-```
-**Impact:** If 500 contracts expire, and email sending takes 200ms, the request takes 100 seconds. This will likely time out Vercel/AWS Lambda functions (default 10-60s limit).
-**Fix:**
-1.  **Queueing:** Push jobs to Redis/BullMQ.
-2.  **Batching:** Send emails in parallel chunks (e.g., `Promise.all` with concurrency limit).
-```typescript
-// Better approach (simple concurrency)
-await Promise.all(expiringContracts.map(c => sendEmail(...)));
+// app/layout.tsx
+// DELETE THIS LINE:
+// export const dynamic = "force-dynamic";
 ```
 
-### 2. Missing Caching on Admin Reads
-**Location:** `app/api/admin/users/route.ts`
-**Issue:** `export const dynamic = "force-dynamic"` is used. While correct for real-time data, frequent polling by the admin dashboard will hammer the database.
-**Fix:** Implement `stale-while-revalidate` caching headers or Redis caching for list views where realtime consistency isn't strictly required (e.g., 60s cache).
+### 2. Animation Library Bloat
+**Impact:** **High Bundle Size**
+**Issue:** Three distinct animation libraries are loaded.
+**Evidence:** `package.json` includes:
+- `framer-motion` (approx 30kb gzipped)
+- `gsap` (approx 23kb gzipped)
+- `@splinetool/runtime` (approx 100kb+ depending on usage)
+- `tailwindcss-animate`
+**Analysis:** This creates unnecessary main-thread overhead and payload size.
+**Recommendation:** Standardize on `framer-motion` for UI and `tailwindcss-animate` for simple CSS transitions. Remove GSAP unless absolutely critical for a specific complex timeline. Lazy load Spline.
+
+### 3. Database Bottleneck (SQLite)
+**Impact:** **Zero Concurrency**
+**Issue:** SQLite serializes all write operations.
+**Metric:** Write latency will spike exponentially with concurrent users.
+**Recommendation:** Migrate to PostgreSQL.
 
 ---
 
-## 🏗️ Infrastructure & Rendering
+## 🟡 RENDERING OPTIMIZATIONS
 
-### 1. Image Optimization
-**Status:** `next/image` is used, but `sharp` is missing from `package.json`.
-**Impact:** Next.js's built-in image optimization is slower in production without `sharp`.
-**Fix:** `npm install sharp`
+### 4. Client-Side Hydration Weight
+**Issue:** `app/(site)/layout.tsx` renders `SystemLayer`, `ConsoleHud`, and `RouteTransitionLayer` for all users.
+**Analysis:** These likely contain heavy interactive logic.
+**Recommendation:** Ensure these are code-split and lazy-loaded. Use `dynamic(() => import(...))` for non-critical visual components like `SystemLayer`.
 
-### 2. Standalone Build
-**Status:** `output: 'standalone'` is configured.
-**Note:** Ensure `node_modules` are correctly copied or installed in the final container image for the standalone server to work if it relies on native modules (like `sharp` or `bcrypt`).
+### 5. Missing Image Optimization Strategy
+**Issue:** No explicit image loader configuration found in `next.config.ts` (default generic loader).
+**Recommendation:** Configure `next/image` with a CDN loader (Cloudinary or Vercel Blob) for production.
+
+---
+
+## 🟠 INFRASTRUCTURE OPTIMIZATIONS
+
+### 6. No CDN Configuration
+**Issue:** Static assets are served directly from the Node.js server (via Next.js).
+**Recommendation:** Put Cloudflare or AWS CloudFront in front of the application to offload static asset delivery.
+
+### 7. Missing Redis Caching for Data
+**Issue:** `lib/dal.ts` fetches data directly from Prisma without a caching layer.
+**Recommendation:** Implement `unstable_cache` (Next.js) or manual Redis caching for read-heavy operations like `getLeads` or `content` retrieval.

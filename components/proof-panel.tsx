@@ -254,7 +254,7 @@ export function ProofPanel() {
               <div key={header.name} className="space-y-1">
                 <div className="flex items-center justify-between">
                   <span>{header.name}</span>
-                  <span className={mode === "legacy" ? "text-destructive font-semibold" : (header.ok ? "text-emerald-500 font-semibold" : "text-destructive font-semibold")}>
+                  <span className={mode === "legacy" ? "text-destructive font-semibold" : (header.ok ? "text-signal-success font-semibold" : "text-destructive font-semibold")}>
                     {mode === "legacy" ? "Missing" : (header.ok ? "Present" : "Missing")}
                   </span>
                 </div>

@@ -127,8 +127,8 @@ export default function ContactPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="text-center max-w-md"
         >
-          <div className="h-24 w-24 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-             <CheckCircle2 className="h-12 w-12 text-green-500" />
+          <div className="h-24 w-24 bg-signal-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+             <CheckCircle2 className="h-12 w-12 text-signal-success" />
           </div>
           <h2 className="text-3xl font-bold mb-4">Message Received</h2>
           <p className="text-muted-foreground text-lg mb-8">

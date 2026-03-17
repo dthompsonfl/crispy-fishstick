@@ -122,14 +122,14 @@ export function ExecutionProtocol({ steps }: ExecutionProtocolProps) {
               <div className="hidden md:flex flex-col items-center pt-2 relative">
                 <div className={cn(
                     "w-4 h-4 rounded-full border-2 transition-all duration-500 z-10",
-                    state === "completed" ? "bg-emerald-500/20 border-emerald-500" :
-                    state === "active" ? "bg-emerald-500 border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]" :
+                    state === "completed" ? "bg-signal-success/20 border-signal-success" :
+                    state === "active" ? "bg-signal-success border-signal-success shadow-[0_0_15px_var(--signal-success)]" :
                     "bg-transparent border-muted-foreground/30"
                 )} />
                 {index !== steps.length - 1 && (
                     <div className={cn(
                         "w-px flex-1 my-2 transition-colors duration-500",
-                         state === "completed" ? "bg-emerald-500/50" : "bg-border"
+                         state === "completed" ? "bg-signal-success/50" : "bg-border"
                     )} />
                 )}
               </div>
@@ -138,7 +138,7 @@ export function ExecutionProtocol({ steps }: ExecutionProtocolProps) {
               <div className="md:hidden absolute left-0 top-0 bottom-0 w-px bg-border -ml-4">
                  <div className={cn(
                     "absolute top-8 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 transition-colors duration-300",
-                    state === "active" || state === "completed" ? "bg-emerald-500 border-emerald-500" : "bg-background border-muted-foreground"
+                    state === "active" || state === "completed" ? "bg-signal-success border-signal-success" : "bg-background border-muted-foreground"
                  )} />
               </div>
 
@@ -160,13 +160,13 @@ export function ExecutionProtocol({ steps }: ExecutionProtocolProps) {
               >
                  <div className={cn(
                     "glass-card surface-rim rounded-lg p-6 md:p-8 relative overflow-hidden transition-all duration-300",
-                    isInspected ? "ring-1 ring-emerald-500/50" : "group-focus:ring-1 group-focus:ring-emerald-500/30"
+                    isInspected ? "ring-1 ring-signal-success/50" : "group-focus:ring-1 group-focus:ring-signal-success/30"
                  )}>
 
                     {/* Header */}
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-8">
                        <div>
-                          <div className="font-mono text-xs text-emerald-500/80 mb-2 tracking-wider">
+                          <div className="font-mono text-xs text-signal-success/80 mb-2 tracking-wider">
                             PHASE_{step.number} :: {state === "completed" ? "COMPLETE" : state === "active" ? "EXECUTING..." : "PENDING"}
                           </div>
                           <h3 className="text-2xl font-bold tracking-tight">{step.title}</h3>
@@ -190,17 +190,17 @@ export function ExecutionProtocol({ steps }: ExecutionProtocolProps) {
                     </div>
 
                     {/* Console/Terminal Output */}
-                    <div className="bg-[rgba(var(--foreground-rgb),0.9)] rounded-md p-4 font-mono text-xs md:text-sm text-emerald-400 border border-border/5 shadow-inner">
+                    <div className="bg-[rgba(var(--foreground-rgb),0.9)] rounded-md p-4 font-mono text-xs md:text-sm text-signal-success border border-border/5 shadow-inner">
                        <ul className="space-y-2">
                           {step.commands.map((cmd, i) => (
                              <li key={i} className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-1">
                                 <span className="opacity-90">
-                                   <span className="text-emerald-600 mr-2">{">"}</span>
+                                   <span className="text-signal-success mr-2">{">"}</span>
                                    {cmd.cmd}
                                 </span>
                                 <span className={cn(
                                    "text-[10px] uppercase tracking-wider opacity-60 ml-4 sm:ml-0 text-right",
-                                   cmd.result === "OK" || cmd.result === "VERIFIED" ? "text-emerald-400" : "text-amber-400"
+                                   cmd.result === "OK" || cmd.result === "VERIFIED" ? "text-signal-success" : "text-signal-warning"
                                 )}>
                                    [{cmd.result}]
                                 </span>

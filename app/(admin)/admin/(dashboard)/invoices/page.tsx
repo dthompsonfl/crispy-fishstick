@@ -104,9 +104,9 @@ export default async function InvoicesPage(
                     <TableCell>{invoice.Tenant.name}</TableCell>
                     <TableCell>
                       <Badge variant={
-                        invoice.status === "paid" ? "default" :
+                        invoice.status === "paid" ? "success" :
                         invoice.status === "overdue" ? "destructive" :
-                        invoice.status === "sent" ? "secondary" : "outline"
+                        invoice.status === "sent" ? "info" : "outline"
                       }>
                         {invoice.status}
                       </Badge>
