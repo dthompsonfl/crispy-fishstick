@@ -10,13 +10,13 @@ export function DashboardPreview() {
       {/* Fake Browser Toolbar */}
       <div className="bg-muted/50 px-4 py-3 border-b border-border/50 flex items-center gap-4">
         <div className="flex gap-2">
-          <div className="w-3 h-3 rounded-full bg-red-500/50" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-          <div className="w-3 h-3 rounded-full bg-green-500/50" />
+          <div className="w-3 h-3 rounded-full bg-signal-danger/50" />
+          <div className="w-3 h-3 rounded-full bg-signal-warning/50" />
+          <div className="w-3 h-3 rounded-full bg-signal-success/50" />
         </div>
         <div className="flex-1 bg-background/50 rounded-md px-3 py-1 text-xs text-muted-foreground font-mono flex justify-between items-center">
           <span>admin.yourbusiness.com/dashboard</span>
-          <span className="flex items-center gap-1 text-green-500"><div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"/> Secure</span>
+          <span className="flex items-center gap-1 text-signal-success"><div className="w-2 h-2 rounded-full bg-signal-success animate-pulse"/> Secure</span>
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export function DashboardPreview() {
              className="absolute bottom-20 left-1/3 bg-background border border-primary/20 shadow-lg p-4 rounded-xl z-20 max-w-xs"
            >
               <div className="flex items-start gap-3">
-                 <div className="bg-blue-500/10 p-2 rounded-full text-blue-500">
+                 <div className="bg-signal-info/10 p-2 rounded-full text-signal-info">
                     <ImageIcon className="w-4 h-4" />
                  </div>
                  <div>

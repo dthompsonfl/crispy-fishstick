@@ -4,32 +4,22 @@ import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { verify as verifyOtp } from "otplib";
 import Redis from "ioredis";
+import crypto from "crypto";
 import { decryptSecret } from "@/lib/security/mfa";
 import { updateSessionActivity } from "@/lib/security/session";
 import { getRateLimiter } from "@/lib/security/rate-limit";
 import { authConfig } from "./auth.config";
 
 // Create Redis client for rate limiting
-let rateLimiterInstance = null;
+let rateLimiterInstance: ReturnType<typeof getRateLimiter> | null = null;
 
-if (process.env.DISABLE_RATE_LIMITING === "true") {
-  console.warn('Rate limiting disabled via env var');
-  rateLimiterInstance = {
-    checkLoginAttempt: async () => { return { success: true, remaining: 5 } as const },
-    getClientIp: () => '127.0.0.1',
-  };
-} else {
-  try {
-    const redis = new Redis(process.env.REDIS_URL || "redis://localhost:6379");
-    rateLimiterInstance = getRateLimiter(redis);
-  } catch (_error) {
-    console.warn('Redis not available, rate limiting will be disabled');
-    // Create a mock rate limiter for testing/fallback
-    rateLimiterInstance = {
-      checkLoginAttempt: async () => { return { success: true, remaining: 5 }; },
-      getClientIp: () => '127.0.0.1',
-    };
-  }
+try {
+  const redis = new Redis(process.env.REDIS_URL || "redis://localhost:6379");
+  rateLimiterInstance = getRateLimiter(redis);
+} catch (error) {
+  console.warn('Redis connection failed, falling back to in-memory rate limiting', error);
+  // Fallback to in-memory rate limiting
+  rateLimiterInstance = getRateLimiter(null);
 }
 
 declare module "next-auth" {
@@ -224,7 +214,7 @@ export const authOptions: NextAuthOptions = {
       // Handle session creation on sign-in with session fixation protection
       if (trigger === "signIn") {
         // Generate a new session token to prevent session fixation
-        token.sessionToken = `session_${Math.random().toString(36).substring(2, 15)}_${Date.now()}`;
+        token.sessionToken = `session_${crypto.randomUUID()}`;
         token.sessionCreatedAt = Math.floor(Date.now() / 1000);
         
         // Add security metadata

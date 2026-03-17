@@ -1,189 +1,94 @@
-import type { Metadata } from "next";
-import { Code, Layers, Database, Box } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Services & Packages",
-  description: "Specialized engineering and design services for high-stakes digital products.",
-};
-
-const packages = [
-  {
-    title: "The Business OS",
-    description: "The complete technology foundation for your business. You get the site, the hosting, and the control panel.",
-    price: "Starting at $5,000",
-    features: [
-      "Custom Next.js Website (Fastest tech available)",
-      "Owner's Dashboard (Edit content instantly)",
-      "Google Core Web Vitals Optimization",
-      "Managed Hosting & Security Updates",
-      "Full Code Ownership (No lock-in)"
-    ],
-    cta: "Build My Foundation",
-    highlight: true,
-  },
-  {
-    title: "Audit & Rescue",
-    description: "Fixing your current site's speed, legal compliance, and lost leads.",
-    price: "Flat Fee: $1,500",
-    features: [
-      "ADA/WCAG Compliance Audit",
-      "Performance Optimization (Speed up load times)",
-      "Security Vulnerability Scan",
-      "SEO Technical Fixes",
-      "Detailed 'Plain English' Report"
-    ],
-    cta: "Fix My Site",
-    highlight: false,
-  }
-];
-
-const services = [
-  {
-    icon: Code,
-    title: "Design Engineering",
-    description:
-      "Bridging the gap between Figma and production code. I build pixel-perfect UI systems that scale.",
-    features: [
-      "Component Libraries",
-      "Design Systems",
-      "Motion & Interaction",
-      "Storybook Architecture",
-    ],
-  },
-  {
-    icon: Layers,
-    title: "Frontend Systems",
-    description:
-      "Scalable React architectures for complex applications. Optimized for performance and maintainability.",
-    features: [
-      "Next.js Architecture",
-      "State Management",
-      "Performance Optimization",
-      "Type-Safe APIs",
-    ],
-  },
-  {
-    icon: Database,
-    title: "Commerce Integrations",
-    description:
-      "Reliable synchronization engines and custom storefronts for high-volume commerce.",
-    features: [
-      "Shopify Headless",
-      "ERP Synchronization",
-      "Inventory Management",
-      "Payment Gateways",
-    ],
-  },
-];
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Check, ArrowRight } from "lucide-react";
+import { siteConfig } from "@/lib/site";
 
 export default function ServicesPage() {
+  const services = [
+    {
+      title: "Website Rebuild & Modernization",
+      description: "Migrate from slow WordPress/Wix sites to high-performance Next.js systems.",
+      whoFor: "Businesses outgrowing DIY builders.",
+      timeline: "4-6 weeks",
+      price: "From $3,500",
+      features: ["Sub-100ms load times", "Perfect SEO structure", "Mobile-first design", "Content Management System"]
+    },
+    {
+      title: "Booking & Automation Systems",
+      description: "Custom appointment flows, reminders, and payment processing.",
+      whoFor: "Service businesses (Clinics, Salons, Consultancies).",
+      timeline: "6-8 weeks",
+      price: "From $5,000",
+      features: ["Calendar integration", "Stripe/Square payments", "Automated SMS/Email", "Admin dashboard"]
+    },
+    {
+      title: "Local SEO & Presence",
+      description: "Technical SEO to dominate local search results. No magic, just clean data.",
+      whoFor: "Local brick-and-mortar.",
+      timeline: "Ongoing",
+      price: "From $1,000/mo",
+      features: ["Schema markup implementation", "Google Business Profile optimization", "Review management", "Local citation audits"]
+    },
+    {
+      title: "Maintenance & Reliability",
+      description: "We keep the lights on so you don't have to.",
+      whoFor: "Anyone with a critical digital asset.",
+      timeline: "Monthly",
+      price: "From $250/mo",
+      features: ["Daily backups", "Security patches", "Uptime monitoring", "Emergency response"]
+    }
+  ];
+
   return (
-    <div className="min-h-screen py-24 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="mb-20 text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Services & Packages
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            Whether you need a full digital transformation or just a specific technical problem solved, we have a package for you.
-          </p>
-        </div>
+    <div className="container py-12 md:py-24 space-y-16">
+      <div className="text-center max-w-3xl mx-auto space-y-4">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Services</h1>
+        <p className="text-xl text-muted-foreground">
+          Engineering solutions for business problems. No fluff, no upsells you don't need.
+        </p>
+      </div>
 
-        {/* SMB PACKAGES */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32 max-w-5xl mx-auto">
-          {packages.map((pkg) => (
-             <div
-               key={pkg.title}
-               className={`relative p-8 rounded-3xl border flex flex-col ${pkg.highlight ? 'bg-secondary/10 border-primary/50 shadow-lg shadow-primary/5' : 'bg-card border-border'}`}
-             >
-                {pkg.highlight && (
-                   <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl uppercase tracking-wider">
-                      Most Popular
-                   </div>
-                )}
-                <div className="mb-6">
-                   <h2 className="text-3xl font-bold mb-2">{pkg.title}</h2>
-                   <p className="text-lg font-medium text-primary">{pkg.price}</p>
+      <div className="grid md:grid-cols-2 gap-8">
+        {services.map((service, index) => (
+          <Card key={index} className="flex flex-col h-full card-precision">
+            <CardHeader>
+              <div className="flex justify-between items-start gap-4">
+                <div>
+                   <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
+                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </div>
-                <p className="text-muted-foreground mb-8 text-lg leading-relaxed flex-1">
-                   {pkg.description}
-                </p>
-                <ul className="space-y-4 mb-8">
-                   {pkg.features.map((f) => (
-                      <li key={f} className="flex items-start gap-3 text-sm">
-                         <div className="mt-1 min-w-4 h-4 rounded-full bg-green-500/20 text-green-600 flex items-center justify-center">
-                            <Box className="w-2.5 h-2.5" />
-                         </div>
-                         <span>{f}</span>
-                      </li>
-                   ))}
-                </ul>
-                <Button className={`w-full h-12 text-lg rounded-xl ${pkg.highlight ? 'default' : 'variant-outline'}`} asChild>
-                   <Link href="/contact">{pkg.cta}</Link>
-                </Button>
-             </div>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-4 mb-12">
-           <div className="h-px bg-border flex-1" />
-           <span className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Specialized Engineering</span>
-           <div className="h-px bg-border flex-1" />
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={service.title}
-                className="group bg-card rounded-2xl p-6 border border-border hover:border-foreground/20 transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="mb-6">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-secondary group-hover:bg-foreground/5 transition-colors">
-                    <Icon className="h-6 w-6 text-foreground" />
-                  </div>
-                </div>
-
-                <h2 className="text-xl font-bold mb-3">{service.title}</h2>
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="text-xs font-medium flex items-center gap-2 text-foreground/80"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-primary/60" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <Badge variant="secondary" className="whitespace-nowrap">{service.price}</Badge>
               </div>
-            );
-          })}
-        </div>
-
-        {/* CTA Section */}
-        <div className="border-t border-border pt-24 text-center">
-            <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6">
-                  Not sure what you need?
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  We often take on custom engineering challenges that don&apos;t fit neatly into a bucket.
-                </p>
-                <Button asChild size="lg" className="rounded-full px-8">
-                   <Link href="/contact">Book a Consultation</Link>
+            </CardHeader>
+            <CardContent className="flex-1 space-y-6">
+               <div className="grid grid-cols-2 gap-4 text-sm">
+                   <div>
+                       <span className="font-semibold text-muted-foreground block">Who it's for</span>
+                       {service.whoFor}
+                   </div>
+                   <div>
+                       <span className="font-semibold text-muted-foreground block">Timeline</span>
+                       {service.timeline}
+                   </div>
+               </div>
+               <ul className="space-y-2">
+                   {service.features.map((feature, i) => (
+                       <li key={i} className="flex items-center gap-2 text-sm">
+                           <Check className="h-4 w-4 text-signal-success" />
+                           {feature}
+                       </li>
+                   ))}
+               </ul>
+            </CardContent>
+            <CardFooter>
+                <Button asChild className="w-full btn-precision">
+                    <Link href="/contact">Book Consultation</Link>
                 </Button>
-            </div>
-        </div>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   );

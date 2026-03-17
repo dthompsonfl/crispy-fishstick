@@ -1,140 +1,130 @@
 import Link from "next/link";
-import { ArrowRight, ShieldAlert, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HeroBackground } from "@/components/hero-background";
-import { Reveal } from "@/components/reveal";
-import { DashboardPreview } from "@/components/dashboard-preview";
-import { RiskCards } from "@/components/risk-cards";
-import { LocalBusinessImpact } from "@/components/local-business-impact";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, ShieldCheck, Zap, Lock, Database, LayoutTemplate, Clock } from "lucide-react";
+import { TextReveal } from "@/components/ui/kinetic/text-reveal";
+import { HeroBadge } from "@/components/ui/kinetic/hero-badge";
+import { AmbientBackground } from "@/components/ui/kinetic/ambient-background";
+import { siteConfig } from "@/lib/site";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* HERO SECTION */}
-      <section
-        className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden border-b border-border/50 py-20"
-        data-hud-section="Hero"
-      >
-        <HeroBackground />
+    <div className="flex flex-col gap-16 md:gap-32 pb-24 md:pb-32 relative">
+      <AmbientBackground />
+      {/* Hero Section */}
+      <section className="relative pt-8 md:pt-24 lg:pt-32 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col items-center text-center gap-6 md:gap-8">
+          <HeroBadge>
+            <span className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal-success opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-signal-success"></span>
+              </span>
+              Accepting New Clients for Q3
+            </span>
+          </HeroBadge>
 
-        <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
-            <Reveal>
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-8 backdrop-blur-sm">
-                <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse" />
-                Ownership. Control. Peace of Mind.
-              </div>
-            </Reveal>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl text-balance">
+            <TextReveal text="Engineering-grade systems for small businesses." />
+          </h1>
 
-            <Reveal delay={0.1}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 max-w-4xl text-balance">
-                Enterprise-grade web apps that you actually <span className="text-primary">own</span> and <span className="text-primary">control</span>.
-              </h1>
-            </Reveal>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl text-balance">
+            Math, not marketing. We build rigorous, high-performance websites and systems that you own 100%. No vague promises, just measurable outcomes.
+          </p>
 
-            <Reveal delay={0.2}>
-              <p className="text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed text-balance">
-                Stop renting your digital presence. We build rigorous, high-performance engines that you drive—without needing a developer for every price change.
-              </p>
-            </Reveal>
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
+            <Button asChild size="lg" className="h-12 px-8 rounded-full text-base btn-precision">
+              <Link href="/audit">
+                Get a Free Mini-Audit <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="h-12 px-8 rounded-full text-base btn-precision">
+              <Link href="/pricing">
+                View Packages
+              </Link>
+            </Button>
+          </div>
 
-            <Reveal delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center justify-center">
-                <Button asChild size="lg" className="h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/20">
-                  <Link href="/platform">
-                    Tour the Platform <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full hover:bg-background/80">
-                  <Link href="/work">
-                    View Case Studies
-                  </Link>
-                </Button>
-              </div>
-            </Reveal>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm text-muted-foreground mt-8 border-t border-border/50 pt-8 w-full max-w-3xl">
+            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-primary" /> 100% Ownership Transfer</span>
+            <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Guaranteed Timelines</span>
+            <span className="flex items-center gap-2"><Lock className="h-4 w-4 text-primary" /> Enterprise Security</span>
+          </div>
         </div>
       </section>
 
-      {/* THE NO-CODE PROMISE */}
-      <section className="py-24 bg-secondary/20 border-b border-border/50 overflow-hidden relative">
-        <div className="container relative z-10">
-           <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl mb-6 text-primary">
-                 <LayoutDashboard className="w-8 h-8" />
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">We build the engine. You drive the car.</h2>
-              <p className="text-lg text-muted-foreground">
-                 Update your pricing, hours, and content instantly without calling a developer. Our &quot;BusinessOS&quot; dashboard puts the keys in your hands.
-              </p>
-           </div>
-
-           <DashboardPreview />
-
-           <div className="text-center mt-12">
-              <Button variant="link" asChild className="text-lg text-primary">
-                 <Link href="/platform">See all features in the Owner&apos;s Dashboard &rarr;</Link>
-              </Button>
-           </div>
+      {/* Feature Pillars */}
+      <section className="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="card-precision bg-card/50 backdrop-blur-sm">
+            <CardHeader>
+              <Zap className="h-8 w-8 text-primary mb-4" />
+              <CardTitle>Performance First</CardTitle>
+              <CardDescription>
+                Speed is revenue. We build for sub-100ms interactions and perfect Core Web Vitals scores.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+          <Card className="card-precision bg-card/50 backdrop-blur-sm">
+            <CardHeader>
+              <Database className="h-8 w-8 text-primary mb-4" />
+              <CardTitle>Data Sovereignty</CardTitle>
+              <CardDescription>
+                You own your code, your data, and your infrastructure. We provide a full "Bus Factor" handoff protocol.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+          <Card className="card-precision bg-card/50 backdrop-blur-sm">
+            <CardHeader>
+              <LayoutTemplate className="h-8 w-8 text-primary mb-4" />
+              <CardTitle>Transparent Scope</CardTitle>
+              <CardDescription>
+                Fixed packages with clear deliverables. No scope creep, no surprise invoices, no "hourly" black holes.
+              </CardDescription>
+            </CardHeader>
+          </Card>
         </div>
       </section>
 
-      {/* HIDDEN DANGERS */}
-      <section className="py-24 bg-background">
-         <div className="container">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-               <div className="max-w-2xl">
-                  <div className="flex items-center gap-3 mb-4 text-amber-500 font-medium">
-                     <ShieldAlert className="w-5 h-5" />
-                     <span>Education First</span>
-                  </div>
-                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">The Hidden Dangers</h2>
-                  <p className="text-lg text-muted-foreground">
-                     Most small business sites are ticking time bombs. Here is what cheap agencies don&apos;t tell you.
-                  </p>
+      {/* How it Works (Short) */}
+      <section className="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">How we work</h2>
+            <p className="text-muted-foreground">Simple, deterministic, and transparent.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8 relative">
+           <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-border -z-10" />
+           {[
+               { step: "01", title: "Audit & Scope", desc: "We analyze your needs and define a fixed scope." },
+               { step: "02", title: "Build & Verify", desc: "Rigorous development with weekly demos." },
+               { step: "03", title: "Launch & Handover", desc: "Full ownership transfer + training." }
+           ].map((item, i) => (
+               <div key={i} className="flex flex-col items-center text-center bg-background p-4 rounded-lg border border-transparent hover:border-border transition-colors">
+                   <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4 shadow-lg z-10">
+                       {item.step}
+                   </div>
+                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                   <p className="text-muted-foreground">{item.desc}</p>
                </div>
-               <Button variant="outline" asChild>
-                  <Link href="/academy">Read the full guide</Link>
-               </Button>
-            </div>
-
-            <RiskCards />
-         </div>
+           ))}
+        </div>
       </section>
 
-      {/* SOCIAL PROOF */}
-      <section className="py-24 border-y border-border/50 bg-secondary/10">
-         <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Real Results for Local Owners</h2>
-               <p className="text-lg text-muted-foreground">
-                  When you stop fighting with your website, you start growing your business.
-               </p>
-            </div>
-            <LocalBusinessImpact />
-         </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section
-        className="py-32 container text-center relative overflow-hidden"
-        data-hud-section="CTA"
-      >
-         <div className="absolute inset-0 bg-primary/5 -skew-y-3 transform scale-150 z-0 pointer-events-none" />
-         <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
-               Ready to take control?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-10 text-balance">
-               Stop renting. Start owning. Get a rigorous, compliant, and profitable digital asset.
+      {/* CTA Section */}
+      <section className="px-4 md:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+        <div className="rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 lg:p-16 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_50%,transparent_75%)] bg-[length:250%_250%] animate-shimmer pointer-events-none" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">Stop guessing. Start building.</h2>
+            <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto relative z-10">
+                Get a free engineering audit of your current setup. No sales pressure, just technical facts.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-               <Button asChild size="lg" className="rounded-full px-10 h-14 text-lg shadow-xl">
-                  <Link href="/contact">Book a Free Strategy Call</Link>
-               </Button>
-               <Button asChild variant="outline" size="lg" className="rounded-full px-10 h-14 text-lg bg-background">
-                  <Link href="/process">How We Work</Link>
-               </Button>
-            </div>
-         </div>
+            <Button asChild size="lg" variant="secondary" className="rounded-full px-8 h-12 text-foreground font-bold btn-precision relative z-10">
+                <Link href="/audit">
+                    Get Your Audit
+                </Link>
+            </Button>
+        </div>
       </section>
     </div>
   );

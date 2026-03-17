@@ -1,5 +1,7 @@
-import { Header } from "@/components/header";
+import { DesktopHeader } from "@/components/shells/desktop-header";
+import { MobileHeader } from "@/components/shells/mobile-shell";
 import { Footer } from "@/components/footer";
+import { MobileBottomNav } from "@/components/mobile-bottom-nav";
 import { PageTransition } from "@/components/page-transition";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { SystemLayer } from "@/components/system-layer";
@@ -13,24 +15,41 @@ export default function SiteLayout({
 }>) {
   return (
     <>
-      {/* Background system layer */}
+      {/* Background system layer - Shared */}
       <SystemLayer />
 
-      {/* Console HUD */}
+      {/* Console HUD - Shared */}
       <ConsoleHud />
 
-      {/* Route Transition Overlay */}
+      {/* Route Transition Overlay - Shared */}
       <RouteTransitionLayer />
 
-      {/* Foreground app chrome */}
-      <div className="relative z-10 min-h-dvh flex flex-col">
-        <Header />
-        <PageTransition>
-          <ErrorBoundary>
-            <main className="flex-1 pt-20">{children}</main>
-          </ErrorBoundary>
-        </PageTransition>
-        <Footer />
+      <div className="flex flex-col min-h-screen bg-muted/5 md:bg-background">
+         {/* Headers */}
+         <div className="hidden md:block">
+            <DesktopHeader />
+         </div>
+         <div className="md:hidden">
+            <MobileHeader />
+         </div>
+
+         {/* Main Content - Single Render */}
+         <PageTransition>
+            <ErrorBoundary>
+               {/* Mobile needs p-0 for edge-to-edge content, Desktop needs pt-20 for fixed header */}
+               <main className="flex-1 p-0 md:pt-20">
+                  {children}
+               </main>
+            </ErrorBoundary>
+         </PageTransition>
+
+         {/* Footers */}
+         <div className="hidden md:block">
+            <Footer />
+         </div>
+         <div className="md:hidden">
+            <MobileBottomNav />
+         </div>
       </div>
     </>
   );
