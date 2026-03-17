@@ -96,7 +96,7 @@ export default async function ServicesPage(
                     <TableCell>{service.User?.name || "Unassigned"}</TableCell>
                     <TableCell>
                         {service.repoUrl ? (
-                            <a href={service.repoUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <a href={service.repoUrl} target="_blank" rel="noopener noreferrer" className="text-signal-info hover:underline">
                                 Link
                             </a>
                         ) : "-"}

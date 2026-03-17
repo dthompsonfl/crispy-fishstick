@@ -21,7 +21,7 @@ export function AdminFeatureHighlight({ icon: Icon, title, description, timeSave
       </div>
       <div className="shrink-0 bg-background border border-border px-4 py-2 rounded-lg text-center min-w-[120px]">
          <div className="text-xs text-muted-foreground uppercase font-semibold mb-0.5">Time Saved</div>
-         <div className="text-emerald-500 font-bold">{timeSaved}</div>
+         <div className="text-signal-success font-bold">{timeSaved}</div>
       </div>
     </div>
   );

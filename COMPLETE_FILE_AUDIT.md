@@ -1,97 +1,108 @@
 # COMPLETE FILE AUDIT
 
-## [API Route]: Admin User Creation
-
-**PATH:** `/app/api/admin/users/route.ts`
-
-### Issues Found:
-1. **Line 37:** Missing `verifyCsrfToken` invocation. - Severity: CRITICAL
-   - **Impact:** Allows Cross-Site Request Forgery (CSRF). An attacker can create admin users if a logged-in admin visits a malicious page.
-   - **Fix:**
-     ```typescript
-     // Use the wrapper
-     export const POST = adminMutation({ permissions: ["users.write"] }, async (user, body) => { ... })
-     ```
-   - **Estimated Time:** 2 hours
-
-2. **Line 11:** `const where: any` - Severity: LOW
-   - **Impact:** Loss of type safety.
-   - **Fix:** `const where: Prisma.UserWhereInput = ...`
-   - **Estimated Time:** 0.5 hours
-
-### Recommendations:
-- Refactor to use `adminMutation` wrapper consistently.
+**DATE:** 2025-05-15
+**SCOPE:** Critical Files Analysis
 
 ---
 
-## [Library]: Authentication Logic
-
-**PATH:** `/lib/auth.ts`
-
-### Issues Found:
-1. **Line 15:** `process.env.DISABLE_RATE_LIMITING === "true"` - Severity: HIGH
-   - **Impact:** Allows bypassing security controls via simple env var change, often left on by mistake.
-   - **Fix:** Remove this block. Rate limiting should always be enabled in production.
-   - **Estimated Time:** 1 hour
-
-2. **Line 18:** Mock Rate Limiter always returns success - Severity: HIGH
-   - **Impact:** If Redis fails, the system fails open (allows all requests), enabling brute force attacks.
-   - **Fix:** Fail closed or implement a memory-based fallback with actual limits.
-   - **Estimated Time:** 4 hours
-
-3. **Line 132:** `Math.random()` for session token - Severity: HIGH
-   - **Impact:** Predictable session tokens allow session hijacking.
-   - **Fix:**
-     ```typescript
-     token.sessionToken = `session_${crypto.randomUUID()}`;
-     ```
-   - **Estimated Time:** 1 hour
-
-### Recommendations:
-- Switch to `crypto.randomUUID()`.
-- Implement robust fallback for Redis unavailability.
-
----
-
-## [Middleware]: Security Proxy
-
+## `proxy.ts` (Middleware)
 **PATH:** `/proxy.ts`
 
 ### Issues Found:
-1. **Line 45:** `pathname.startsWith("/admin")` - Severity: MEDIUM
-   - **Impact:** Fragile route protection. If an admin route is created at `/api/admin` (not covered by `matcher` exclusion?) or `/Admin` (if case sensitive), it might be bypassed.
-   - **Fix:** Use a robust pattern matcher or centralize admin routes.
-   - **Estimated Time:** 2 hours
-
-### Recommendations:
-- Ensure strict lowercase comparison or use a dedicated `isAdminRoute(pathname)` helper with comprehensive logic.
+1. **Line 57:** Security Matcher Bypass - **Severity: CRITICAL**
+   - **Impact:** API routes (`/api/*`) are explicitly excluded from the middleware. They receive NO security headers (CSP, HSTS) and NO authentication checks from this layer.
+   - **Fix:**
+     ```typescript
+     // Remove 'api' from the negative lookahead
+     matcher: ['/((?!_next/static|_next/image|favicon.ico|...).*)'],
+     ```
+   - **Estimated Time:** 1 hour
 
 ---
 
-## [API Route]: Cron Contract Reminders
-
-**PATH:** `/app/api/cron/contract-reminders/route.ts`
+## `app/api/admin/users/route.ts`
+**PATH:** `/app/api/admin/users/route.ts`
 
 ### Issues Found:
-1. **Loop:** `for (const contract of expiringContracts) { await sendEmail(...) }` - Severity: HIGH
-   - **Impact:** Serial execution will timeout with large datasets (performance/reliability).
-   - **Fix:** Use `Promise.all` for batches or a job queue.
-   - **Estimated Time:** 6 hours
+1. **Line 19:** Force Dynamic - **Severity: HIGH**
+   - **Impact:** `export const dynamic = "force-dynamic";` disables caching for this route. While acceptable for admin APIs, if copied to public routes, it degrades performance.
+   - **Fix:** Use only when necessary.
+   - **Estimated Time:** 0.5 hours
 
-### Recommendations:
-- Move email sending to a background job (BullMQ).
+2. **Line 46-48:** Manual Security Implementation - **Severity: HIGH**
+   - **Impact:** Manually calling `assertSameOrigin` and `verifyCsrfToken` is error-prone.
+   - **Fix:** Use `adminMutation` wrapper.
+   - **Estimated Time:** 2 hours (refactor)
+
+3. **Line 63:** Weak Password Hashing - **Severity: MEDIUM**
+   - **Impact:** `bcrypt.hash(password, 10)` is too weak for 2025 standards.
+   - **Fix:** `bcrypt.hash(password, 14)`
+   - **Estimated Time:** 1 hour
 
 ---
 
-## [Database]: Prisma Schema
+## `app/layout.tsx`
+**PATH:** `/app/layout.tsx`
 
+### Issues Found:
+1. **Line 48:** Global Force Dynamic - **Severity: CRITICAL**
+   - **Impact:** `export const dynamic = "force-dynamic";` forces the entire application (including marketing pages) to render server-side on every request.
+   - **Fix:** Delete this line immediately.
+   - **Estimated Time:** 0.5 hours
+
+---
+
+## `lib/auth.config.ts`
+**PATH:** `/lib/auth.config.ts`
+
+### Issues Found:
+1. **Line 35:** Hardcoded Fallback Secret - **Severity: CRITICAL**
+   - **Impact:** Returns `"dev-secret-fallback-for-development-only"` if secret is missing.
+   - **Fix:** Throw error in production if secret is missing.
+   - **Estimated Time:** 0.5 hours
+
+## `package.json`: Dependencies
+
+**PATH:** `/package.json`
+
+## `scripts/bootstrap-ubuntu22.sh`
+**PATH:** `/scripts/bootstrap-ubuntu22.sh`
+
+### Issues Found:
+1. **Line 538:** Syntax Error & Unconditional Exit - **Severity: BLOCKER**
+   - **Impact:** Script fails to run. `exit 1` is placed in the main execution flow, not an error block, and there is a dangling `fi`.
+   - **Fix:** Rewrite the logic flow.
+   - **Estimated Time:** 2 hours
+
+---
+
+## `components/admin/content/content-form.tsx`
+**PATH:** `/components/admin/content/content-form.tsx`
+
+### Issues Found:
+1. **Line 227:** Unsanitized Markdown Rendering - **Severity: CRITICAL**
+   - **Impact:** Stored XSS via `<ReactMarkdown>{field.value}</ReactMarkdown>`.
+   - **Fix:** Add `rehype-sanitize` plugin.
+   - **Estimated Time:** 1 hour
+
+**PATH:** `/lib/dal.ts`
+
+## `prisma/schema.prisma`
 **PATH:** `/prisma/schema.prisma`
 
 ### Issues Found:
-1. **Line 5:** `provider = "sqlite"` - Severity: HIGH (for Enterprise)
-   - **Impact:** Non-scalable, no concurrent writes.
+1. **Line 6:** SQLite Provider - **Severity: HIGH**
+   - **Impact:** Not suitable for production concurrency.
    - **Fix:** Change to `postgresql`.
-   - **Estimated Time:** 16 hours (migration + testing)
+   - **Estimated Time:** 4 hours (migration & config)
 
-### Recommendations:
-- Plan migration to Postgres immediately.
+---
+
+## `lib/auth.ts`
+**PATH:** `/lib/auth.ts`
+
+### Issues Found:
+1. **Line 24:** Rate Limit Fail Open - **Severity: HIGH**
+   - **Impact:** If Redis fails, rate limiting is disabled.
+   - **Fix:** Fail closed (deny login) or implement in-memory fallback with strict limits.
+   - **Estimated Time:** 2 hours

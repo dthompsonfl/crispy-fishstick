@@ -140,7 +140,7 @@ export default function ProcessPage() {
         <div className="mb-20 md:mb-32">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-               <span className="font-mono text-emerald-500 mr-2">{">>"}</span>
+               <span className="font-mono text-signal-success mr-2">{">>"}</span>
                <CalibrationHeadline text="EXECUTION_PROTOCOL" />
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8">

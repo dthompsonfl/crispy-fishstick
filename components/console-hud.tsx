@@ -169,7 +169,7 @@ export function ConsoleHud() {
           >
             {/* Top Right Pill */}
             <div className="absolute top-6 right-6 flex items-center gap-2 bg-background/80 backdrop-blur border border-border/40 px-3 py-1 rounded-full shadow-sm">
-              <span className={cn("w-1.5 h-1.5 rounded-full", audit.auditOk ? "bg-green-500" : "bg-amber-500", syncing && "animate-pulse")} />
+              <span className={cn("w-1.5 h-1.5 rounded-full", audit.auditOk ? "bg-signal-success" : "bg-signal-warning", syncing && "animate-pulse")} />
               <span className="text-foreground/80">{audit.auditOk ? "VERIFIED" : "DEGRADED"}</span>
             </div>
 

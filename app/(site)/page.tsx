@@ -14,21 +14,24 @@ import { BuildPlanModule } from "@/components/build-plan-module";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* HERO SECTION */}
-      <section
-        className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden border-b border-border/50 py-20"
-        data-hud-section="Hero"
-      >
-        <HeroBackground />
+    <div className="flex flex-col gap-16 md:gap-32 pb-24 md:pb-32 relative">
+      <AmbientBackground />
+      {/* Hero Section */}
+      <section className="relative pt-8 md:pt-24 lg:pt-32 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col items-center text-center gap-6 md:gap-8">
+          <HeroBadge>
+            <span className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal-success opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-signal-success"></span>
+              </span>
+              Accepting New Clients for Q3
+            </span>
+          </HeroBadge>
 
-        <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
-            <Reveal>
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-8 backdrop-blur-sm">
-                <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse" />
-                Ownership. Control. Peace of Mind.
-              </div>
-            </Reveal>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl text-balance">
+            <TextReveal text="Engineering-grade systems for small businesses." />
+          </h1>
 
             <Reveal delay={0.1}>
               <div className="mb-12">

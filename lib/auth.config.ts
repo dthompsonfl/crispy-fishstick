@@ -43,8 +43,15 @@ function getAuthSecret(): string {
   }
 
   if (!secret) {
-    console.warn("No auth secret found. Using a development fallback secret.");
-    return "dev-secret-fallback-for-development-only";
+    console.warn("No auth secret found. Generating a random fallback secret for development.");
+    // Generate a random 32-byte hex string (64 characters)
+    if (typeof crypto !== "undefined" && crypto.getRandomValues) {
+      const array = new Uint8Array(32);
+      crypto.getRandomValues(array);
+      return Array.from(array, (byte) => byte.toString(16).padStart(2, "0")).join("");
+    }
+    // Fallback if crypto is not available (should not happen in modern Node/Edge)
+    throw new Error("No auth secret found and secure generation failed. Please set NEXTAUTH_SECRET.");
   }
 
   if (secret.length < 32) {

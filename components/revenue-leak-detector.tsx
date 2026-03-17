@@ -87,7 +87,7 @@ export function RevenueLeakDetector() {
             <span className={cn(
                 "font-bold",
                 result.band === "high" ? "text-destructive" :
-                result.band === "medium" ? "text-orange-500" : "text-green-500"
+                result.band === "medium" ? "text-signal-warning" : "text-signal-success"
             )}>
                RISK: {result.band}
             </span>
@@ -104,7 +104,7 @@ export function RevenueLeakDetector() {
                    fill="none"
                    className={cn(
                        result.band === "high" ? "text-destructive" :
-                       result.band === "medium" ? "text-orange-500" : "text-green-500"
+                       result.band === "medium" ? "text-signal-warning" : "text-signal-success"
                    )}
                    strokeDasharray={553} // 2*pi*88
                    strokeLinecap="round"

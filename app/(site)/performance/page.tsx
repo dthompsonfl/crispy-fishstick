@@ -94,7 +94,7 @@ export default function PerformancePage() {
       <section className="bg-secondary/10 rounded-3xl p-8 md:p-12 border border-border/50">
          <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1 space-y-6">
-               <div className="flex items-center gap-3 text-emerald-500 font-bold">
+               <div className="flex items-center gap-3 text-signal-success font-bold">
                   <ShieldCheck className="w-6 h-6" />
                   <span>Bank-Grade Security</span>
                </div>

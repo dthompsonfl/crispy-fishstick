@@ -199,21 +199,21 @@ export function ProposalForm({ initialData }: { initialData?: {
               <Label htmlFor="title">Title</Label>
               <Input id="title" {...register("title")} placeholder="Proposal Title" />
               {errors.title && (
-                <p className="text-sm text-red-500">{errors.title.message}</p>
+                <p className="text-sm text-signal-danger">{errors.title.message}</p>
               )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="clientEmail">Client Email</Label>
               <Input id="clientEmail" {...register("clientEmail")} placeholder="client@example.com" type="email" />
               {errors.clientEmail && (
-                <p className="text-sm text-red-500">{errors.clientEmail.message}</p>
+                <p className="text-sm text-signal-danger">{errors.clientEmail.message}</p>
               )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="validUntil">Valid Until</Label>
               <Input id="validUntil" type="date" {...register("validUntil")} />
               {errors.validUntil && (
-                <p className="text-sm text-red-500">{errors.validUntil.message}</p>
+                <p className="text-sm text-signal-danger">{errors.validUntil.message}</p>
               )}
             </div>
           </div>
@@ -243,7 +243,7 @@ export function ProposalForm({ initialData }: { initialData?: {
                   <Label className="text-xs">Description</Label>
                   <Input {...register(`items.${index}.description`)} placeholder="Item description" />
                   {errors.items?.[index]?.description && (
-                    <p className="text-xs text-red-500">{errors.items[index]?.description?.message}</p>
+                    <p className="text-xs text-signal-danger">{errors.items[index]?.description?.message}</p>
                   )}
                 </div>
                 <div className="col-span-2 space-y-2">
@@ -253,7 +253,7 @@ export function ProposalForm({ initialData }: { initialData?: {
                     {...register(`items.${index}.hours`, { valueAsNumber: true })} 
                   />
                   {errors.items?.[index]?.hours && (
-                    <p className="text-xs text-red-500">{errors.items[index]?.hours?.message}</p>
+                    <p className="text-xs text-signal-danger">{errors.items[index]?.hours?.message}</p>
                   )}
                 </div>
                 <div className="col-span-2 space-y-2">
@@ -263,12 +263,12 @@ export function ProposalForm({ initialData }: { initialData?: {
                     {...register(`items.${index}.rate`, { valueAsNumber: true })} 
                   />
                   {errors.items?.[index]?.rate && (
-                    <p className="text-xs text-red-500">{errors.items[index]?.rate?.message}</p>
+                    <p className="text-xs text-signal-danger">{errors.items[index]?.rate?.message}</p>
                   )}
                 </div>
                 <div className="col-span-2">
                   <Button type="button" variant="ghost" size="icon" onClick={() => remove(index)}>
-                    <Trash className="h-4 w-4 text-red-500" />
+                    <Trash className="h-4 w-4 text-signal-danger" />
                   </Button>
                 </div>
               </div>

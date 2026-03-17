@@ -10,7 +10,6 @@ import { VisitedPathProvider } from "@/components/visited-path-provider";
 import { AppMotionConfig } from "@/components/motion-config";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { MobileBottomNav } from "@/components/mobile-bottom-nav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,15 +23,14 @@ export const metadata: Metadata = {
     template: "%s | Vantus Systems",
   },
   description:
-    "A specialized engineering studio for founders who demand production-grade quality, rigorous systems, and Apple-caliber interfaces.",
+    "Engineering-grade websites & systems for small businesses. Math, not marketing.",
   keywords: [
     "Software Engineering",
+    "Small Business Website",
     "Systems Architecture",
     "Next.js",
     "React",
     "TypeScript",
-    "High-Performance",
-    "Design Engineering",
   ],
   authors: [{ name: "Vantus Systems" }],
   openGraph: {
@@ -41,7 +39,7 @@ export const metadata: Metadata = {
     url: "https://vantus.systems",
     title: "Vantus Systems",
     description:
-      "Engineering for High-Trust Products. Production-grade quality from day one.",
+      "Engineering-grade websites & systems for small businesses.",
     siteName: "Vantus Systems",
   },
   twitter: {
@@ -71,7 +69,7 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className={cn(
         inter.variable,
-        "font-sans antialiased min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary pb-20 md:pb-0"
+        "font-sans antialiased min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary"
       )}>
         <AuthProvider session={session}>
             <ThemeProvider
@@ -85,7 +83,6 @@ export default async function RootLayout({
                     <PointerSignalProvider>
                         <VisitedPathProvider>
                             {children}
-                            <MobileBottomNav />
                         </VisitedPathProvider>
                     </PointerSignalProvider>
                 </AppMotionConfig>
