@@ -12,7 +12,7 @@ These instructions are for GitHub Copilot (VS Code) working **inside this reposi
 - **Framework:** Next.js 16 (App Router) + React 19
 - **Language:** TypeScript (strict mode)
 - **Styling:** Tailwind CSS + shadcn/ui patterns + Radix UI
-- **Animation:** Framer Motion + GSAP
+- **Animation:** Framer Motion + GSAP + **Remotion** (`@remotion/player` embedded in every primary public page for bespoke animated compositions)
 - **Content:** MDX (configured via `@next/mdx`) — case studies in `content/work/`, insights in `content/insights/`
 - **Database:** Prisma (schema at `prisma/schema.prisma`) — SQLite used for local/dev, PostgreSQL recommended for production
 - **Auth:** NextAuth v4 (JWT strategy) with MFA, session helpers in `lib/auth.ts`
@@ -41,6 +41,9 @@ These instructions are for GitHub Copilot (VS Code) working **inside this reposi
 - `content/` — MDX content
   - `content/work/` — case studies
   - `content/insights/` — insights / blog-style posts
+- `remotion/` — Remotion compositions for embedded animated players (**planned**)
+  - `remotion/Root.tsx` — registers all compositions
+  - `remotion/compositions/` — individual Remotion compositions (TopologyNetwork, AuditChecklist, MorphingBarChart, etc.)
 
 ### Backend (Server routes & libs)
 - `app/api/` — server route handlers (`route.ts` files). There are ~75 server routes (including cron/webhooks and public endpoints)
@@ -78,8 +81,10 @@ These instructions are for GitHub Copilot (VS Code) working **inside this reposi
 - `README.md` — high-level project summary and quick start
 - `AGENT.md`, `AGENT_GUIDE.md`, `ADMIN.md`, `ARCHITECTURE_REVIEW.md` — agent & architecture contracts and hard requirements
 - `docs/` — deployment, security review, and operational runbooks
+- `docs/public/DESIGN_SYSTEM/BESPOKE_DESIGN_SCHEMA.md` — **Bespoke UI design schema for all public pages** (design tokens, Remotion compositions, animation patterns, SVG masks, per-page inventory)
 - `.agent/` — agent artifacts, decisions, and verification workflows
 - **2026-01-13:** `/.github/agents/general.agent.md` updated to add anti-hallucination controls, bounded execution rules, DAP workflow, and skills-based subagent orchestration (details.md updated)
+- **2026-03-17:** Bespoke design schema created. Stitch project `17263530675590024345` holds 18 screen designs covering every page in `PUBLIC.SITE_MAP.md`. Remotion added to animation stack. Design system documented in `docs/public/DESIGN_SYSTEM/BESPOKE_DESIGN_SCHEMA.md`.
 - `public/proof/build.json` — build proof artifact generated at build time
 
 ## API Endpoints (75 route files total; ~67 admin endpoints)
