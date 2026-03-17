@@ -6,19 +6,19 @@ export function RiskCards() {
     {
       title: "Google's Core Web Vitals",
       icon: Gauge,
-      color: "text-signal-warning",
+      color: "text-amber-500",
       description: "Google now penalizes slow sites. If your page takes >2.5s to load, you lose rank to competitors.",
     },
     {
       title: "ADA Lawsuits",
       icon: Gavel,
-      color: "text-signal-danger",
+      color: "text-red-500",
       description: "Small businesses are prime targets for predatory lawsuits. Accessibility isn't optional; it's legal insurance.",
     },
     {
       title: "The 'Latency Tax'",
       icon: AlertTriangle,
-      color: "text-signal-warning",
+      color: "text-orange-500",
       description: "Every 100ms delay costs you 1% of sales. Cheap hosting saves $5/mo but loses you thousands in leads.",
     },
   ];

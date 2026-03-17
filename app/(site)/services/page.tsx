@@ -2,8 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ArrowRight } from "lucide-react";
-import { siteConfig } from "@/lib/site";
+import { Check } from "lucide-react";
 
 export default function ServicesPage() {
   const services = [
@@ -46,7 +45,7 @@ export default function ServicesPage() {
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Services</h1>
         <p className="text-xl text-muted-foreground">
-          Engineering solutions for business problems. No fluff, no upsells you don't need.
+          Engineering solutions for business problems. No fluff, no upsells you don&apos;t need.
         </p>
       </div>
 
@@ -65,7 +64,7 @@ export default function ServicesPage() {
             <CardContent className="flex-1 space-y-6">
                <div className="grid grid-cols-2 gap-4 text-sm">
                    <div>
-                       <span className="font-semibold text-muted-foreground block">Who it's for</span>
+                       <span className="font-semibold text-muted-foreground block">Who it&apos;s for</span>
                        {service.whoFor}
                    </div>
                    <div>

@@ -26,13 +26,13 @@ export function ContractSignature({ contractId, status, signedBy, signedAt }: Co
 
   if (status === "active" && signedBy) {
     return (
-      <Card className="bg-signal-success/5 border-signal-success/20">
+      <Card className="bg-green-50 border-green-200">
         <CardHeader>
-          <CardTitle className="text-signal-success flex items-center gap-2">
+          <CardTitle className="text-green-800 flex items-center gap-2">
             <PenTool className="h-5 w-5" />
             Signed & Active
           </CardTitle>
-          <CardDescription className="text-signal-success">
+          <CardDescription className="text-green-700">
             This contract was signed by <strong>{signedBy}</strong> on {new Date(signedAt!).toLocaleDateString()}.
           </CardDescription>
         </CardHeader>

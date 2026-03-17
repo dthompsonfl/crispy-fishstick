@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShieldCheck, Server, Key, FileText, UserCheck } from "lucide-react";
+import { Server, Key, FileText, UserCheck } from "lucide-react";
 
 export default function TrustPage() {
   return (
@@ -57,8 +57,8 @@ export default function TrustPage() {
                   Bus Factor Protocol
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                  "What happens if Vantus Systems disappears tomorrow?" <br/>
-                  It's a morbid question, but a responsible business owner must ask it. We have a pre-defined protocol to ensure you are never locked out of your business.
+                  &quot;What happens if Vantus Systems disappears tomorrow?&quot; <br/>
+                  It&apos;s a morbid question, but a responsible business owner must ask it. We have a pre-defined protocol to ensure you are never locked out of your business.
               </p>
               <Button asChild size="lg" className="btn-precision">
                   <Link href="/bus-factor-protocol">

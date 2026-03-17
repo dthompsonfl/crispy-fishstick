@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from '@/components/ui/use-toast';
@@ -159,22 +158,6 @@ export function MFASettings({
     }
   };
 
-  const copyToClipboard = async (text: string, label: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      toast({
-        title: "Copied!",
-        description: `${label} copied to clipboard.`,
-      });
-    } catch (_error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to copy to clipboard.",
-      });
-    }
-  };
-
   return (
     <Card>
       <CardHeader>
@@ -189,15 +172,15 @@ export function MFASettings({
             <div className="flex items-center gap-2">
               <span className="font-medium">Status</span>
               {isEnabled ? (
-                <Badge variant="success">
+                <span className="flex items-center text-sm text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
                   <CheckCircle2 className="mr-1 h-3 w-3" />
                   Enabled
-                </Badge>
+                </span>
               ) : (
-                <Badge variant="destructive">
+                <span className="flex items-center text-sm text-red-600 bg-red-100 px-2 py-0.5 rounded-full">
                   <XCircle className="mr-1 h-3 w-3" />
                   Disabled
-                </Badge>
+                </span>
               )}
             </div>
           </div>
@@ -255,7 +238,6 @@ export function MFASettings({
                     value={token}
                     onChange={(e) => setToken(e.target.value)}
                     maxLength={6}
-                    autoComplete="one-time-code"
                   />
                 </div>
                 <div className="flex gap-2">
@@ -292,9 +274,7 @@ export function MFASettings({
                     <div key={index} className="flex items-center gap-2">
                       <span className="font-mono bg-muted px-2 py-1 rounded text-sm">{code}</span>
                       <Button variant="ghost" size="icon" className="h-6 w-6"
-                        onClick={() => copyToClipboard(code, "Backup code")}
-                        aria-label={`Copy backup code ${code}`}
-                      >
+                        onClick={() => navigator.clipboard.writeText(code)}>
                         <Copy className="h-3 w-3" />
                       </Button>
                     </div>
@@ -323,9 +303,7 @@ export function MFASettings({
                 <div className="flex items-center gap-2 mb-4">
                   <span className="font-mono bg-muted px-3 py-2 rounded text-lg font-bold">{recoveryCode}</span>
                   <Button variant="ghost" size="icon"
-                    onClick={() => copyToClipboard(recoveryCode, "Recovery code")}
-                    aria-label="Copy recovery code"
-                  >
+                    onClick={() => navigator.clipboard.writeText(recoveryCode)}>
                     <Copy className="h-4 w-4" />
                   </Button>
                 </div>
@@ -355,9 +333,7 @@ export function MFASettings({
                   {deviceFingerprint}
                 </span>
                 <Button variant="ghost" size="icon" className="h-6 w-6"
-                  onClick={() => copyToClipboard(deviceFingerprint, "Device fingerprint")}
-                  aria-label="Copy device fingerprint"
-                >
+                  onClick={() => navigator.clipboard.writeText(deviceFingerprint)}>
                   <Copy className="h-3 w-3" />
                 </Button>
               </div>

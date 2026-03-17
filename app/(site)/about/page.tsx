@@ -7,24 +7,24 @@ export default function AboutPage() {
       <div className="space-y-6">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Math, Not Marketing.</h1>
         <p className="text-xl text-muted-foreground leading-relaxed">
-           Vantus Systems was founded on a simple frustration: Small businesses are constantly being sold "magic" marketing solutions that are technically broken.
+           Vantus Systems was founded on a simple frustration: Small businesses are constantly being sold &quot;magic&quot; marketing solutions that are technically broken.
         </p>
       </div>
 
       <div className="prose prose-neutral dark:prose-invert max-w-none">
           <p>
-              We are not a marketing agency. We don't sell "vibes". We are an engineering studio.
+              We are not a marketing agency. We don&apos;t sell &quot;vibes&quot;. We are an engineering studio.
               We believe that a website is a software product, and it should be built with the same rigor as a banking app or a flight control system.
           </p>
           <h3>Our Principles</h3>
           <ul>
-              <li><strong>Transparency:</strong> If we don't know, we say so. If it costs more, we explain why.</li>
+              <li><strong>Transparency:</strong> If we don&apos;t know, we say so. If it costs more, we explain why.</li>
               <li><strong>Ownership:</strong> You should never feel trapped by your vendor. We build systems you own.</li>
               <li><strong>Performance:</strong> We obsess over milliseconds because speed equals trust.</li>
           </ul>
-          <h3>Why "Vantus"?</h3>
+          <h3>Why &quot;Vantus&quot;?</h3>
           <p>
-              Derived from "Advantage". We give small businesses the unfair advantage of enterprise-grade engineering, without the enterprise-grade bureaucracy.
+              Derived from &quot;Advantage&quot;. We give small businesses the unfair advantage of enterprise-grade engineering, without the enterprise-grade bureaucracy.
           </p>
       </div>
 

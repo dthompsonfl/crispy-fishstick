@@ -18,11 +18,6 @@ interface RateLimitResult {
   remaining?: number;
 }
 
-interface MemoryRateLimitData {
-  count: number;
-  expires: number;
-}
-
 const DEFAULT_MAX_ATTEMPTS = 5;
 const DEFAULT_WINDOW_MS = 60 * 1000; // 1 minute
 const DEFAULT_KEY_PREFIX = "rl:";
@@ -36,64 +31,16 @@ const EMAIL_KEY_PREFIX = "rl:email:";
  * Redis Rate Limiter
  */
 export class RateLimiter {
-  private redis: Redis | null;
+  private redis: Redis;
   private maxAttempts: number;
   private windowMs: number;
   private keyPrefix: string;
-  private memoryStore: Map<string, MemoryRateLimitData>;
 
-  constructor(redisClient: Redis | null, options: RateLimitOptions = {}) {
+  constructor(redisClient: Redis, options: RateLimitOptions = {}) {
     this.redis = redisClient;
     this.maxAttempts = options.maxAttempts || DEFAULT_MAX_ATTEMPTS;
     this.windowMs = options.windowMs || DEFAULT_WINDOW_MS;
     this.keyPrefix = options.keyPrefix || DEFAULT_KEY_PREFIX;
-    this.memoryStore = new Map();
-  }
-
-  /**
-   * Check rate limit using in-memory store
-   */
-  private checkMemory(key: string, maxAttempts: number, windowMs: number): RateLimitResult {
-    const now = Date.now();
-    const data = this.memoryStore.get(key);
-
-    if (!data) {
-      this.memoryStore.set(key, {
-        count: 1,
-        expires: now + windowMs
-      });
-      return {
-        success: true,
-        remaining: maxAttempts - 1
-      };
-    }
-
-    if (now > data.expires) {
-      this.memoryStore.set(key, {
-        count: 1,
-        expires: now + windowMs
-      });
-      return {
-        success: true,
-        remaining: maxAttempts - 1
-      };
-    }
-
-    if (data.count >= maxAttempts) {
-      const retryAfter = Math.ceil((data.expires - now) / 1000);
-      return {
-        success: false,
-        retryAfter: retryAfter
-      };
-    }
-
-    data.count++;
-    this.memoryStore.set(key, data);
-
-    return {
-      success: true,
-      remaining: maxAttempts - data.count
-    };
   }
 
   /**
@@ -115,12 +62,6 @@ export class RateLimiter {
    */
   async check(ip: string): Promise<RateLimitResult> {
     const key = this.getKey(ip);
-
-    // Use memory store if Redis is not configured
-    if (!this.redis) {
-      return this.checkMemory(key, this.maxAttempts, this.windowMs);
-    }
-
     const now = Date.now();
 
     try {
@@ -179,8 +120,11 @@ export class RateLimiter {
       
     } catch (error) {
       console.error("Rate limiting error:", error);
-      // Fallback to memory store if Redis fails
-      return this.checkMemory(key, this.maxAttempts, this.windowMs);
+      // Fail open if Redis is unavailable
+      return {
+        success: true,
+        remaining: this.maxAttempts
+      };
     }
   }
 
@@ -189,12 +133,6 @@ export class RateLimiter {
    */
   async checkEmail(email: string): Promise<RateLimitResult> {
     const key = this.getEmailKey(email);
-
-    // Use memory store if Redis is not configured
-    if (!this.redis) {
-      return this.checkMemory(key, EMAIL_MAX_ATTEMPTS, EMAIL_WINDOW_MS);
-    }
-
     const now = Date.now();
 
     try {
@@ -253,8 +191,11 @@ export class RateLimiter {
       
     } catch (error) {
       console.error("Email rate limiting error:", error);
-      // Fallback to memory store if Redis fails
-      return this.checkMemory(key, EMAIL_MAX_ATTEMPTS, EMAIL_WINDOW_MS);
+      // Fail open if Redis is unavailable
+      return {
+        success: true,
+        remaining: EMAIL_MAX_ATTEMPTS
+      };
     }
   }
 
@@ -341,7 +282,7 @@ let globalRateLimiter: RateLimiter | null = null;
 /**
  * Get or create global rate limiter
  */
-export function getRateLimiter(redisClient: Redis | null): RateLimiter {
+export function getRateLimiter(redisClient: Redis): RateLimiter {
   if (!globalRateLimiter) {
     globalRateLimiter = new RateLimiter(redisClient, {
       maxAttempts: 5,

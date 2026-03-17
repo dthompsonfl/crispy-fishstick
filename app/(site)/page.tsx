@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, ShieldCheck, Zap, Lock, Database, LayoutTemplate, Clock } from "lucide-react";
 import { TextReveal } from "@/components/ui/kinetic/text-reveal";
 import { HeroBadge } from "@/components/ui/kinetic/hero-badge";
 import { AmbientBackground } from "@/components/ui/kinetic/ambient-background";
-import { siteConfig } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -18,8 +16,8 @@ export default function Home() {
           <HeroBadge>
             <span className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal-success opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-signal-success"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal-success opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-signal-success" />
               </span>
               Accepting New Clients for Q3
             </span>
@@ -71,7 +69,7 @@ export default function Home() {
               <Database className="h-8 w-8 text-primary mb-4" />
               <CardTitle>Data Sovereignty</CardTitle>
               <CardDescription>
-                You own your code, your data, and your infrastructure. We provide a full "Bus Factor" handoff protocol.
+                You own your code, your data, and your infrastructure. We provide a full &quot;Bus Factor&quot; handoff protocol.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -80,7 +78,7 @@ export default function Home() {
               <LayoutTemplate className="h-8 w-8 text-primary mb-4" />
               <CardTitle>Transparent Scope</CardTitle>
               <CardDescription>
-                Fixed packages with clear deliverables. No scope creep, no surprise invoices, no "hourly" black holes.
+                Fixed packages with clear deliverables. No scope creep, no surprise invoices, no &quot;hourly&quot; black holes.
               </CardDescription>
             </CardHeader>
           </Card>

@@ -27,8 +27,8 @@ export default function AuditPage() {
         } else {
             setErrors(result.errors || {});
         }
-    } catch (e) {
-        console.error(e);
+    } catch (_e) {
+        console.error(_e);
         setErrors({ form: ["Something went wrong. Please try again."] });
     } finally {
         setIsSubmitting(false);
@@ -46,7 +46,7 @@ export default function AuditPage() {
                   </div>
                   <h2 className="text-2xl font-bold mb-2">Request Received</h2>
                   <p className="text-muted-foreground mb-8">
-                      We've received your audit request. A senior engineer will review your site and email you a breakdown within 2 business days.
+                      We&apos;ve received your audit request. A senior engineer will review your site and email you a breakdown within 2 business days.
                   </p>
                   <Button onClick={() => setIsSuccess(false)} variant="outline">
                       Submit another
@@ -61,14 +61,14 @@ export default function AuditPage() {
       <div className="text-center mb-12 space-y-4">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Free Engineering Mini-Audit</h1>
         <p className="text-muted-foreground text-lg">
-          No sales pitch. Just a quick check of your site's performance, security, and code quality.
+          No sales pitch. Just a quick check of your site&apos;s performance, security, and code quality.
         </p>
       </div>
 
       <Card className="card-precision">
         <CardHeader>
           <CardTitle>Your Details</CardTitle>
-          <CardDescription>We'll analyze your public site and send a report to your email.</CardDescription>
+          <CardDescription>We&apos;ll analyze your public site and send a report to your email.</CardDescription>
         </CardHeader>
         <CardContent>
           <form action={handleSubmit} className="space-y-6">

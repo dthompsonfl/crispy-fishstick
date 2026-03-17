@@ -21,7 +21,7 @@ export default function BusFactorProtocolPage() {
       <div className="prose prose-neutral dark:prose-invert max-w-none">
           <h3>The Philosophy</h3>
           <p>
-              In software engineering, the "Bus Factor" is the minimum number of team members that have to disappear (e.g., get hit by a bus) before a project stalls.
+              In software engineering, the &quot;Bus Factor&quot; is the minimum number of team members that have to disappear (e.g., get hit by a bus) before a project stalls.
               For many agencies, the Bus Factor is 1. If that person disappears, you lose access to your website, your domain, and your email.
           </p>
           <p>
@@ -50,11 +50,11 @@ export default function BusFactorProtocolPage() {
               <div>
                   <h3 className="text-xl font-bold mb-2">2. Credentials & Hosting</h3>
                   <p className="text-muted-foreground mb-4">
-                      We never put critical assets in a "Vantus Agency Account".
+                      We never put critical assets in a &quot;Vantus Agency Account&quot;.
                   </p>
                   <ul className="list-disc list-inside text-sm space-y-1">
                       <li><strong>Domains:</strong> Registered in your name/account (GoDaddy, Namecheap, etc.).</li>
-                      <li><strong>Hosting:</strong> Vercel/Netlify/AWS accounts are yours. We are added as a "Team Member".</li>
+                      <li><strong>Hosting:</strong> Vercel/Netlify/AWS accounts are yours. We are added as a &quot;Team Member&quot;.</li>
                       <li><strong>Secrets:</strong> API keys are stored in encrypted environment variables, not hardcoded.</li>
                   </ul>
               </div>
@@ -63,7 +63,7 @@ export default function BusFactorProtocolPage() {
           <div className="flex gap-6 items-start p-6 rounded-xl border bg-card/50">
               <Database className="h-8 w-8 text-primary shrink-0 mt-1" />
               <div>
-                  <h3 className="text-xl font-bold mb-2">3. The "Emergency Handoff" File</h3>
+                  <h3 className="text-xl font-bold mb-2">3. The &quot;Emergency Handoff&quot; File</h3>
                   <p className="text-muted-foreground mb-4">
                       Every project repository includes a `docs/HANDOFF.md` file containing:
                   </p>

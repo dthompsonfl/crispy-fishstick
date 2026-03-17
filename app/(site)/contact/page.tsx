@@ -26,7 +26,7 @@ export default function ContactPage() {
         } else {
             setErrors(result.errors || {});
         }
-    } catch (e) {
+    } catch (_e) {
         setErrors({ form: ["Something went wrong."] });
     } finally {
         setIsSubmitting(false);
@@ -37,7 +37,7 @@ export default function ContactPage() {
     <div className="container py-12 md:py-24 grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
       <div className="space-y-8">
           <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Let's Talk</h1>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Let&apos;s Talk</h1>
               <p className="text-xl text-muted-foreground">
                   Ready to build something rigorous? Send us a message or book a time.
               </p>
@@ -85,7 +85,7 @@ export default function ContactPage() {
           {isSuccess ? (
               <div className="text-center py-12">
                   <h3 className="text-xl font-bold text-signal-success mb-2">Message Sent</h3>
-                  <p className="text-muted-foreground">We'll be in touch shortly.</p>
+                  <p className="text-muted-foreground">We&apos;ll be in touch shortly.</p>
                   <Button onClick={() => setIsSuccess(false)} variant="link" className="mt-4">
                       Send another
                   </Button>

@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Check, X, HelpCircle } from "lucide-react";
-import { siteConfig } from "@/lib/site";
+import { Check, X } from "lucide-react";
 
 export default function PricingPage() {
   const packages = [
