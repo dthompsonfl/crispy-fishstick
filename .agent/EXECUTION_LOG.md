@@ -106,3 +106,16 @@
   - 3 heading accessibility errors (documented exceptions for components accepting children via props)
 **[EXEC]** Reduced warnings from 165 to 157 (remaining warnings are intentional `any` types in test files and dynamic API responses).
 **[RESULT]** Zero errors, production-ready code quality with comprehensive linting. Created `CODE_QUALITY_REPORT.md` documenting all changes and recommendations.
+
+### Session 6 (Landing Page Restructure)
+
+**[PLAN]** Restructure landing page for conversion optimization.
+**[EXEC]** Updated `app/(site)/page.tsx`:
+  - Replaced Hero `h1` with `CalibrationHeadline` ("Transparent. Predictable. Done.").
+  - Promoted `AuditModal` to primary CTA.
+  - Added "Engineering Rigor" section with `TrustWidget`.
+  - Added "Revenue Leak Detection" section with `RevenueLeakDetector`.
+  - Added "Engineering Protocol" section with `BuildPlanModule`.
+  - Wrapped all new sections in `<Reveal>` components for animation consistency.
+  - Standardized indentation to 2 spaces throughout the file.
+**[RESULT]** Landing page aligned with PRD conversion goals and AXIOM design system.
