@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from '@/components/ui/use-toast';
@@ -172,15 +173,15 @@ export function MFASettings({
             <div className="flex items-center gap-2">
               <span className="font-medium">Status</span>
               {isEnabled ? (
-                <span className="flex items-center text-sm text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
+                <Badge variant="success">
                   <CheckCircle2 className="mr-1 h-3 w-3" />
                   Enabled
-                </span>
+                </Badge>
               ) : (
-                <span className="flex items-center text-sm text-red-600 bg-red-100 px-2 py-0.5 rounded-full">
+                <Badge variant="destructive">
                   <XCircle className="mr-1 h-3 w-3" />
                   Disabled
-                </span>
+                </Badge>
               )}
             </div>
           </div>

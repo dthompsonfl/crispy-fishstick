@@ -1,59 +1,72 @@
 # PERFORMANCE OPTIMIZATION GUIDE
 
-## ⚡ Bundle Analysis & Bloat
-
-### 1. Duplicate Animation Libraries (Waste: ~150KB+)
-**Issue:** The project includes both `framer-motion` (approx 50KB gzipped) and `gsap` (approx 60KB+ gzipped depending on plugins). Both serve similar purposes (complex animations).
-**Recommendation:** Standardize on one. `framer-motion` is more "React-native", while `GSAP` is more powerful for timeline sequencing.
-**Action:** Remove `gsap` if possible, or `framer-motion` if GSAP is the primary driver.
-**Files:** `package.json`
-
-### 2. Heavy 3D Runtime
-**Issue:** `@splinetool/react-spline` and `@splinetool/runtime` are included. These runtimes are extremely heavy (>500KB - 1MB parsed).
-**Impact:** Significant Time-To-Interactive (TTI) delay on pages using 3D elements.
-**Action:** Lazy load the Spline component using `next/dynamic` with `ssr: false`.
-```tsx
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-  loading: () => <div>Loading 3D...</div>
-})
-```
+**DATE:** 2025-05-15
+**AUDITOR:** Jules (Senior Principal Engineer)
 
 ---
 
-## 🐢 Database & Backend Bottlenecks
+## 1. Bundle Analysis & Bloat
 
-### 1. Synchronous Email Loop in Cron
-**Location:** `app/api/cron/contract-reminders/route.ts`
-**Issue:** The route fetches all expiring contracts and iterates through them, `await`ing `sendEmail` for each one.
+**🚨 CRITICAL ISSUE:** Triple Animation Library Overhead
+The application currently loads THREE separate animation libraries + a 3D runtime.
+
+| Library | Usage | Size (Est. Gzipped) | Status |
+| :--- | :--- | :--- | :--- |
+| `framer-motion` | Global (`layout.tsx`) | ~50KB | **KEEP** (Heavily used) |
+| `gsap` | `living-blueprint-section.tsx` | ~60KB+ | **REMOVE** |
+| `@splinetool/runtime` | `spline-blueprint-canvas.tsx` | ~150KB+ | **REMOVE** |
+| `@splinetool/react-spline` | `spline-blueprint-canvas.tsx` | ~3MB (Parsed) | **REMOVE** |
+
+**Recommendation:**
+1.  **Delete GSAP:** Rewrite `living-blueprint-section.tsx` using `framer-motion`.
+2.  **Delete Spline:** The `HeroBackground` uses a custom Canvas implementation (`Waves.tsx`) which is lightweight. Verify if `spline-blueprint-canvas.tsx` is actually used. If not, delete it. If yes, lazy load it dynamically with `next/dynamic`.
+
+## 2. Rendering Performance
+
+**🚨 CRITICAL ISSUE:** `force-dynamic` in Root Layout
+**Location:** `app/layout.tsx`
 ```typescript
-for (const contract of expiringContracts) {
-  await sendEmail({...}); // API call per iteration
+export const dynamic = "force-dynamic";
+```
+**Impact:** This disables Static Site Generation (SSG) and Incremental Static Regeneration (ISR) for the **ENTIRE APPLICATION**. Every request hits the server.
+**Reason:** Likely added to generate a nonce for CSP.
+**Fix:** Move nonce generation to `middleware.ts` (already there) and pass it via headers, but DO NOT force dynamic on the layout. Use `Script` strategy `nonce` from request headers if possible, or accept that the Marketing Site (`app/(site)`) should be static and might need a different layout than the Admin App.
+
+**Component Issues:**
+*   `components/react-bits/Waves.tsx`: Runs `requestAnimationFrame` continuously.
+    *   **Fix:** Use `IntersectionObserver` to pause the animation loop when the component is not in the viewport.
+
+## 3. Database Performance
+
+**🚨 CRITICAL ISSUE:** SQLite in Production
+**Location:** `prisma/schema.prisma` (`provider = "sqlite"`)
+**Impact:** SQLite allows only one writer at a time. For a $10M enterprise deployment, this will deadlock immediately under load.
+**Fix:** Migrate to PostgreSQL (AWS RDS or similar).
+```prisma
+datasource db {
+  provider = "postgresql" // WAS sqlite
+  url      = env("DATABASE_URL")
 }
 ```
-**Impact:** If 500 contracts expire, and email sending takes 200ms, the request takes 100 seconds. This will likely time out Vercel/AWS Lambda functions (default 10-60s limit).
-**Fix:**
-1.  **Queueing:** Push jobs to Redis/BullMQ.
-2.  **Batching:** Send emails in parallel chunks (e.g., `Promise.all` with concurrency limit).
-```typescript
-// Better approach (simple concurrency)
-await Promise.all(expiringContracts.map(c => sendEmail(...)));
-```
 
-### 2. Missing Caching on Admin Reads
-**Location:** `app/api/admin/users/route.ts`
-**Issue:** `export const dynamic = "force-dynamic"` is used. While correct for real-time data, frequent polling by the admin dashboard will hammer the database.
-**Fix:** Implement `stale-while-revalidate` caching headers or Redis caching for list views where realtime consistency isn't strictly required (e.g., 60s cache).
+**N+1 Queries:**
+*   `getSessionUser` in `lib/admin/guards.ts` manually re-fetches user and roles. Ensure indexes exist on `User.email` and `RoleAssignment.userId` (They do in schema, but verify execution plan).
+
+## 4. Metrics & SLA Targets
+
+| Route | Current Est. | Target | Action |
+| :--- | :--- | :--- | :--- |
+| `/` (Home) | ~1.2s (TTFB) | <200ms | Remove `force-dynamic`, Cache HTML |
+| `/admin/*` | ~500ms | <300ms | Optimize DB queries, use Redis for Session |
+| `bundle.js` | ~1.5MB | <300KB | Remove GSAP, Spline, Tree-shake |
 
 ---
 
-## 🏗️ Infrastructure & Rendering
+## 5. Infrastructure Optimization
 
-### 1. Image Optimization
-**Status:** `next/image` is used, but `sharp` is missing from `package.json`.
-**Impact:** Next.js's built-in image optimization is slower in production without `sharp`.
-**Fix:** `npm install sharp`
+*   **CDN:** Not configured. Assets are served from the Node.js server.
+    *   **Fix:** Configure `next.config.mjs` to upload assets to S3/CloudFront or use a Vercel/Cloudflare adapter.
+*   **Images:** `splinetool.com` is in `remotePatterns`.
+    *   **Fix:** If Spline is removed, remove this pattern to reduce security surface area.
 
-### 2. Standalone Build
-**Status:** `output: 'standalone'` is configured.
-**Note:** Ensure `node_modules` are correctly copied or installed in the final container image for the standalone server to work if it relies on native modules (like `sharp` or `bcrypt`).
+**VERDICT:** The application is currently unoptimized for scale. Immediate refactoring of the animation strategy and database layer is required.

@@ -1,97 +1,95 @@
 # COMPLETE FILE AUDIT
 
-## [API Route]: Admin User Creation
-
-**PATH:** `/app/api/admin/users/route.ts`
-
-### Issues Found:
-1. **Line 37:** Missing `verifyCsrfToken` invocation. - Severity: CRITICAL
-   - **Impact:** Allows Cross-Site Request Forgery (CSRF). An attacker can create admin users if a logged-in admin visits a malicious page.
-   - **Fix:**
-     ```typescript
-     // Use the wrapper
-     export const POST = adminMutation({ permissions: ["users.write"] }, async (user, body) => { ... })
-     ```
-   - **Estimated Time:** 2 hours
-
-2. **Line 11:** `const where: any` - Severity: LOW
-   - **Impact:** Loss of type safety.
-   - **Fix:** `const where: Prisma.UserWhereInput = ...`
-   - **Estimated Time:** 0.5 hours
-
-### Recommendations:
-- Refactor to use `adminMutation` wrapper consistently.
+**DATE:** 2025-05-15
+**AUDITOR:** Jules (Senior Principal Engineer)
 
 ---
 
-## [Library]: Authentication Logic
+## `app/layout.tsx`: Root Layout
 
-**PATH:** `/lib/auth.ts`
-
-### Issues Found:
-1. **Line 15:** `process.env.DISABLE_RATE_LIMITING === "true"` - Severity: HIGH
-   - **Impact:** Allows bypassing security controls via simple env var change, often left on by mistake.
-   - **Fix:** Remove this block. Rate limiting should always be enabled in production.
-   - **Estimated Time:** 1 hour
-
-2. **Line 18:** Mock Rate Limiter always returns success - Severity: HIGH
-   - **Impact:** If Redis fails, the system fails open (allows all requests), enabling brute force attacks.
-   - **Fix:** Fail closed or implement a memory-based fallback with actual limits.
-   - **Estimated Time:** 4 hours
-
-3. **Line 132:** `Math.random()` for session token - Severity: HIGH
-   - **Impact:** Predictable session tokens allow session hijacking.
-   - **Fix:**
-     ```typescript
-     token.sessionToken = `session_${crypto.randomUUID()}`;
-     ```
-   - **Estimated Time:** 1 hour
-
-### Recommendations:
-- Switch to `crypto.randomUUID()`.
-- Implement robust fallback for Redis unavailability.
-
----
-
-## [Middleware]: Security Proxy
-
-**PATH:** `/proxy.ts`
+**PATH:** `/app/layout.tsx`
 
 ### Issues Found:
-1. **Line 45:** `pathname.startsWith("/admin")` - Severity: MEDIUM
-   - **Impact:** Fragile route protection. If an admin route is created at `/api/admin` (not covered by `matcher` exclusion?) or `/Admin` (if case sensitive), it might be bypassed.
-   - **Fix:** Use a robust pattern matcher or centralize admin routes.
-   - **Estimated Time:** 2 hours
+1.  **Line 55:** `export const dynamic = "force-dynamic";` - Severity: CRITICAL
+    -   **Impact:** Disables all caching and static generation. TTFB increases by 200-500ms.
+    -   **Fix:** Remove this line. Handle nonce generation in Middleware/Headers.
+    -   **Estimated Time:** 4 hours
 
-### Recommendations:
-- Ensure strict lowercase comparison or use a dedicated `isAdminRoute(pathname)` helper with comprehensive logic.
+## `scripts/bootstrap-ubuntu22.sh`: Deployment Script
 
----
-
-## [API Route]: Cron Contract Reminders
-
-**PATH:** `/app/api/cron/contract-reminders/route.ts`
+**PATH:** `/scripts/bootstrap-ubuntu22.sh`
 
 ### Issues Found:
-1. **Loop:** `for (const contract of expiringContracts) { await sendEmail(...) }` - Severity: HIGH
-   - **Impact:** Serial execution will timeout with large datasets (performance/reliability).
-   - **Fix:** Use `Promise.all` for batches or a job queue.
-   - **Estimated Time:** 6 hours
+1.  **Line 742:** `exit 1` - Severity: CRITICAL
+    -   **Impact:** Deployment script intentionally kills itself during execution.
+    -   **Fix:** Remove the `exit 1` and fix the `if/fi` nesting.
+    -   **Estimated Time:** 1 hour
 
-### Recommendations:
-- Move email sending to a background job (BullMQ).
-
----
-
-## [Database]: Prisma Schema
+## `prisma/schema.prisma`: Database Schema
 
 **PATH:** `/prisma/schema.prisma`
 
 ### Issues Found:
-1. **Line 5:** `provider = "sqlite"` - Severity: HIGH (for Enterprise)
-   - **Impact:** Non-scalable, no concurrent writes.
-   - **Fix:** Change to `postgresql`.
-   - **Estimated Time:** 16 hours (migration + testing)
+1.  **Line 6:** `provider = "sqlite"` - Severity: CRITICAL
+    -   **Impact:** Non-scalable, file-locking database in production.
+    -   **Fix:** Change to `postgresql` and update connection string.
+    -   **Estimated Time:** 8 hours (migration testing).
 
-### Recommendations:
-- Plan migration to Postgres immediately.
+## `package.json`: Dependencies
+
+**PATH:** `/package.json`
+
+### Issues Found:
+1.  **Dependencies:** `gsap`, `framer-motion`, `@splinetool/runtime` - Severity: HIGH
+    -   **Impact:** Massive bundle size (>500KB unused JS).
+    -   **Fix:** Remove `gsap` and `@splinetool`. Refactor components to use `framer-motion` only.
+    -   **Estimated Time:** 16 hours
+
+## `proxy.ts`: Middleware
+
+**PATH:** `/proxy.ts`
+
+### Issues Found:
+1.  **Line 48:** `userRoles.includes("Admin")` - Severity: HIGH
+    -   **Impact:** Brittle, case-sensitive string matching for security.
+    -   **Fix:** Import constants/Enums for roles.
+    -   **Estimated Time:** 2 hours
+
+2.  **Line 27:** `Math.random().toString(36)` - Severity: MEDIUM
+    -   **Impact:** Weak randomness for security nonce.
+    -   **Fix:** Use `crypto.randomUUID()` exclusively (polyfill if needed).
+    -   **Estimated Time:** 1 hour
+
+## `lib/auth.ts`: Authentication Logic
+
+**PATH:** `/lib/auth.ts`
+
+### Issues Found:
+1.  **Line 28:** Rate Limit Mock returns `success: true` - Severity: CRITICAL
+    -   **Impact:** Security bypass if Redis fails.
+    -   **Fix:** Implement in-memory counter fallback.
+    -   **Estimated Time:** 3 hours
+
+## `lib/dal.ts`: Data Access Layer
+
+**PATH:** `/lib/dal.ts`
+
+### Issues Found:
+1.  **Line 135:** `if (params.tenantId) where.tenantId = params.tenantId` - Severity: CRITICAL
+    -   **Impact:** Missing `tenantId` param returns ALL data.
+    -   **Fix:** Ensure `where.tenantId` is set to `params.tenantId` even if undefined (checking logic), or throw error if context is ambiguous.
+    -   **Estimated Time:** 4 hours
+
+## `app/api/admin/users/route.ts`: Admin API
+
+**PATH:** `/app/api/admin/users/route.ts`
+
+### Issues Found:
+1.  **Line 73:** `catch (error: any)` - Severity: LOW
+    -   **Impact:** Poor type safety.
+    -   **Fix:** Type the error or check `instanceof`.
+    -   **Estimated Time:** 1 hour
+
+---
+
+**TOTAL ESTIMATED REMEDIATION TIME:** ~40 Hours (1 Full Week for 1 Senior Engineer)

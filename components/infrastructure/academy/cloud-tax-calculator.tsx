@@ -46,13 +46,13 @@ export function CloudTaxCalculator() {
         </div>
 
         <div className="grid grid-cols-2 gap-4 pt-4">
-          <div className="p-4 bg-red-500/10 rounded-lg border border-red-500/20 text-center">
+          <div className="p-4 bg-signal-danger/10 rounded-lg border border-signal-danger/20 text-center">
             <div className="text-xs uppercase text-muted-foreground mb-1">Cloud Monthly</div>
-            <div className="text-2xl font-bold text-red-500">${cloudCost}</div>
+            <div className="text-2xl font-bold text-signal-danger">${cloudCost}</div>
           </div>
-          <div className="p-4 bg-green-500/10 rounded-lg border border-green-500/20 text-center">
+          <div className="p-4 bg-signal-success/10 rounded-lg border border-signal-success/20 text-center">
             <div className="text-xs uppercase text-muted-foreground mb-1">Own Monthly (Amortized)</div>
-            <div className="text-2xl font-bold text-green-500">${Math.round(ownCost)}</div>
+            <div className="text-2xl font-bold text-signal-success">${Math.round(ownCost)}</div>
           </div>
         </div>
 

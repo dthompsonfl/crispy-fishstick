@@ -1,62 +1,59 @@
-# REMEDIATION ROADMAP (28-Day Plan)
+# REMEDIATION ROADMAP
 
-## 📅 Week 1: Critical Security Hardening (P0)
-
-### Day 1-2: Fix Authentication & CSRF
-- [ ] **Task:** Refactor all Admin API routes to use `adminMutation` wrapper.
-- [ ] **Task:** Implement `verifyCsrfToken` logic in `lib/security/csrf.ts` if missing (verified present, but ensure robust).
-- [ ] **Task:** Remove `DISABLE_RATE_LIMITING` logic and implement robust Redis fallback (fail closed).
-
-### Day 3: Session Security
-- [ ] **Task:** Replace `Math.random()` with `crypto.randomUUID()` for session tokens in `lib/auth.ts`.
-- [ ] **Task:** Enforce strict secrets validation in `instrumentation.ts` (halt startup if missing).
-
-### Day 4-5: Audit & Penetration Testing (Internal)
-- [ ] **Task:** Write unit tests for CSRF bypass scenarios (`tests/admin/csrf.test.ts`).
-- [ ] **Task:** Verify Admin route protection path matching in `proxy.ts`.
+**GOAL:** Bring codebase to "Production Ready" status.
+**TIMELINE:** 28 Days (4 Sprints)
 
 ---
 
-## 📅 Week 2: Infrastructure & Database (P1)
+## Week 1: Security & Infrastructure (CRITICAL)
 
-### Day 6-7: Database Migration
-- [ ] **Task:** Switch `schema.prisma` provider to `postgresql`.
-- [ ] **Task:** Provision RDS/Cloud SQL instance.
-- [ ] **Task:** Create migration scripts and verify data integrity.
+- [ ] **Day 1: Deployment Fixes**
+  - Fix `bootstrap-ubuntu22.sh` exit bug.
+  - Create `Dockerfile` and `docker-compose.yml`.
+- [ ] **Day 2: Database Migration**
+  - Spin up Postgres instance.
+  - Update `schema.prisma`.
+  - Run migrations and verify data integrity.
+- [ ] **Day 3: Auth Hardening**
+  - Fix Rate Limiting "Fail-Open" bug.
+  - Fix "Admin" string matching (implement Enums).
+- [ ] **Day 4: API Security**
+  - Refactor `getLeads` and DAL to fail-safe on missing `tenantId`.
+  - Standardize CSRF middleware wrapper.
+- [ ] **Day 5: Verification**
+  - Run penetration tests on Auth and Admin API.
+  - Verify Docker build works.
 
-### Day 8-9: Containerization
-- [ ] **Task:** Create `Dockerfile` (multi-stage: deps, builder, runner).
-- [ ] **Task:** Create `docker-compose.yml` for local dev (App + Postgres + Redis).
+## Week 2: Performance & Cleanup
 
-### Day 10: CI/CD Pipeline
-- [ ] **Task:** Implement GitHub Actions for Lint, Test, Build, and Push to Registry.
-- [ ] **Task:** Add Sentry source map upload step.
+- [ ] **Day 6-7: Bundle Diet**
+  - Remove `gsap` and `@splinetool`.
+  - Refactor `living-blueprint-section` to use Framer Motion.
+- [ ] **Day 8: Rendering Fixes**
+  - Remove `force-dynamic` from `layout.tsx`.
+  - Implement caching strategy for Marketing pages.
+- [ ] **Day 9: Code Quality**
+  - Remove `console.log` statements.
+  - Fix `any` types in core files.
+- [ ] **Day 10: Performance Testing**
+  - Run Lighthouse CI.
+  - Verify TTFB < 200ms.
 
----
+## Week 3: DevOps & Stability
 
-## 📅 Week 3: Performance & Scalability (P2)
+- [ ] **Day 11-12: CI/CD Pipeline**
+  - Implement "Deploy to Staging" GitHub Action.
+  - Fix flaky `sleep 10` tests.
+- [ ] **Day 13: Monitoring**
+  - Set up CloudWatch/Datadog log shipping.
+  - Create Sentry alerts for Critical errors.
+- [ ] **Day 14-15: Testing**
+  - Write unit tests for `rate-limit`.
+  - Write integration tests for Tenant Isolation.
 
-### Day 11-12: Job Queue Implementation
-- [ ] **Task:** Install BullMQ.
-- [ ] **Task:** Refactor `app/api/cron/contract-reminders` to push jobs to queue.
-- [ ] **Task:** Create worker process to consume email jobs.
+## Week 4: Final Polish & Launch Prep
 
-### Day 13-14: Frontend Optimization
-- [ ] **Task:** Lazy load `@splinetool/react-spline`.
-- [ ] **Task:** Remove `gsap` (migrate to `framer-motion`) or vice-versa to remove duplication.
-- [ ] **Task:** Install `sharp` for image optimization.
-
-### Day 15: Caching Strategy
-- [ ] **Task:** Implement `stale-while-revalidate` headers for Admin Read APIs.
-- [ ] **Task:** Configure CDN caching rules.
-
----
-
-## 📅 Week 4: QA & Code Quality (P3)
-
-### Day 16-20: Testing & Documentation
-- [ ] **Task:** Increase test coverage to >80% for `lib/auth.ts` and `lib/admin`.
-- [ ] **Task:** Resolve all TypeScript `any` violations.
-- [ ] **Task:** Standardize dependency versions (`react-markdown`).
-- [ ] **Task:** Final Regression Test.
-- [ ] **Task:** **Sign-off for Production Deploy.**
+- [ ] **Day 16-20: Final Audit & Documentation**
+  - Update `README.md`.
+  - Complete API documentation.
+  - Executive Sign-off.

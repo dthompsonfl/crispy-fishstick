@@ -84,7 +84,7 @@ export function Footer() {
             <Link href="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
           </div>
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
-             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+             <span className="w-2 h-2 rounded-full bg-signal-success animate-pulse" />
              <span>Systems Operational</span>
           </div>
         </div>

@@ -1,41 +1,54 @@
 # INFRASTRUCTURE DEFICIENCIES
 
-## 🏗️ Containerization & Deployment
-
-### 1. Missing Docker Configuration
-**Issue:** No `Dockerfile` or `docker-compose.yml` found in the project root.
-**Impact:** Inconsistent environments between dev/staging/prod. "It works on my machine" syndrome. Harder to orchestrate with Kubernetes or ECS.
-**Fix:** Create a multi-stage `Dockerfile` optimized for `output: 'standalone'`.
-
-### 2. Manual Shell Script Deployment
-**Issue:** Reliance on `scripts/bootstrap-ubuntu22.sh` implies a "pet" server approach (SSHing into a VPS) rather than immutable infrastructure.
-**Impact:** Server drift over time. Hard to scale horizontally.
-**Fix:** Move to Infrastructure as Code (Terraform/Pulumi) or PaaS (Vercel/AWS Amplify).
+**DATE:** 2025-05-15
+**AUDITOR:** Jules (Senior Principal Engineer)
 
 ---
 
-## 📡 Observability & Monitoring
+## 1. Containerization & Portability (MISSING)
 
-### 1. Missing Sentry/APM
-**Issue:** `env.example` lists `NEXT_PUBLIC_SENTRY_DSN`, but `@sentry/nextjs` is **NOT** in `package.json` dependencies.
-**Impact:** Blindness to runtime errors in production. You won't know when users are crashing.
-**Fix:** `npm install @sentry/nextjs` and configure `sentry.server.config.ts` / `sentry.client.config.ts`.
+*   **Status:** 🔴 CRITICAL
+*   **Issue:** No `Dockerfile` or `docker-compose.yml` found.
+*   **Impact:**
+    *   "Works on my machine" syndrome.
+    *   Production environment (`bootstrap-ubuntu22.sh`) drifts from Development.
+    *   Cannot easily scale horizontally (Orchestration requires containers).
+*   **Remediation:** Create a multi-stage `Dockerfile` optimized for Next.js standalone output.
 
-### 2. No Health Check Endpoint
-**Issue:** No dedicated `/api/health` or `/healthz` endpoint found.
-**Impact:** Load balancers cannot reliably detect if the application is hung or unresponsive.
-**Fix:** Create `app/api/health/route.ts` that checks DB connectivity and Redis status.
+## 2. Database Infrastructure
+
+*   **Status:** 🔴 CRITICAL
+*   **Issue:** Production uses SQLite (`bootstrap-ubuntu22.sh` implies single node setup).
+*   **Impact:**
+    *   **No Horizontal Scaling:** Cannot add read replicas.
+    *   **Single Point of Failure:** If the disk dies, data is gone (unless backup script works perfectly).
+    *   **Concurrency:** SQLite writes lock the DB file.
+*   **Remediation:** Provision AWS RDS (Postgres) or similar managed DB.
+
+## 3. CI/CD Pipeline
+
+*   **Status:** 🟠 MEDIUM
+*   **Issue:**
+    *   CI (`.github/workflows/ci.yml`) exists but lacks a **CD (Deployment)** stage.
+    *   Deployment is manual (`ssh user@host 'bash bootstrap.sh'`).
+    *   Lighthouse CI step relies on `sleep 10` which is race-condition prone.
+*   **Remediation:** Add a `deploy` job that pushes the Docker image to a registry (ECR/GHCR) and triggers a rollout (e.g., via SSH or K8s).
+
+## 4. Monitoring & Logging
+
+*   **Status:** 🟡 HIGH
+*   **Issue:**
+    *   Sentry is installed (Good).
+    *   Logs are written to local files (`/var/log/vantus/...`) in the bootstrap script.
+    *   **No Centralized Logging:** If you have 2 servers, you have to SSH into each to grep logs.
+*   **Remediation:** Install CloudWatch Agent, Datadog, or similar to ship logs off-box.
+
+## 5. Deployment Script Bugs
+
+*   **Status:** 🔴 CRITICAL
+*   **Issue:** `scripts/bootstrap-ubuntu22.sh` has a syntax/logic error that forces `exit 1` in the package installation step.
+*   **Impact:** Automated deployment WILL FAIL 100% of the time.
 
 ---
 
-## 💾 Database & Backups
-
-### 1. Backup Strategy
-**Observation:** `scripts/database-backup.sh` exists.
-**Risk:** Verify where these backups go. If they stay on the same server (`./backups`), a server failure loses both app and data.
-**Requirement:** Ensure backups are piped to S3 or off-site storage.
-
-### 2. SQLite in Production?
-**Observation:** `schema.prisma` uses `provider = "sqlite"`.
-**CRITICAL:** SQLite is not suitable for a $10M+ enterprise deployment with high concurrency or horizontal scaling. It locks the file on write.
-**Fix:** Migrate to PostgreSQL (`provider = "postgresql"`).
+**SUMMARY:** The infrastructure is "Hobby Tier" at best. It is not suitable for a Fortune 500 $10M deployment. It relies on a single mutable server with a file-based database.

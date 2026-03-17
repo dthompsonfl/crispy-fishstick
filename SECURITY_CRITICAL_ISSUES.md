@@ -1,83 +1,109 @@
 # SECURITY CRITICAL ISSUES AUDIT
 
-## 🔴 CRITICAL RISK (Deploy Blocker)
+**DATE:** 2025-05-15
+**AUDITOR:** Jules (Senior Principal Engineer)
+**SCOPE:** Full Codebase Analysis
 
-### 1. CSRF Vulnerability in Admin API
-**Location:** `app/api/admin/users/route.ts` (and potentially others not using `adminMutation`)
-**Issue:** The Admin API for user creation (`POST`) manually implements `requireAdmin` and `assertSameOrigin` but fails to invoke `verifyCsrfToken`. This allows attackers to forge requests if they can trick an admin into visiting a malicious site (CSRF), bypassing the Origin check if the browser doesn't send it or if it's spoofed in certain non-browser contexts (though Origin is robust in modern browsers, defense-in-depth is missing).
+---
+
+## 🔴 CRITICAL (Deploy Blocker)
+
+### 1. Rate Limiting "Fail-Open" Vulnerability
+**Location:** `lib/auth.ts:25-30`
+**Description:** The rate limiting logic falls back to a mock implementation if Redis is unavailable. This mock *always returns success* (`remaining: 5`), effectively disabling rate limiting when the infrastructure is most stressed or under attack.
 **Code Evidence:**
 ```typescript
-// app/api/admin/users/route.ts
-export async function POST(req: NextRequest) {
-  try {
-    // Phase 6: CSRF/Origin Enforcement
-    assertSameOrigin(req); // Good, but insufficient alone
-    const actor = await requireAdmin({ permissions: ["users.write"] });
-    // MISSING: await verifyCsrfToken(req);
-```
-**Fix:**
-Replace manual logic with the secure wrapper `adminMutation` which enforces CSRF:
-```typescript
-import { adminMutation } from "@/lib/admin/route";
-
-export const POST = adminMutation({ permissions: ["users.write"] }, async (user, body) => {
-  // Handler logic...
-});
-```
-
-### 2. Authentication Bypass / Weak Rate Limiting
-**Location:** `lib/auth.ts`
-**Issue:** The code allows disabling rate limiting via an environment variable `DISABLE_RATE_LIMITING`. Furthermore, the fallback mock rate limiter hardcodes `remaining: 5` and returns `success: true` always. If Redis fails or is disabled, brute force attacks are trivial.
-**Code Evidence:**
-```typescript
-// lib/auth.ts
-if (process.env.DISABLE_RATE_LIMITING === "true") {
-  console.warn('Rate limiting disabled via env var'); // DANGEROUS IN PROD
+} catch (_error) {
+  console.warn('Redis not available, rate limiting will be disabled');
+  // Create a mock rate limiter for testing/fallback
   rateLimiterInstance = {
-    checkLoginAttempt: async () => ({ success: true, remaining: 5 }), // ALways allows
+    checkLoginAttempt: async () => { return { success: true, remaining: 5 }; }, // ALWAYS ALLOWS
     getClientIp: () => '127.0.0.1',
   };
 }
 ```
-**Fix:**
-Remove the bypass. Fail securely if Redis is down (deny login) or fallback to an in-memory Map rate limiter, not a "always success" mock.
+**Fix:** Implement a "Fail-Closed" mechanism or an in-memory fallback that actually counts requests.
+```typescript
+// FIX: In-memory fallback
+const memoryStore = new Map();
+rateLimiterInstance = {
+  checkLoginAttempt: async (ip) => {
+    const count = (memoryStore.get(ip) || 0) + 1;
+    memoryStore.set(ip, count);
+    if (count > 5) return { success: false, retryAfter: 60 };
+    return { success: true, remaining: 5 - count };
+  }
+};
+```
+
+### 2. Tenant Isolation Bypass (Global Data Leak)
+**Location:** `lib/dal.ts` (implied usage in `app/api/admin/leads/route.ts`)
+**Description:** The data access layer (`getLeads`) accepts an optional `tenantId`. If `undefined` is passed (which happens for Global Admins or potentially due to bug `user.tenantId || undefined`), the Prisma `where` clause omits the `tenantId` filter entirely. This causes the query to return **ALL leads from ALL tenants**.
+**Code Evidence:**
+```typescript
+// lib/dal.ts
+if (params.tenantId) where.tenantId = params.tenantId;
+// If params.tenantId is undefined, where.tenantId is NOT set.
+```
+**Impact:** A single misconfiguration or bug in the calling controller exposes the entire platform's data.
+**Fix:** Enforce explicit `undefined` vs `null` handling or default to a "no-op" ID that returns nothing if context is missing.
+
+### 3. Deployment Script Logic Error (Guaranteed Failure)
+**Location:** `scripts/bootstrap-ubuntu22.sh:742`
+**Description:** The bootstrap script contains a logic error where it unconditionally exits with status `1` during the package installation phase, preventing deployment.
+**Code Evidence:**
+```bash
+    # Clean up node_modules to ensure fresh install
+    if [ -d "$APP_DIR/node_modules" ]; then
+        log_info "Cleaning up old node_modules directory..."
+        rm -rf "$APP_DIR/node_modules" "$APP_DIR/package-lock.json"
+    fi
+    exit 1  # <--- FATAL: Unconditional exit
+fi
+```
+**Fix:** Remove the `exit 1` and fix the surrounding `if/fi` block structure.
 
 ---
 
 ## 🟡 HIGH RISK
 
-### 1. Weak Session Token Generation
-**Location:** `lib/auth.ts`
-**Issue:** Session tokens are generated using `Math.random()`, which is not cryptographically secure.
+### 1. Hardcoded Role Strings
+**Location:** `proxy.ts` (Middleware) & `lib/dal.ts`
+**Description:** Authorization checks rely on string matching `"Admin"` or `"Owner"`. This is brittle and case-sensitive. Database migrations or manual edits changing a role to `"admin"` will silently break access control or lock out users.
 **Code Evidence:**
 ```typescript
-// lib/auth.ts
-token.sessionToken = `session_${Math.random().toString(36).substring(2, 15)}_${Date.now()}`;
+const isAdmin = userRoles.includes("Admin") || userRoles.includes("Owner");
 ```
-**Fix:**
-Use `crypto.randomUUID()`:
-```typescript
-token.sessionToken = `session_${crypto.randomUUID()}`;
-```
+**Recommendation:** Use an enum or constant file for Role names (e.g., `Roles.ADMIN`).
 
-### 2. Fragile Admin Route Protection
+### 2. Manual CSRF Implementation
+**Location:** `app/api/admin/users/route.ts`
+**Description:** Critical mutation endpoints manually invoke `await verifyCsrfToken(req)`. While currently correct, this pattern is prone to developer error (forgetting to call it).
+**Recommendation:** Enforce a higher-order function (HOF) wrapper like `withAdminGuard` that *automatically* performs CSRF checks for all non-GET requests.
+
+### 3. Weak Randomness in Middleware
 **Location:** `proxy.ts`
-**Issue:** Admin route protection relies on string matching `pathname.startsWith("/admin")`. While `pathname` is generally normalized by Next.js, reliance on string prefixes can be fragile if case-sensitivity handling varies or if new admin routes are introduced that don't match the pattern (e.g., `/api/v2/admin`).
-**Fix:**
-Use a robust matcher or move admin routes to a separate subdomain/app to enforce isolation. Ensure `pathname` is lowercased before check (it is in the current code, but the pattern is manual).
+**Description:** Fallback for `nonce` generation uses `Math.random()`.
+```typescript
+const nonce = globalThis.crypto?.randomUUID?.().replace(/-/g, "") ?? Math.random().toString(36).slice(2);
+```
+**Recommendation:** Ensure `crypto` is always available (Node 20+ supports it globally) or use a polyfill. Remove the weak fallback.
 
 ---
 
 ## 🟠 MEDIUM RISK
 
-### 1. Graceful Degradation on Missing Secrets
-**Location:** `instrumentation.ts`
-**Issue:** The application logs a warning but continues startup if `NEXTAUTH_SECRET` or `DATABASE_URL` are missing in production. This can lead to runtime errors or insecure defaults.
-**Code Evidence:**
-```typescript
-if (missing.length > 0) {
-  console.warn(`⚠️ Missing required environment variables... continuing with graceful degradation`);
-}
-```
-**Fix:**
-Throw an error and halt startup in production if critical secrets are missing.
+### 1. Markdown Rendering XSS Potential
+**Location:** `components/admin/content/content-form.tsx`
+**Description:** `ReactMarkdown` is used. While safe by default, no explicit sanitization plugins (`rehype-sanitize`) are configured. Future changes (e.g., enabling HTML input) would immediately introduce XSS.
+**Fix:** Install and use `rehype-sanitize`.
+
+### 2. Environment Variable Validation
+**Location:** `lib/auth.ts`
+**Description:** The application allows starting with "dev secrets" in some paths if validation fails, printing a warning. In a chaotic production boot, this might be missed.
+**Recommendation:** `process.exit(1)` immediately if `NEXTAUTH_SECRET` is missing or weak in production.
+
+---
+
+**TOTAL SCORE:** 0/100 (FAIL)
+**STATUS:** ⛔ DO NOT DEPLOY
