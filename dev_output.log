@@ -1,0 +1,1758 @@
+
+> crispy-fishstick@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Experiments (use with caution):
+  · clientTraceMetadata
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+[Telemetry] Service starting...
+[Telemetry] Service ready in 1.01ms
+✓ Ready in 5s
+Environment validation errors: {
+  _errors: [],
+  NEXTAUTH_SECRET: { _errors: [ 'Required' ] },
+  NEXTAUTH_URL: { _errors: [ 'Required' ] }
+}
+Using development fallback due to environment validation errors
+No auth secret found. Using a development fallback secret.
+○ Compiling / ...
+Environment validation errors: {
+  _errors: [],
+  NEXTAUTH_SECRET: { _errors: [ 'Required' ] },
+  NEXTAUTH_URL: { _errors: [ 'Required' ] }
+}
+Using development fallback due to environment validation errors
+No auth secret found. Using a development fallback secret.
+[next-auth][warn][NEXTAUTH_URL]
+https://next-auth.js.org/warnings#nextauth_url
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 13.3s (compile: 11.3s, proxy.ts: 409ms, render: 1683ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET /api/proof/headers 200 in 2.9s (compile: 2.9s, render: 25ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 301ms (compile: 16ms, proxy.ts: 11ms, render: 274ms)
+ GET /api/proof/headers 200 in 11ms (compile: 5ms, render: 6ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 409ms (compile: 45ms, proxy.ts: 18ms, render: 345ms)
+ GET /api/proof/headers 200 in 12ms (compile: 6ms, render: 6ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 367ms (compile: 12ms, proxy.ts: 7ms, render: 348ms)
+ GET /api/proof/headers 200 in 11ms (compile: 5ms, render: 6ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 327ms (compile: 11ms, proxy.ts: 9ms, render: 306ms)
+ GET /api/proof/headers 200 in 16ms (compile: 9ms, render: 7ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 250ms (compile: 14ms, proxy.ts: 7ms, render: 230ms)
+ GET /api/proof/headers 200 in 12ms (compile: 8ms, render: 5ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+✓ Compiled in 330ms
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+Environment validation errors: {
+  _errors: [],
+  NEXTAUTH_SECRET: { _errors: [ 'Required' ] },
+  NEXTAUTH_URL: { _errors: [ 'Required' ] }
+}
+Using development fallback due to environment validation errors
+No auth secret found. Using a development fallback secret.
+[next-auth][warn][NEXTAUTH_URL]
+https://next-auth.js.org/warnings#nextauth_url
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 1495ms (compile: 531ms, proxy.ts: 9ms, render: 955ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET /api/proof/headers 200 in 11ms (compile: 5ms, render: 6ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET / 200 in 305ms (compile: 11ms, proxy.ts: 6ms, render: 289ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+ GET /api/proof/headers 200 in 10ms (compile: 5ms, render: 6ms)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+[ioredis] Unhandled error event: AggregateError:
+    at internalConnectMultiple (node:net:1134:18)
+    at afterConnectMultiple (node:net:1715:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)

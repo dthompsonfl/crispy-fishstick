@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Vantus Systems",
   company: "Vantus Systems",
-  tagline: "Engineering for High-Trust Products",
+  tagline: "Engineering-grade websites & systems for small businesses.",
   description:
-    "A specialized engineering studio for founders who demand production-grade quality, rigorous systems, and Apple-caliber interfaces.",
+    "Engineering-grade websites & systems for small businesses. Math, not marketing.",
   email: "hello@vantus.systems",
   links: {
     github: "https://github.com/vantus-systems",
@@ -12,70 +12,80 @@ export const siteConfig = {
   },
   cta: {
     primary: {
-      text: "Book a Consultation",
-      href: "/contact",
+      text: "Get a Free Mini-Audit",
+      href: "/audit",
     },
     secondary: {
-      text: "View Case Studies",
-      href: "/work",
+      text: "See Packages",
+      href: "/pricing",
     },
   },
-  featuredWork: [
+  mainNav: [
     {
-      title: "Shopify Admin Sync",
-      description: "Enterprise synchronization engine for Shopify Plus → ERPNext.",
-      slug: "shopify-admin-sync",
-      outcome: "100% data integrity across 500k+ SKUs",
-      constraints: "Black Friday traffic spikes, strict ERPNext schema enforcement.",
+      title: "Services",
+      href: "/services",
     },
     {
-      title: "Fintech Dashboard",
-      description: "Real-time analytics and reporting for a Series B fintech.",
-      slug: "fintech-dashboard",
-      outcome: "Sub-200ms analytics refresh under 30M events/day.",
-      constraints: "Regulatory audit trails and SOC2 logging requirements.",
+      title: "Pricing",
+      href: "/pricing",
     },
     {
-      title: "HealthTech Patient Portal",
-      description: "HIPAA-compliant patient onboarding and scheduling system.",
-      slug: "healthtech-platform",
-      outcome: "42% reduction in intake time across 12 clinics.",
-      constraints: "HIPAA safeguards with legacy EMR integrations.",
-    },
-  ],
-  stackPrimary: [
-    "Next.js App Router",
-    "TypeScript Strict",
-    "Framer Motion",
-    "PostgreSQL / Prisma",
-    "Frappe ERPNext Integrations",
-    "GraphQL Federation",
-  ],
-  stackSecondary: [
-    "Event-driven systems",
-    "Observability / SLOs",
-    "Infrastructure as Code",
-    "Design Systems",
-    "Security Reviews",
-  ],
-  principles: [
-    {
-      title: "Clarity",
-      desc: "Code that explains itself. Interfaces that need no manual.",
+      title: "How it Works",
+      href: "/how-it-works",
     },
     {
-      title: "Reliability",
-      desc: "Systems designed to fail safely and recover instantly.",
+      title: "Trust",
+      href: "/trust",
     },
     {
-      title: "Performance",
-      desc: "Sub-100ms interactions. Core Web Vitals optimized.",
-    },
-    {
-      title: "Accessibility",
-      desc: "Inclusive by default. WCAG AA compliance baked in.",
+      title: "Resources",
+      href: "/resources",
     },
   ],
+  mobileNav: [
+    {
+      title: "Home",
+      href: "/",
+      icon: "Home",
+    },
+    {
+      title: "Services",
+      href: "/services",
+      icon: "Layers",
+    },
+    {
+      title: "Pricing",
+      href: "/pricing",
+      icon: "CreditCard",
+    },
+    {
+      title: "Audit",
+      href: "/audit",
+      icon: "Activity",
+    },
+    {
+      title: "Contact",
+      href: "/contact",
+      icon: "MessageSquare",
+    },
+  ],
+  packages: [
+    {
+        name: "Starter",
+        price: "$2,500",
+        description: "Perfect for launch or refresh."
+    },
+    {
+        name: "Growth",
+        price: "$5,000",
+        description: "Systems + Automation."
+    },
+    {
+        name: "Scale",
+        price: "$10,000+",
+        description: "Multi-location / Advanced."
+    }
+  ]
 };
 
 export type SiteConfig = typeof siteConfig;
