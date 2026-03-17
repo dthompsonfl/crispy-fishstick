@@ -1,59 +1,49 @@
-# REMEDIATION ROADMAP
+# REMEDIATION ROADMAP (28 Days)
 
-**GOAL:** Bring codebase to "Production Ready" status.
-**TIMELINE:** 28 Days (4 Sprints)
+**GOAL:** Transform "NO-GO" codebase to Production-Ready
 
 ---
 
-## Week 1: Security & Infrastructure (CRITICAL)
+## WEEK 1: SECURITY HARDENING (CRITICAL)
+*Focus: Locking down the application and fixing vulnerabilities.*
 
-- [ ] **Day 1: Deployment Fixes**
-  - Fix `bootstrap-ubuntu22.sh` exit bug.
-  - Create `Dockerfile` and `docker-compose.yml`.
-- [ ] **Day 2: Database Migration**
-  - Spin up Postgres instance.
-  - Update `schema.prisma`.
-  - Run migrations and verify data integrity.
-- [ ] **Day 3: Auth Hardening**
-  - Fix Rate Limiting "Fail-Open" bug.
-  - Fix "Admin" string matching (implement Enums).
-- [ ] **Day 4: API Security**
-  - Refactor `getLeads` and DAL to fail-safe on missing `tenantId`.
-  - Standardize CSRF middleware wrapper.
-- [ ] **Day 5: Verification**
-  - Run penetration tests on Auth and Admin API.
-  - Verify Docker build works.
+- **Day 1:** Fix `proxy.ts` matcher to include API routes. Implement `adminMutation` wrapper in all admin routes.
+- **Day 2:** Remove `force-dynamic` from `app/layout.tsx`. Remove hardcoded secrets from `lib/auth.config.ts`.
+- **Day 3:** Fix `components/admin/content/content-form.tsx` XSS vulnerability (add `rehype-sanitize`).
+- **Day 4:** Migrate Database from SQLite to PostgreSQL (Local Dev & Schema).
+- **Day 5:** Implement "Fail Closed" logic for Rate Limiting in `lib/auth.ts`.
+- **Day 6:** Audit and rotate all existing secrets. Set up proper `.env` validation.
+- **Day 7:** Security Penetration Test (Self-Scan) & Verification.
 
-## Week 2: Performance & Cleanup
+## WEEK 2: INFRASTRUCTURE & DEVOPS
+*Focus: reliable deployment and environment parity.*
 
-- [ ] **Day 6-7: Bundle Diet**
-  - Remove `gsap` and `@splinetool`.
-  - Refactor `living-blueprint-section` to use Framer Motion.
-- [ ] **Day 8: Rendering Fixes**
-  - Remove `force-dynamic` from `layout.tsx`.
-  - Implement caching strategy for Marketing pages.
-- [ ] **Day 9: Code Quality**
-  - Remove `console.log` statements.
-  - Fix `any` types in core files.
-- [ ] **Day 10: Performance Testing**
-  - Run Lighthouse CI.
-  - Verify TTFB < 200ms.
+- **Day 8:** Create production `Dockerfile`.
+- **Day 9:** Create `docker-compose.yml` for local dev (App + Postgres + Redis).
+- **Day 10:** Rewrite `scripts/bootstrap-ubuntu22.sh` or replace with Ansible playbook.
+- **Day 11:** Set up GitHub Actions CD pipeline (Build -> Push to Registry -> Deploy).
+- **Day 12:** Configure S3 Backups for PostgreSQL.
+- **Day 13:** Set up Monitoring (Datadog/Prometheus) and Logging (ELK/CloudWatch).
+- **Day 14:** Disaster Recovery Simulation (Restore DB from backup).
 
-## Week 3: DevOps & Stability
+## WEEK 3: PERFORMANCE & QUALITY
+*Focus: Speed and maintainability.*
 
-- [ ] **Day 11-12: CI/CD Pipeline**
-  - Implement "Deploy to Staging" GitHub Action.
-  - Fix flaky `sleep 10` tests.
-- [ ] **Day 13: Monitoring**
-  - Set up CloudWatch/Datadog log shipping.
-  - Create Sentry alerts for Critical errors.
-- [ ] **Day 14-15: Testing**
-  - Write unit tests for `rate-limit`.
-  - Write integration tests for Tenant Isolation.
+- **Day 15:** Remove duplicate animation libraries. Standardize on `framer-motion`.
+- **Day 16:** Implement Redis caching in `lib/dal.ts` for public-facing data.
+- **Day 17:** Configure CDN (CloudFront/Cloudflare) for static assets.
+- **Day 18:** Fix `tsconfig.json` (`skipLibCheck: false`) and resolve type errors.
+- **Day 19:** Add Unit Tests for `lib/auth.ts` and `lib/security`.
+- **Day 20:** Refactor large components (e.g., `content-form.tsx`).
+- **Day 21:** Load Testing (K6) to verify concurrency handling.
 
-## Week 4: Final Polish & Launch Prep
+## WEEK 4: FINAL POLISH & GO-LIVE
+*Focus: Verification and launch.*
 
-- [ ] **Day 16-20: Final Audit & Documentation**
-  - Update `README.md`.
-  - Complete API documentation.
-  - Executive Sign-off.
+- **Day 22:** Full E2E Test Suite Run & Fixes.
+- **Day 23:** Accessibility Audit (WCAG 2.1).
+- **Day 24:** SEO Audit & Optimization.
+- **Day 25:** Documentation Update (README, API Docs).
+- **Day 26:** Staging Deployment & Final Acceptance Testing.
+- **Day 27:** Executive Sign-off.
+- **Day 28:** **PRODUCTION LAUNCH**.

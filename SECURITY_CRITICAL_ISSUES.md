@@ -1,78 +1,120 @@
 # SECURITY CRITICAL ISSUES AUDIT
 
 **DATE:** 2025-05-15
-**AUDITOR:** Jules (Senior Principal Engineer)
-**SCOPE:** Full Codebase Analysis
+**AUDITOR:** Senior Principal Engineer
+**TARGET:** Fortune 500 Deployment Suitability
+**STATUS:** 🔴 NO-GO (CRITICAL VULNERABILITIES DETECTED)
 
 ---
 
 ## 🔴 CRITICAL (Deploy Blocker)
 
-### 1. Rate Limiting "Fail-Open" Vulnerability
-**Location:** `lib/auth.ts:25-30`
-**Description:** The rate limiting logic falls back to a mock implementation if Redis is unavailable. This mock *always returns success* (`remaining: 5`), effectively disabling rate limiting when the infrastructure is most stressed or under attack.
-**Code Evidence:**
+### 1. API Route Protection Bypass (Global Authorization Fail)
+**Severity:** CRITICAL
+**CWE:** CWE-285: Improper Authorization
+**Location:** `proxy.ts`
+**Impact:** Complete bypass of authentication, authorization, and security headers for ALL API routes. Attackers can access any API endpoint directly without admin checks or CSP protections.
+
+**Evidence:**
 ```typescript
-} catch (_error) {
-  console.warn('Redis not available, rate limiting will be disabled');
-  // Create a mock rate limiter for testing/fallback
-  rateLimiterInstance = {
-    checkLoginAttempt: async () => { return { success: true, remaining: 5 }; }, // ALWAYS ALLOWS
-    getClientIp: () => '127.0.0.1',
-  };
-}
-```
-**Fix:** Implement a "Fail-Closed" mechanism or an in-memory fallback that actually counts requests.
-```typescript
-// FIX: In-memory fallback
-const memoryStore = new Map();
-rateLimiterInstance = {
-  checkLoginAttempt: async (ip) => {
-    const count = (memoryStore.get(ip) || 0) + 1;
-    memoryStore.set(ip, count);
-    if (count > 5) return { success: false, retryAfter: 60 };
-    return { success: true, remaining: 5 - count };
-  }
+// proxy.ts
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes) <--- EXPLICIT EXCLUSION
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|assets/uploads|.*\\.(?:jpg|jpeg|gif|png|webp|svg|ico)$).*)',
+  ],
 };
 ```
 
-### 2. Tenant Isolation Bypass (Global Data Leak)
-**Location:** `lib/dal.ts` (implied usage in `app/api/admin/leads/route.ts`)
-**Description:** The data access layer (`getLeads`) accepts an optional `tenantId`. If `undefined` is passed (which happens for Global Admins or potentially due to bug `user.tenantId || undefined`), the Prisma `where` clause omits the `tenantId` filter entirely. This causes the query to return **ALL leads from ALL tenants**.
-**Code Evidence:**
+**Fix:** Remove `api` from the exclusion list or create a dedicated middleware for API security.
 ```typescript
-// lib/dal.ts
-if (params.tenantId) where.tenantId = params.tenantId;
-// If params.tenantId is undefined, where.tenantId is NOT set.
+// proxy.ts - Fixed Matcher
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|assets/uploads).*)',
+  ],
+};
 ```
-**Impact:** A single misconfiguration or bug in the calling controller exposes the entire platform's data.
-**Fix:** Enforce explicit `undefined` vs `null` handling or default to a "no-op" ID that returns nothing if context is missing.
 
-### 3. Deployment Script Logic Error (Guaranteed Failure)
-**Location:** `scripts/bootstrap-ubuntu22.sh:742`
-**Description:** The bootstrap script contains a logic error where it unconditionally exits with status `1` during the package installation phase, preventing deployment.
-**Code Evidence:**
-```bash
-    # Clean up node_modules to ensure fresh install
-    if [ -d "$APP_DIR/node_modules" ]; then
-        log_info "Cleaning up old node_modules directory..."
-        rm -rf "$APP_DIR/node_modules" "$APP_DIR/package-lock.json"
-    fi
-    exit 1  # <--- FATAL: Unconditional exit
-fi
+### 2. Hardcoded Authentication Secret Fallback
+**Severity:** CRITICAL
+**CWE:** CWE-798: Use of Hard-coded Credentials
+**Location:** `lib/auth.config.ts`
+**Impact:** Allows session forgery. If the environment variable check fails or is bypassed (common in containerized envs with improper `NODE_ENV` propagation), the system defaults to a known secret string.
+
+**Evidence:**
+```typescript
+// lib/auth.config.ts
+if (!secret) {
+  console.warn("No auth secret found. Using a development fallback secret.");
+  return "dev-secret-fallback-for-development-only";
+}
 ```
-**Fix:** Remove the `exit 1` and fix the surrounding `if/fi` block structure.
+
+**Fix:** Fail fast and hard in all environments, or at least strictly in production.
+```typescript
+// lib/auth.config.ts
+if (!secret) {
+  if (process.env.NODE_ENV === "production") {
+    throw new Error("CRITICAL SECURITY: NEXTAUTH_SECRET is missing.");
+  }
+  // Only for strictly local dev
+  return "dev-secret-fallback-for-development-only";
+}
+```
+
+### 3. Stored XSS in Content Management
+**Severity:** CRITICAL
+**CWE:** CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+**Location:** `components/admin/content/content-form.tsx`
+**Impact:** Administrators viewing malicious content (e.g., from a compromised account or if the form is exposed) will execute arbitrary JavaScript. `react-markdown` renders HTML by default if not sanitized.
+
+**Evidence:**
+```tsx
+// components/admin/content/content-form.tsx
+<ReactMarkdown>{field.value}</ReactMarkdown>
+```
+*Note: While `react-markdown` escapes HTML by default in newer versions, it allows protocol vulnerabilities (e.g., `javascript:`) and lacks explicit sanitization configuration required for corporate compliance.*
+
+**Fix:** Use `rehype-sanitize`.
+```tsx
+import rehypeSanitize from "rehype-sanitize";
+// ...
+<ReactMarkdown rehypePlugins={[rehypeSanitize]}>{field.value}</ReactMarkdown>
+```
 
 ---
 
 ## 🟡 HIGH RISK
 
-### 1. Hardcoded Role Strings
-**Location:** `proxy.ts` (Middleware) & `lib/dal.ts`
-**Description:** Authorization checks rely on string matching `"Admin"` or `"Owner"`. This is brittle and case-sensitive. Database migrations or manual edits changing a role to `"admin"` will silently break access control or lock out users.
-**Code Evidence:**
+### 4. Broken Rate Limiting Strategy ("Fail Open")
+**Severity:** HIGH
+**CWE:** CWE-693: Protection Mechanism Failure
+**Location:** `lib/auth.ts`
+**Impact:** Brute force attacks are possible if Redis is unavailable. The system falls back to a mock limiter that *always permits* requests.
+
+**Evidence:**
 ```typescript
-const isAdmin = userRoles.includes("Admin") || userRoles.includes("Owner");
+// lib/auth.ts
+} catch (_error) {
+  console.warn('Redis not available, rate limiting will be disabled');
+  // Create a mock rate limiter for testing/fallback
+  rateLimiterInstance = {
+    checkLoginAttempt: async () => { return { success: true, remaining: 5 }; }, // ALWAYS SUCCESS
+    getClientIp: () => '127.0.0.1',
+  };
+}
+```
+
+**Fix:** Fail closed. Login must be disabled if security infrastructure is offline.
+```typescript
+rateLimiterInstance = {
+  checkLoginAttempt: async () => { throw new Error("LOGIN_TEMPORARILY_UNAVAILABLE"); },
+  // ...
+};
 ```
 **Recommendation:** Use an enum or constant file for Role names (e.g., `Roles.ADMIN`).
 
@@ -81,29 +123,25 @@ const isAdmin = userRoles.includes("Admin") || userRoles.includes("Owner");
 **Description:** Critical mutation endpoints manually invoke `await verifyCsrfToken(req)`. While currently correct, this pattern is prone to developer error (forgetting to call it).
 **Recommendation:** Enforce a higher-order function (HOF) wrapper like `withAdminGuard` that *automatically* performs CSRF checks for all non-GET requests.
 
-### 3. Weak Randomness in Middleware
-**Location:** `proxy.ts`
-**Description:** Fallback for `nonce` generation uses `Math.random()`.
-```typescript
-const nonce = globalThis.crypto?.randomUUID?.().replace(/-/g, "") ?? Math.random().toString(36).slice(2);
-```
-**Recommendation:** Ensure `crypto` is always available (Node 20+ supports it globally) or use a polyfill. Remove the weak fallback.
+### 5. Inconsistent CSRF Enforcement
+**Severity:** HIGH
+**CWE:** CWE-352: Cross-Site Request Forgery
+**Location:** `app/api/admin/users/route.ts` (and others)
+**Impact:** Developers are manually implementing `verifyCsrfToken(req)` and `assertSameOrigin(req)`. This is prone to human error. One missed check opens a route to CSRF.
+**Evidence:** `app/api/admin/users/route.ts` manually calls these functions instead of using the `adminMutation` wrapper from `lib/admin/route.ts`.
 
 ---
 
 ## 🟠 MEDIUM RISK
 
-### 1. Markdown Rendering XSS Potential
-**Location:** `components/admin/content/content-form.tsx`
-**Description:** `ReactMarkdown` is used. While safe by default, no explicit sanitization plugins (`rehype-sanitize`) are configured. Future changes (e.g., enabling HTML input) would immediately introduce XSS.
-**Fix:** Install and use `rehype-sanitize`.
+### 6. Weak Password Hashing Configuration
+**Severity:** MEDIUM
+**CWE:** CWE-916: Use of Password Hash with Insufficient Computational Effort
+**Location:** `app/api/admin/users/route.ts`
+**Impact:** `bcrypt.hash(password, 10)` uses a cost factor of 10. Modern hardware can crack this faster than desired. NIST recommends higher work factors for critical systems.
+**Fix:** Increase work factor to 12 or 14.
 
-### 2. Environment Variable Validation
-**Location:** `lib/auth.ts`
-**Description:** The application allows starting with "dev secrets" in some paths if validation fails, printing a warning. In a chaotic production boot, this might be missed.
-**Recommendation:** `process.exit(1)` immediately if `NEXTAUTH_SECRET` is missing or weak in production.
-
----
-
-**TOTAL SCORE:** 0/100 (FAIL)
-**STATUS:** ⛔ DO NOT DEPLOY
+### 7. Missing Security Headers on API Responses
+**Severity:** MEDIUM
+**Location:** Global
+**Impact:** Because `proxy.ts` excludes `/api`, API responses lack `X-Content-Type-Options`, `X-Frame-Options`, and `HSTS` headers, making them vulnerable to mime-sniffing and clickjacking (if rendered in browser).
