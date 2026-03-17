@@ -55,11 +55,11 @@ export function BeforeAfterToggle() {
                  exit={{ opacity: 0, scale: 0.95 }}
                  className="flex flex-col items-center gap-4"
                >
-                 <div className="w-32 h-32 rounded-full border-4 border-red-500 flex items-center justify-center text-4xl font-bold text-red-500">
+                 <div className="w-32 h-32 rounded-full border-4 border-signal-danger flex items-center justify-center text-4xl font-bold text-signal-danger">
                    40
                  </div>
                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-red-400 flex items-center justify-center gap-2">
+                    <h3 className="text-lg font-semibold text-signal-danger flex items-center justify-center gap-2">
                         <AlertTriangle className="w-5 h-5" />
                         Slow & Bloated
                     </h3>
@@ -136,7 +136,7 @@ function MetricRow({ label, standard, vantus, mode }: { label: string, standard:
             <div className="flex items-center gap-3">
                 <span className={cn(
                     "text-sm font-mono transition-colors duration-300",
-                    isVantus ? "text-muted-foreground line-through opacity-50" : "text-red-500 font-bold"
+                    isVantus ? "text-muted-foreground line-through opacity-50" : "text-signal-danger font-bold"
                 )}>
                     {standard}
                 </span>

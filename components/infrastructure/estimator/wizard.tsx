@@ -108,7 +108,7 @@ export function EstimatorWizard() {
                 {...form.register("userCount", { valueAsNumber: true })}
               />
               {form.formState.errors.userCount && (
-                <p className="text-xs text-red-500">{form.formState.errors.userCount.message}</p>
+                <p className="text-xs text-signal-danger">{form.formState.errors.userCount.message}</p>
               )}
             </div>
 

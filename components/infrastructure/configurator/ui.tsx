@@ -193,7 +193,7 @@ function ConfiguratorContent() {
                  ))}
 
                  {validation?.warnings.map((warn, i) => (
-                    <Alert key={i} className="border-yellow-500/50 bg-yellow-500/10">
+                    <Alert key={i} className="border-signal-warning/50 bg-signal-warning/10">
                        <AlertCircle className="h-4 w-4 text-yellow-500" />
                        <AlertTitle className="text-yellow-500">Warning</AlertTitle>
                        <AlertDescription className="text-yellow-600 dark:text-yellow-400">{warn}</AlertDescription>
@@ -201,10 +201,10 @@ function ConfiguratorContent() {
                  ))}
 
                  {validation?.isValid && (
-                    <Alert className="border-green-500/50 bg-green-500/10">
-                       <CheckCircle className="h-4 w-4 text-green-500" />
-                       <AlertTitle className="text-green-500">Valid Build</AlertTitle>
-                       <AlertDescription className="text-green-600 dark:text-green-400">
+                    <Alert className="border-signal-success/50 bg-signal-success/10">
+                       <CheckCircle className="h-4 w-4 text-signal-success" />
+                       <AlertTitle className="text-signal-success">Valid Build</AlertTitle>
+                       <AlertDescription className="text-signal-success">
                          Ready for reservation.
                        </AlertDescription>
                     </Alert>

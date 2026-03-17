@@ -82,7 +82,7 @@ export default function Home() {
          <div className="container">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                <div className="max-w-2xl">
-                  <div className="flex items-center gap-3 mb-4 text-amber-500 font-medium">
+                  <div className="flex items-center gap-3 mb-4 text-signal-warning font-medium">
                      <ShieldAlert className="w-5 h-5" />
                      <span>Education First</span>
                   </div>

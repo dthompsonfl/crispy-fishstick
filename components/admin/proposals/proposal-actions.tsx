@@ -110,7 +110,7 @@ export function ProposalActions({ proposalId, currentStatus }: ProposalActionsPr
           <Button 
             variant="outline" 
             size="sm" 
-            className="text-green-600 hover:text-green-700"
+            className="text-signal-success hover:text-signal-success/80"
             onClick={() => updateStatus("approved")}
             disabled={isLoading}
           >
@@ -120,7 +120,7 @@ export function ProposalActions({ proposalId, currentStatus }: ProposalActionsPr
           <Button 
             variant="outline" 
             size="sm"
-            className="text-red-600 hover:text-red-700"
+            className="text-signal-danger hover:text-signal-danger/80"
             onClick={() => updateStatus("rejected")}
             disabled={isLoading}
           >

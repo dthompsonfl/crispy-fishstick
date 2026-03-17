@@ -74,6 +74,12 @@ fi
 import rehypeSanitize from 'rehype-sanitize';
 <ReactMarkdown rehypePlugins={[rehypeSanitize]}>{field.value}</ReactMarkdown>
 ```
+**Recommendation:** Use an enum or constant file for Role names (e.g., `Roles.ADMIN`).
+
+### 2. Manual CSRF Implementation
+**Location:** `app/api/admin/users/route.ts`
+**Description:** Critical mutation endpoints manually invoke `await verifyCsrfToken(req)`. While currently correct, this pattern is prone to developer error (forgetting to call it).
+**Recommendation:** Enforce a higher-order function (HOF) wrapper like `withAdminGuard` that *automatically* performs CSRF checks for all non-GET requests.
 
 ### 2. Missing Containerization
 **Risk**: Environment Drift / RCE

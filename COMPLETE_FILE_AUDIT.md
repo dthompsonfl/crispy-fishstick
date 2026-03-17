@@ -82,7 +82,9 @@
 
 ## prisma/schema.prisma: Scalability Block
 
-**PATH:** `/prisma/schema.prisma`
+## `app/api/admin/users/route.ts`: Admin API
+
+**PATH:** `/app/api/admin/users/route.ts`
 
 ### Issues Found:
 1. **Line 6:** SQLite Provider - Severity: CRITICAL
