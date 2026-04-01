@@ -1,0 +1,50 @@
+{
+  "route": "/start-audit",
+  "seo": {
+    "title": "Start Audit | Website Reality Check | Vantus Systems",
+    "meta_description": "Request a Website Reality Check from Vantus Systems. Tell us what is broken, what is unclear, and what your business needs next."
+  },
+  "hero": {
+    "eyebrow": "Start here",
+    "headline": "Start your Website Reality Check",
+    "subheadline": "This is the fastest way to get a serious read on what is hurting trust, where the real technical or workflow debt sits, and which offer is actually appropriate."
+  },
+  "sections": [
+    {
+      "type": "what_happens",
+      "heading": "What happens next",
+      "body": "You submit the form. Vantus reviews the current situation, the main pain points, and the likely scope fit. If the opportunity is a fit, the next step is a focused call and, when appropriate, a Discovery + Solution Blueprint.",
+      "bullets": [
+        "Clear next step",
+        "No vague proposal theater",
+        "Fit-first review",
+        "Honest scope direction"
+      ]
+    },
+    {
+      "type": "form_intro",
+      "heading": "Tell us what is wrong, what is urgent, and what you are trying to fix",
+      "body": "Good inputs make the review better. If the main issue is credibility, say that. If the problem is content control, say that. If the real issue is workflow sprawl, say that too. The point is to identify the right scope, not force every business into the same package."
+    },
+    {
+      "type": "trust_note",
+      "heading": "What this is not",
+      "body": "This is not a bait-and-switch quote form. It is a qualification step designed to reduce wasted time, clarify fit, and point the project toward the right package."
+    },
+    {
+      "type": "sidebar",
+      "heading": "Most audits turn into one of three paths",
+      "items": [
+        "Website Rebuild",
+        "Website + CMS",
+        "Website + Business Portal"
+      ],
+      "body": "If none of those fit, Vantus will say so. That is better than forcing a bad project into a familiar box."
+    },
+    {
+      "type": "microcopy",
+      "submit_button": "Start Audit",
+      "assurance_line": "We review for fit, scope, and urgency before recommending next steps."
+    }
+  ]
+}

@@ -14,20 +14,36 @@ export function AmbientBackground() {
 
   return (
     <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
-       {/* Top Center Glow */}
+      {/* Top-center sky glow — stronger in light mode for visible depth */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ duration: 2 }}
-        className="absolute top-[-20%] left-[20%] w-[60%] h-[60%] bg-primary/20 blur-[120px] rounded-full mix-blend-screen"
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.5 }}
+        className="absolute top-[-25%] left-[10%] w-[80%] h-[70%] rounded-full blur-[140px] ambient-orb-sky-top"
       />
 
-      {/* Bottom Left Glow */}
+      {/* Right-side navy depth anchor */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        transition={{ duration: 2, delay: 0.5 }}
-        className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-signal-success/10 blur-[100px] rounded-full mix-blend-screen"
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.5, delay: 0.4 }}
+        className="absolute top-[0%] right-[-15%] w-[50%] h-[60%] rounded-full blur-[120px] ambient-orb-navy-right"
+      />
+
+      {/* Bottom-left warm accent */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 0.8 }}
+        className="absolute bottom-[-15%] left-[-10%] w-[45%] h-[45%] rounded-full blur-[110px] ambient-orb-sky-bottom"
+      />
+
+      {/* Dark-mode extra depth — invisible in light mode */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 3, delay: 0.3 }}
+        className="absolute top-[5%] left-[40%] w-[60%] h-[50%] rounded-full blur-[160px] ambient-orb-dark-sky dark:opacity-[1] opacity-0"
       />
     </div>
   );

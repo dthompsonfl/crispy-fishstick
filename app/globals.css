@@ -712,3 +712,229 @@
     animation: none;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   3D Card Lift System
+   ══════════════════════════════════════════════════════════ */
+
+.card-3d {
+  position: relative;
+  transform: perspective(900px) translateY(0px) rotateX(0deg) scale(1);
+  box-shadow:
+    0 1px 2px rgba(16,40,59,0.04),
+    0 2px 4px rgba(16,40,59,0.04),
+    0 4px 8px rgba(16,40,59,0.03),
+    0 0 0 1px rgba(16,40,59,0.05);
+  transition:
+    transform 320ms cubic-bezier(0.22,1,0.36,1),
+    box-shadow 320ms cubic-bezier(0.22,1,0.36,1),
+    border-color 200ms ease;
+  will-change: transform;
+}
+
+.card-3d:hover {
+  transform: perspective(900px) translateY(-6px) rotateX(-1.5deg) scale(1.01);
+  box-shadow:
+    0 2px 4px rgba(16,40,59,0.04),
+    0 4px 8px rgba(16,40,59,0.06),
+    0 12px 24px rgba(16,40,59,0.08),
+    0 24px 48px rgba(16,40,59,0.06),
+    0 0 0 1px rgba(80,165,208,0.22);
+}
+
+.dark .card-3d {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.15),
+    0 2px 4px rgba(0,0,0,0.12),
+    0 4px 8px rgba(0,0,0,0.10),
+    0 0 0 1px rgba(56,189,248,0.06);
+}
+
+.dark .card-3d:hover {
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.18),
+    0 8px 16px rgba(0,0,0,0.18),
+    0 16px 32px rgba(0,0,0,0.14),
+    0 0 0 1px rgba(56,189,248,0.25),
+    0 0 40px rgba(56,189,248,0.10);
+}
+
+/* ── Card Sheen — shimmer sweep on hover ── */
+
+.card-sheen {
+  overflow: hidden;
+}
+.card-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255,255,255,0.06) 44%,
+    rgba(255,255,255,0.14) 50%,
+    rgba(255,255,255,0.06) 56%,
+    transparent 70%
+  );
+  transform: translateX(-110%) skewX(-12deg);
+  transition: none;
+  pointer-events: none;
+  z-index: 1;
+}
+.card-sheen:hover::before {
+  transform: translateX(110%) skewX(-12deg);
+  transition: transform 540ms cubic-bezier(0.22,1,0.36,1);
+}
+
+.dark .card-sheen::before {
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(56,189,248,0.04) 44%,
+    rgba(56,189,248,0.10) 50%,
+    rgba(56,189,248,0.04) 56%,
+    transparent 70%
+  );
+}
+
+/* ── Section Callout — navy/brand background for proof strip
+       and standards sections; overrides theme in both light + dark ── */
+
+.section-callout {
+  background: linear-gradient(135deg, #10283B 0%, #16334F 50%, #244A6D 100%);
+  color: #F9F8F4;
+  border: 1px solid rgba(80,165,208,0.20);
+  box-shadow:
+    0 0 0 1px rgba(80,165,208,0.12),
+    0 8px 40px rgba(80,165,208,0.15),
+    0 32px 80px rgba(16,40,59,0.40);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-callout::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(80,165,208,0.18), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-callout > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark mode: slightly more vibrant glow */
+.dark .section-callout {
+  background: linear-gradient(135deg, #0C131A 0%, #10283B 50%, #16334F 100%);
+  border-color: rgba(56,189,248,0.25);
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,0.18),
+    0 8px 48px rgba(56,189,248,0.18),
+    0 32px 80px rgba(0,0,0,0.50);
+}
+
+.dark .section-callout::before {
+  background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(56,189,248,0.18), transparent 70%);
+}
+
+/* Text overrides inside callout — text inherits cream by default */
+.section-callout .text-muted-foreground {
+  color: rgba(249,248,244,0.72) !important;
+}
+.section-callout .border-border {
+  border-color: rgba(80,165,208,0.25) !important;
+}
+
+/* ── Divider light rule inside section-callout ── */
+.callout-divider {
+  border-color: rgba(80,165,208,0.20);
+}
+
+/* ── Tap / Press Active State (mobile haptic-like) ── */
+
+.tap-active {
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+.tap-active:active {
+  transform: scale(0.97) !important;
+  box-shadow: none !important;
+}
+
+/* ── Frosted Glass Nav — for MobileBottomNav + sticky bars ── */
+
+.frosted-nav {
+  background: color-mix(in oklch, var(--background) 78%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border-top: 1px solid color-mix(in oklch, var(--border) 60%, transparent);
+}
+
+/* ── Ambient Background Orbs ── */
+
+.ambient-orb-sky-top {
+  background: radial-gradient(ellipse at center, rgba(80,165,208,0.22) 0%, rgba(36,74,109,0.10) 60%, transparent 100%);
+}
+.ambient-orb-navy-right {
+  background: radial-gradient(ellipse at center, rgba(22,51,79,0.14) 0%, transparent 70%);
+}
+.ambient-orb-sky-bottom {
+  background: radial-gradient(ellipse at center, rgba(80,165,208,0.10) 0%, transparent 70%);
+}
+.ambient-orb-dark-sky {
+  background: radial-gradient(ellipse at center, rgba(56,189,248,0.12) 0%, transparent 65%);
+}
+
+/* ── Nav icon glow for active state ── */
+
+.nav-icon-active {
+  filter: drop-shadow(0 0 6px rgba(80,165,208,0.55));
+}
+
+/* ── Callout button variants ── */
+
+.btn-callout-primary {
+  background: var(--vantus-sky) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.btn-callout-primary:hover {
+  background: color-mix(in oklch, var(--vantus-sky) 88%, white) !important;
+}
+
+.btn-callout-outline {
+  background: transparent !important;
+  border-color: rgba(255,255,255,0.20) !important;
+  color: rgba(249,248,244,0.85) !important;
+}
+.btn-callout-outline:hover {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.36) !important;
+}
+
+/* ── Text color helpers for inside section-callout ── */
+
+.text-callout {
+  color: #F9F8F4;
+}
+.text-callout-muted {
+  color: rgba(249,248,244,0.72);
+}
+
+/* ── Reduced-motion guard for all 3D effects ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .card-3d, .card-3d:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .card-sheen::before,
+  .card-sheen:hover::before {
+    display: none;
+  }
+  .tap-active:active {
+    transform: none !important;
+  }
+}

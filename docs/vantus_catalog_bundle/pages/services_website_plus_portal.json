@@ -1,0 +1,104 @@
+{
+  "route": "/services/website-plus-portal",
+  "seo": {
+    "title": "Website + Business Portal | Vantus Systems",
+    "meta_description": "When the real problem is not just the website but the workflow behind it, this package moves you from public presence into operational software."
+  },
+  "hero": {
+    "eyebrow": "Public offer",
+    "headline": "Website + Business Portal",
+    "price_line": {
+      "starting_at_usd": 90000,
+      "typical_range_usd": [
+        90000,
+        400000
+      ]
+    },
+    "subheadline": "When the real problem is not just the website but the workflow behind it, this package moves you from public presence into operational software.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  },
+  "sections": [
+    {
+      "type": "best_for",
+      "heading": "Best for",
+      "body": "Businesses whose operations are already breaking on spreadsheets and manual handoffs."
+    },
+    {
+      "type": "included",
+      "heading": "What you get",
+      "items": [
+        "Everything in Website + CMS",
+        "Secure authentication",
+        "Portal MVP scope",
+        "RBAC baseline",
+        "Audit trail for key actions",
+        "One primary workflow implementation",
+        "Integration foundation"
+      ]
+    },
+    {
+      "type": "what_changes",
+      "heading": "What changes after launch",
+      "body": "You stop forcing operational work through channels that were never designed for it. Sensitive actions can be logged. Roles become cleaner. Manual bottlenecks become visible. And the website starts pulling real operational weight instead of only functioning as a brochure."
+    },
+    {
+      "type": "not_included",
+      "heading": "What this offer does not include by default",
+      "items": [
+        "Unlimited workflow development",
+        "Enterprise-wide replatforming",
+        "Unscoped multi-system modernization",
+        "Mobile app development",
+        "Ongoing helpdesk support inside project scope"
+      ]
+    },
+    {
+      "type": "next_steps",
+      "heading": "Common add-ons and next moves",
+      "body": "Portal work is MVP-scoped by design. From here, the next move is usually deeper integration, harder security controls, or a larger enterprise systems program.",
+      "related_modules": [
+        "Integration (per system)",
+        "SSO + RBAC Hardening",
+        "Analytics & Dashboarding",
+        "Discovery + Solution Blueprint",
+        "Vantus Care Sovereign"
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "q": "Is this too much for a small business?",
+          "a": "Sometimes yes. That is why the public offer ladder starts lower. This package is right only when operational process debt is already material."
+        },
+        {
+          "q": "Are portals included as an unlimited feature?",
+          "a": "No. The public guardrail is one primary workflow in MVP form. Additional workflows require separate scope."
+        },
+        {
+          "q": "Can this integrate with our existing systems?",
+          "a": "Yes, but integration depth affects complexity and price. That is why integrations are modular."
+        }
+      ]
+    },
+    {
+      "type": "final_cta",
+      "heading": "When the workflow is the problem, a prettier homepage is not enough",
+      "primary_cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      },
+      "secondary_cta": {
+        "label": "View Pricing",
+        "href": "/pricing"
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "route": "/standards",
+  "seo": {
+    "title": "Standards | How Vantus builds for ownership, security, and quality | Vantus Systems",
+    "meta_description": "See the public standards behind Vantus Systems delivery: ownership, security, documentation, performance, accessibility, and honest scope control."
+  },
+  "hero": {
+    "eyebrow": "Public standards overview",
+    "headline": "Standards before sales language",
+    "subheadline": "Vantus does not treat standards as internal decoration. This page explains how we think, what we enforce, and what a delivered system must be able to survive before we call it done.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  },
+  "sections": [
+    {
+      "type": "why",
+      "heading": "Standards exist to protect the client, not flatter the vendor",
+      "body": "A good standard makes bad work harder to ship. It forces clarity around ownership, documentation, security, reversibility, performance, and maintainability. If an approach violates those principles, the answer is not \u201cship it anyway.\u201d The answer is \u201cfix it or change the plan.\u201d"
+    },
+    {
+      "type": "vantus_standard",
+      "heading": "What a completed system must prove",
+      "intro": "A system is not complete because the interface looks polished. It is complete when it can be understood, operated, recovered, and handed off without drama.",
+      "principles": [
+        {
+          "name": "Documented",
+          "copy": "Architecture, decisions, and runbooks exist and stay current."
+        },
+        {
+          "name": "Secure",
+          "copy": "Access, failure modes, and data handling are designed on purpose."
+        },
+        {
+          "name": "Observable",
+          "copy": "System health can be seen, measured, and understood."
+        },
+        {
+          "name": "Recoverable",
+          "copy": "Backups and restores are proven, not assumed."
+        },
+        {
+          "name": "Owned",
+          "copy": "The client controls code, credentials, and infrastructure."
+        },
+        {
+          "name": "Performant",
+          "copy": "The system is fast for users and disciplined for budgets."
+        },
+        {
+          "name": "Maintainable",
+          "copy": "A competent engineer can pick it up without calling us."
+        }
+      ]
+    },
+    {
+      "type": "values",
+      "heading": "The standard comes from values, not slogans",
+      "items": [
+        "Tell the truth",
+        "Build for independence",
+        "Respect the machine",
+        "Leave a trail",
+        "Protect what is not ours",
+        "Done means done",
+        "Small business deserves the best"
+      ]
+    },
+    {
+      "type": "site_bar",
+      "heading": "What the public site itself has to prove",
+      "body": "The Vantus website is not exempt from the standard. It has to demonstrate the same discipline it claims to bring to clients. That means explicit performance targets, accessibility requirements, mobile discipline, plain-language forms, and clear next actions on every page.",
+      "standards": [
+        "Main navigation kept to five items or fewer",
+        "Every page reachable within three clicks",
+        "WCAG 2.1 AA baseline",
+        "Plain-language errors on forms",
+        "Touch targets built for real devices",
+        "Security headers on production pages",
+        "Content written below 8th-grade reading level where possible"
+      ]
+    },
+    {
+      "type": "performance",
+      "heading": "Performance is not cosmetic",
+      "body": "Slow systems cost trust. That is why the website standard sets concrete targets for speed, payload size, Lighthouse quality, and mobile experience. Fast loading is not a nice-to-have here. It is part of credibility.",
+      "targets": [
+        "Lighthouse 95+ target on key public templates",
+        "Accessibility target: 100",
+        "Best Practices target: 100",
+        "SEO target: 100",
+        "Initial JavaScript kept disciplined",
+        "Text-heavy pages kept lightweight"
+      ]
+    },
+    {
+      "type": "anti_patterns",
+      "heading": "Anti-patterns we reject",
+      "body": "We do not use fake scarcity. We do not hide pricing logic. We do not use dark patterns. We do not treat documentation as optional. We do not ship half-finished work and rename it \u201cagile.\u201d We do not optimize for client dependence."
+    },
+    {
+      "type": "prospect",
+      "heading": "Standards are the difference between a website and a durable asset",
+      "body": "The practical question is simple: if the vendor disappears, what remains? If the answer is confusion, missing credentials, undocumented process, or a site nobody can change, the standard failed. Vantus is built around the opposite outcome."
+    },
+    {
+      "type": "final_cta",
+      "heading": "If your current vendor cannot explain the standard, start by checking the risk",
+      "primary_cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      },
+      "secondary_cta": {
+        "label": "View Proof",
+        "href": "/proof"
+      }
+    }
+  ]
+}

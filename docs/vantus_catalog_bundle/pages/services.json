@@ -1,0 +1,202 @@
+{
+  "route": "/services",
+  "seo": {
+    "title": "Services | Enterprise Website and System Delivery for Gulf Coast Businesses | Vantus Systems",
+    "meta_description": "Explore Vantus Systems services for Gulf Coast businesses: Website Rebuild, Website + CMS, and Website + Business Portal. Clear scope, transparent pricing anchors, and ownership-first delivery."
+  },
+  "hero": {
+    "eyebrow": "Public services catalog",
+    "headline": "Enterprise website and system delivery for businesses that are done looking small online",
+    "subheadline": "Vantus Systems builds modern websites and business systems for Gulf Coast businesses that need credibility, control, and a cleaner way to operate. Every public offer is scoped, documented, and built to leave the client with ownership.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Contact",
+      "href": "/contact"
+    },
+    "trust_strip": [
+      "Ownership-first delivery",
+      "Proof-backed launch standards",
+      "Security baseline included",
+      "Plain-language handoff",
+      "Change control, not surprise scope"
+    ]
+  },
+  "sections": [
+    {
+      "type": "intro",
+      "heading": "Three public offers. Clear boundaries. No vague retainers.",
+      "body": "Most local shops stop at brochure sites. Vantus does not. We deliver structured builds with performance, accessibility, security, documentation, and operational handoff built in. The public offer ladder is simple on purpose: start with the right build package, add only the modules you actually need, and move into more complex systems only when the business case is real."
+    },
+    {
+      "type": "offer_cards",
+      "offers": [
+        {
+          "name": "Website Rebuild (Modern + Complete)",
+          "sku": "VS-PKG-WEB-REBLD",
+          "slug": "/services/website-rebuild",
+          "starting_price_usd": 15000,
+          "typical_range_usd": [
+            15000,
+            55000
+          ],
+          "recommended": false,
+          "summary": "Replace the site that makes your business look dated, hard to trust, or difficult to use. This package gives you a serious public foundation without overcomplicating the scope.",
+          "best_for": "Businesses whose main problem is public credibility.",
+          "includes": [
+            "Responsive design implementation",
+            "Content completion support",
+            "Technical SEO baseline",
+            "Analytics instrumentation",
+            "Deployment hardening",
+            "Launch readiness checks",
+            "Ownership handoff package"
+          ],
+          "not_included": [
+            "CMS functionality",
+            "User login or portal workflows",
+            "Complex integrations",
+            "Ongoing content updates after handoff",
+            "Open-ended custom application work"
+          ],
+          "upsell": "Website + CMS",
+          "cross_sell": [
+            "Cloud Deployment Baseline",
+            "On-Prem Install + Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint"
+          ]
+        },
+        {
+          "name": "Website + CMS (Recommended)",
+          "sku": "VS-PKG-WEB-CMS",
+          "slug": "/services/website-plus-cms",
+          "starting_price_usd": 32000,
+          "typical_range_usd": [
+            32000,
+            125000
+          ],
+          "recommended": true,
+          "summary": "This is the best-fit package for most growing businesses. It gives you the public credibility of a modern rebuild plus the internal control to manage content without waiting on a developer.",
+          "best_for": "Growing teams that need publishing control and content velocity.",
+          "includes": [
+            "Everything in Website Rebuild",
+            "CMS implementation",
+            "Content model architecture",
+            "Editorial workflow setup",
+            "Role-based publishing controls",
+            "Media and publishing governance",
+            "Operator training and handoff"
+          ],
+          "not_included": [
+            "User-facing portal workflows",
+            "Customer authentication",
+            "Complex business process automation",
+            "Third-party system integrations unless added",
+            "Ongoing content creation or copywriting"
+          ],
+          "upsell": "Website + Business Portal",
+          "cross_sell": [
+            "Data and Content Migration",
+            "Analytics & Dashboarding",
+            "Localization Framework",
+            "Integration (per system)",
+            "Vantus Care Advanced"
+          ]
+        },
+        {
+          "name": "Website + Business Portal",
+          "sku": "VS-PKG-PORTAL-MVP",
+          "slug": "/services/website-plus-portal",
+          "starting_price_usd": 90000,
+          "typical_range_usd": [
+            90000,
+            400000
+          ],
+          "recommended": false,
+          "summary": "When the real problem is not just the website but the workflow behind it, this package moves you from public presence into operational software.",
+          "best_for": "Businesses whose operations are already breaking on spreadsheets and manual handoffs.",
+          "includes": [
+            "Everything in Website + CMS",
+            "Secure authentication",
+            "Portal MVP scope",
+            "RBAC baseline",
+            "Audit trail for key actions",
+            "One primary workflow implementation",
+            "Integration foundation"
+          ],
+          "not_included": [
+            "Unlimited workflow development",
+            "Enterprise-wide replatforming",
+            "Unscoped multi-system modernization",
+            "Mobile app development",
+            "Ongoing helpdesk support inside project scope"
+          ],
+          "upsell": "Enterprise Systems Program",
+          "cross_sell": [
+            "Integration (per system)",
+            "SSO + RBAC Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint",
+            "Vantus Care Sovereign"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "heading": "Which offer fits where you are now?",
+      "items": [
+        {
+          "offer": "Website Rebuild",
+          "copy": "Choose this when your main problem is public credibility."
+        },
+        {
+          "offer": "Website + CMS",
+          "copy": "Choose this when your team needs publishing control, proof pages, and content governance."
+        },
+        {
+          "offer": "Website + Business Portal",
+          "copy": "Choose this when the website is no longer the real bottleneck and the business needs workflow improvement."
+        }
+      ]
+    },
+    {
+      "type": "why_vantus",
+      "heading": "Why not the cheap site, the DIY platform, or the bloated agency retainer?",
+      "body": "Because the cheap site usually stops at surface-level design. The DIY platform trades control for convenience. The bloated agency often sells ongoing motion without giving you operational ownership. Vantus is positioned differently: enterprise-grade execution for small businesses, with proof, handoff, and clear scope boundaries."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "q": "Why are your projects more expensive than a $500 website?",
+          "a": "Because those are usually brochures. These offers include implementation, structure, performance, accessibility, analytics, hardening, and ownership handoff. You are buying a real system, not a homepage and a promise."
+        },
+        {
+          "q": "Can we just use Wix or Squarespace?",
+          "a": "You can, if platform limits, lock-in, and reduced extensibility are acceptable. Vantus is for businesses that want control and room to grow."
+        },
+        {
+          "q": "What happens if we need more than the package includes?",
+          "a": "Anything outside approved scope moves through formal change control. That protects both delivery quality and cost clarity."
+        }
+      ]
+    },
+    {
+      "type": "final_cta",
+      "heading": "Start with the right scope before you buy the wrong build",
+      "body": "Book a Website Reality Check if you want a clear read on what is hurting trust, what is operationally weak, and which offer actually fits.",
+      "primary_cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      },
+      "secondary_cta": {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    }
+  ]
+}

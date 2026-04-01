@@ -1,0 +1,114 @@
+{
+  "route": "/about",
+  "seo": {
+    "title": "About | Why Vantus Systems exists",
+    "meta_description": "Learn why Vantus Systems was founded, what it builds, how it works, and why ownership, documentation, and independence are central to every engagement."
+  },
+  "hero": {
+    "eyebrow": "About Vantus Systems",
+    "headline": "Built for owners who are tired of fragile systems and vague answers",
+    "subheadline": "Vantus Systems was founded to give small businesses something they are rarely offered: enterprise-grade systems they can own, understand, and control without being trapped by the vendor who built them.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  },
+  "sections": [
+    {
+      "type": "story",
+      "heading": "Why Vantus exists",
+      "body": "Vantus started after watching too many small businesses get hurt by bad technology decisions and worse incentives. Data was lost because backups were never set up. Websites were shipped that clients could not edit. Critical business systems were tied to platforms that could raise prices or reduce flexibility overnight. These were not weak businesses. They were good businesses stuck with the wrong tech and the wrong relationship around that tech."
+    },
+    {
+      "type": "belief",
+      "heading": "Ownership is not ideology. It is risk management.",
+      "body": "A business should own its code, credentials, and infrastructure. It should know who has access, where data goes, and how to exit cleanly if needed. That is not abstract philosophy. It is how a business protects itself from lock-in, avoidable outages, and expensive confusion.",
+      "bullets": [
+        "Ownership reduces dependence",
+        "Documentation reduces fragility",
+        "Handoff reduces fear",
+        "Clarity improves decision-making"
+      ]
+    },
+    {
+      "type": "what_we_build",
+      "heading": "What Vantus does",
+      "intro": "We are not a generalist agency. We build systems where failure is expensive and clarity matters.",
+      "blocks": [
+        {
+          "title": "Resilient system architecture",
+          "copy": "Systems designed to stay up, recover cleanly, and scale without chaos."
+        },
+        {
+          "title": "Security by design",
+          "copy": "Protection built in from day one, not added at the end because a form field feels risky."
+        },
+        {
+          "title": "Governed delivery",
+          "copy": "Clear scope, visible decisions, and controlled change instead of improvisation."
+        },
+        {
+          "title": "Operational engineering",
+          "copy": "Monitoring, backups, recovery, and runbooks for the real world."
+        },
+        {
+          "title": "Enablement and transfer",
+          "copy": "Training, documentation, and handoff so the client can operate the system after launch."
+        }
+      ]
+    },
+    {
+      "type": "process",
+      "heading": "We do not sell mystery process",
+      "body": "Vantus uses a five-step delivery model built around risk, scope, execution, and handoff. The point is not to keep the client dependent. The point is to leave them with a working system and the ability to govern it.",
+      "process": [
+        "Audit",
+        "Plan",
+        "Build",
+        "Handoff",
+        "Care"
+      ],
+      "support_copy": "Care is optional. Ownership is not."
+    },
+    {
+      "type": "values",
+      "heading": "What guides the work",
+      "items": [
+        "Tell the truth",
+        "Build for independence",
+        "Respect the machine",
+        "Leave a trail",
+        "Protect what is not ours",
+        "Small business deserves the best"
+      ]
+    },
+    {
+      "type": "leadership",
+      "heading": "Leadership",
+      "body": "Vantus Systems was founded in 2025 by Dylan Thompson. The company is based in the United States and operates as a remote-first team. The mission is simple: small businesses deserve the same level of technical rigor as larger organizations, without the baggage and dependency that usually come with it.",
+      "contact_line": "Direct line: dylan.thompson@vantus.systems"
+    },
+    {
+      "type": "truth",
+      "heading": "What a Vantus system should feel like",
+      "body": "It should be high-integrity, operationally real, secure, fast, documented, and maintainable. Most of all, it should be yours."
+    },
+    {
+      "type": "final_cta",
+      "heading": "If that is how you think technology should work, start with the audit",
+      "body": "The best first step is not a sales pitch. It is a clear look at what is weak, what is risky, and what should be fixed first.",
+      "primary_cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      },
+      "secondary_cta": {
+        "label": "View Standards",
+        "href": "/standards"
+      }
+    }
+  ]
+}

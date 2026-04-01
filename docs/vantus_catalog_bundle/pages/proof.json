@@ -1,0 +1,117 @@
+{
+  "route": "/proof",
+  "seo": {
+    "title": "Proof | Case studies, evidence, and delivery outcomes | Vantus Systems",
+    "meta_description": "See how Vantus Systems presents problem context, delivered scope, evidence artifacts, and outcome summaries without inflated claims or internal-only detail."
+  },
+  "hero": {
+    "eyebrow": "Evidence, not theater",
+    "headline": "Proof you can inspect",
+    "subheadline": "This page exists to show verifiable delivery outcomes without exposing internal-only data. Every proof item follows the same structure: what was wrong, what was delivered, what evidence exists, and what changed.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  },
+  "sections": [
+    {
+      "type": "why",
+      "heading": "You should not have to trust a polished homepage without receipts",
+      "body": "Proof pages are where Vantus earns credibility. Claims here must be attributable, timestamped, and backed by context. If something cannot be verified, it should not be presented as fact. Internal security and infrastructure detail stays summarized. Public evidence stays usable and honest."
+    },
+    {
+      "type": "method",
+      "heading": "Every case follows the same pattern",
+      "blocks": [
+        {
+          "title": "Problem context",
+          "copy": "What was failing, what risk existed, and why the business needed a change."
+        },
+        {
+          "title": "Scope delivered",
+          "copy": "What Vantus actually shipped. No padded lists. No blurred boundaries."
+        },
+        {
+          "title": "Evidence artifacts",
+          "copy": "Screenshots, reports, before-and-after comparisons, attributed quotes, audit outputs, and other public-safe artifacts."
+        },
+        {
+          "title": "Outcome summary",
+          "copy": "What improved after delivery, with evidence context attached."
+        },
+        {
+          "title": "Next step",
+          "copy": "What a similar business should do next if they recognize the same pattern."
+        }
+      ]
+    },
+    {
+      "type": "summary_cards",
+      "heading": "What this section proves",
+      "cards": [
+        {
+          "title": "Public credibility can be rebuilt",
+          "copy": "Outdated websites can be replaced with something faster, cleaner, and easier to trust."
+        },
+        {
+          "title": "Content control changes operations",
+          "copy": "A real CMS reduces update friction and keeps the site from degrading after launch."
+        },
+        {
+          "title": "Workflow debt can be contained",
+          "copy": "When the problem moves beyond the public site, the right operational scope matters more than a prettier interface."
+        },
+        {
+          "title": "Documentation is part of the result",
+          "copy": "A system is not finished if the client cannot operate it after handoff."
+        }
+      ]
+    },
+    {
+      "type": "evidence_rules",
+      "heading": "What counts as evidence here",
+      "body": "We use public-safe proof only. That can include attributed client feedback, measured before-and-after comparisons, screenshots of observable improvements, QA outputs, accessibility results, documented deliverables, and timestamped launch artifacts. It does not include unverifiable vanity language or privileged internal diagrams.",
+      "rules": [
+        "Attributable",
+        "Timestamped",
+        "Public-safe",
+        "Contextualized",
+        "Tied to a delivered scope"
+      ]
+    },
+    {
+      "type": "case_study_index",
+      "heading": "Case studies",
+      "intro": "Each case study should be read like a technical and business record, not a trophy page.",
+      "card_template": {
+        "title": "[Client or anonymized industry label]",
+        "subhead": "[Core problem in plain language]",
+        "meta_line": "Scope delivered | Public-safe evidence available",
+        "summary": "[2-3 sentence summary]",
+        "cta": "View case study"
+      }
+    },
+    {
+      "type": "what_not",
+      "heading": "What you will not find here",
+      "body": "You will not find inflated outcomes with no method attached. You will not find sensitive internal architecture details. You will not find \u201ctrust us\u201d language pretending to be evidence. This page is here to reduce uncertainty, not manufacture it."
+    },
+    {
+      "type": "final_cta",
+      "heading": "If the pattern looks familiar, start with the audit",
+      "body": "Proof is useful when it helps you identify your own next move. If your business is dealing with the same failure pattern, start with a Website Reality Check.",
+      "primary_cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      },
+      "secondary_cta": {
+        "label": "Explore Services",
+        "href": "/services"
+      }
+    }
+  ]
+}

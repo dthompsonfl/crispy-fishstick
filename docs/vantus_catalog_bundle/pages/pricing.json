@@ -1,0 +1,257 @@
+{
+  "route": "/pricing",
+  "seo": {
+    "title": "Pricing | Vantus Systems",
+    "meta_description": "Pricing anchors for enterprise website and system delivery, including core offers, infrastructure engineering, and enterprise add-on modules."
+  },
+  "hero": {
+    "headline": "Pricing anchors for enterprise website and system delivery",
+    "subheadline": "These are starting points and typical ranges. Final pricing is confirmed after discovery, written scope, and complexity scoring.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  },
+  "sections": [
+    {
+      "type": "intro",
+      "heading": "Clear price anchors, not fake certainty",
+      "body": "Public pricing should help you understand the investment range without pretending every project is identical. Scope, content volume, integrations, workflow complexity, and environment constraints all affect final price. That is why Vantus publishes anchors and ranges instead of forcing a one-size-fits-all number onto unlike work."
+    },
+    {
+      "type": "core_packages",
+      "packages": [
+        {
+          "name": "Website Rebuild (Modern + Complete)",
+          "sku": "VS-PKG-WEB-REBLD",
+          "slug": "/services/website-rebuild",
+          "starting_price_usd": 15000,
+          "typical_range_usd": [
+            15000,
+            55000
+          ],
+          "recommended": false,
+          "summary": "Replace the site that makes your business look dated, hard to trust, or difficult to use. This package gives you a serious public foundation without overcomplicating the scope.",
+          "best_for": "Businesses whose main problem is public credibility.",
+          "includes": [
+            "Responsive design implementation",
+            "Content completion support",
+            "Technical SEO baseline",
+            "Analytics instrumentation",
+            "Deployment hardening",
+            "Launch readiness checks",
+            "Ownership handoff package"
+          ],
+          "not_included": [
+            "CMS functionality",
+            "User login or portal workflows",
+            "Complex integrations",
+            "Ongoing content updates after handoff",
+            "Open-ended custom application work"
+          ],
+          "upsell": "Website + CMS",
+          "cross_sell": [
+            "Cloud Deployment Baseline",
+            "On-Prem Install + Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint"
+          ]
+        },
+        {
+          "name": "Website + CMS (Recommended)",
+          "sku": "VS-PKG-WEB-CMS",
+          "slug": "/services/website-plus-cms",
+          "starting_price_usd": 32000,
+          "typical_range_usd": [
+            32000,
+            125000
+          ],
+          "recommended": true,
+          "summary": "This is the best-fit package for most growing businesses. It gives you the public credibility of a modern rebuild plus the internal control to manage content without waiting on a developer.",
+          "best_for": "Growing teams that need publishing control and content velocity.",
+          "includes": [
+            "Everything in Website Rebuild",
+            "CMS implementation",
+            "Content model architecture",
+            "Editorial workflow setup",
+            "Role-based publishing controls",
+            "Media and publishing governance",
+            "Operator training and handoff"
+          ],
+          "not_included": [
+            "User-facing portal workflows",
+            "Customer authentication",
+            "Complex business process automation",
+            "Third-party system integrations unless added",
+            "Ongoing content creation or copywriting"
+          ],
+          "upsell": "Website + Business Portal",
+          "cross_sell": [
+            "Data and Content Migration",
+            "Analytics & Dashboarding",
+            "Localization Framework",
+            "Integration (per system)",
+            "Vantus Care Advanced"
+          ]
+        },
+        {
+          "name": "Website + Business Portal",
+          "sku": "VS-PKG-PORTAL-MVP",
+          "slug": "/services/website-plus-portal",
+          "starting_price_usd": 90000,
+          "typical_range_usd": [
+            90000,
+            400000
+          ],
+          "recommended": false,
+          "summary": "When the real problem is not just the website but the workflow behind it, this package moves you from public presence into operational software.",
+          "best_for": "Businesses whose operations are already breaking on spreadsheets and manual handoffs.",
+          "includes": [
+            "Everything in Website + CMS",
+            "Secure authentication",
+            "Portal MVP scope",
+            "RBAC baseline",
+            "Audit trail for key actions",
+            "One primary workflow implementation",
+            "Integration foundation"
+          ],
+          "not_included": [
+            "Unlimited workflow development",
+            "Enterprise-wide replatforming",
+            "Unscoped multi-system modernization",
+            "Mobile app development",
+            "Ongoing helpdesk support inside project scope"
+          ],
+          "upsell": "Enterprise Systems Program",
+          "cross_sell": [
+            "Integration (per system)",
+            "SSO + RBAC Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint",
+            "Vantus Care Sovereign"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "heading": "Infrastructure engineering",
+      "items": [
+        {
+          "name": "Cloud deployment baseline (VPS + Docker + NGINX)",
+          "price_range_usd": [
+            7000,
+            30000
+          ]
+        },
+        {
+          "name": "On-prem install + hardening (client-owned hardware)",
+          "price_range_usd": [
+            15000,
+            70000
+          ]
+        }
+      ]
+    },
+    {
+      "type": "enterprise_addons",
+      "heading": "Enterprise add-on modules",
+      "items": [
+        {
+          "name": "Discovery + Solution Blueprint",
+          "sku": "VS-ADD-DISC-BLUP",
+          "price_range_usd": [
+            5000,
+            20000
+          ],
+          "category": "Research & Scoping"
+        },
+        {
+          "name": "Data and Content Migration",
+          "sku": "VS-ADD-DATA-MIGR",
+          "price_range_usd": [
+            4000,
+            30000
+          ],
+          "category": "Migration"
+        },
+        {
+          "name": "Integration (per system)",
+          "sku": "VS-ADD-INT-PSYS",
+          "price_range_usd": [
+            8000,
+            35000
+          ],
+          "category": "Integrations"
+        },
+        {
+          "name": "SSO and RBAC Hardening",
+          "sku": "VS-ADD-SEC-SSRB",
+          "price_range_usd": [
+            12000,
+            50000
+          ],
+          "category": "Security"
+        },
+        {
+          "name": "Analytics & Dashboarding",
+          "sku": "VS-ADD-DATA-ANDB",
+          "price_range_usd": [
+            7000,
+            30000
+          ],
+          "category": "Analytics"
+        },
+        {
+          "name": "Localization Framework",
+          "sku": "VS-ADD-WEB-LOCL",
+          "price_range_usd": [
+            8000,
+            40000
+          ],
+          "category": "Content Operations"
+        }
+      ]
+    },
+    {
+      "type": "pricing_explanation",
+      "heading": "What pushes a project toward the higher end of the range?",
+      "body": "Projects move up in range when they include more content types, more approvals, harder migrations, more integrations, more workflow complexity, or more infrastructure and compliance constraints. That is not sales theater. It is basic delivery reality."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "q": "Why publish ranges instead of a single number?",
+          "a": "Because public builds are scoped projects, not commodity subscriptions. Ranges are more honest than fake flat pricing."
+        },
+        {
+          "q": "Why is Website + CMS marked as recommended?",
+          "a": "Because it is the highest-value public package for most businesses. It solves both the presentation problem and the publishing-control problem."
+        },
+        {
+          "q": "Do you publish Care pricing here?",
+          "a": "No. This release of /pricing excludes Care tiers."
+        }
+      ]
+    },
+    {
+      "type": "legal_note",
+      "body": "Final pricing is confirmed after discovery, complexity scoring, and written scope. Out-of-scope work is handled through formal change requests."
+    },
+    {
+      "type": "metadata_footer",
+      "data": {
+        "pricing_data_version": "2.1",
+        "pricing_data_last_updated": "2026-03-15",
+        "strategy": "Option A - Gulf Coast Leader",
+        "target_market": "Gulf Coast SMBs (Ft. Walton, Pensacola, Mobile)",
+        "source_file": "../../pricing/pricing_public.yaml"
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "bundle_name": "vantus-catalog-enterprise-bundle",
+  "generated_on": "2026-03-19",
+  "brand": {
+    "company_name": "Vantus Systems",
+    "positioning": "Enterprise-grade websites and business systems for Gulf Coast small businesses that need ownership, proof, performance, and a clean path out of vendor lock-in.",
+    "primary_audience": "Small-business owners and operators in the Gulf Coast region who need credibility, operational control, and durable systems.",
+    "voice": [
+      "plain-language",
+      "proof-first",
+      "ownership-first",
+      "anti-hype",
+      "direct",
+      "enterprise-grade"
+    ],
+    "cta_primary": "Start Audit",
+    "cta_secondary_default": "Contact",
+    "geos": [
+      "Fort Walton Beach",
+      "Pensacola",
+      "Mobile",
+      "Gulf Coast"
+    ],
+    "strategy": "Option A - Gulf Coast Leader"
+  },
+  "routes": [
+    {
+      "key": "homepage",
+      "route": "/"
+    },
+    {
+      "key": "services",
+      "route": "/services"
+    },
+    {
+      "key": "services_website_rebuild",
+      "route": "/services/website-rebuild"
+    },
+    {
+      "key": "services_website_plus_cms",
+      "route": "/services/website-plus-cms"
+    },
+    {
+      "key": "services_website_plus_portal",
+      "route": "/services/website-plus-portal"
+    },
+    {
+      "key": "pricing",
+      "route": "/pricing"
+    },
+    {
+      "key": "proof",
+      "route": "/proof"
+    },
+    {
+      "key": "standards",
+      "route": "/standards"
+    },
+    {
+      "key": "about",
+      "route": "/about"
+    },
+    {
+      "key": "start_audit",
+      "route": "/start-audit"
+    },
+    {
+      "key": "contact",
+      "route": "/contact"
+    }
+  ],
+  "libraries": [
+    "libraries/vantus-services-pricing-library.json",
+    "libraries/vantus-services-pricing-library.yaml"
+  ],
+  "notes": [
+    "This bundle is optimized for recursive agent-driven site updates.",
+    "JSON files are canonical for machine consumption; YAML duplicates the service library for ops-friendly editing.",
+    "Copy and pricing are grounded in the conversation-provided March 2026 canonical framing and the agreed Vantus offer ladder."
+  ]
+}

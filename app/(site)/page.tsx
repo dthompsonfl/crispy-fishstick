@@ -83,10 +83,10 @@ export default function Home() {
 
           <Reveal delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-              <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-semibold btn-sky-glow">
+              <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-semibold btn-sky-glow tap-active">
                 <Link href="/start-audit">Get a Free Audit</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-10 h-14 text-base hover:border-[var(--vantus-sky)] hover:text-[var(--vantus-sky)] transition-colors">
+              <Button asChild variant="outline" size="lg" className="rounded-full px-10 h-14 text-base hover:border-[var(--vantus-sky)] hover:text-[var(--vantus-sky)] transition-colors tap-active">
                 <Link href="/proof">See Our Work</Link>
               </Button>
             </div>
@@ -110,17 +110,18 @@ export default function Home() {
       </section>
 
       {/* ── Proof strip ── */}
-      <Reveal>
-        <section className="px-4 md:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+      <Reveal width="100%">
+        <section className="px-4 md:px-6 lg:px-8 max-w-5xl mx-auto w-full">
           <div
-            className="rounded-2xl grid grid-cols-3 divide-x divide-white/10 glow-sky bg-navy text-cream"
+            className="rounded-2xl grid grid-cols-3 divide-x callout-divider section-callout"
+            aria-label="Proof statistics"
           >
             {PROOF_STRIP.map((item) => (
-              <div key={item.stat} className="flex flex-col items-center justify-center py-8 px-4 text-center">
-                <span className="font-heading text-3xl md:text-4xl font-bold text-gradient-brand">
+              <div key={item.stat} className="flex flex-col items-center justify-center py-10 px-4 text-center gap-1">
+                <span className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gradient-brand">
                   {item.stat}
                 </span>
-                <span className="font-body text-xs md:text-sm mt-1 opacity-70">{item.label}</span>
+                <span className="font-body text-xs md:text-sm mt-1 text-callout-muted">{item.label}</span>
               </div>
             ))}
           </div>
@@ -144,7 +145,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {PAIN_POINTS.map((pp) => (
             <Reveal key={pp.problem}>
-              <div className="rounded-2xl border border-border bg-card p-6 space-y-3 card-glow h-full">
+              <div className="rounded-2xl border border-border bg-card p-6 space-y-3 card-3d card-sheen h-full">
                 <p className="font-heading font-bold text-base text-gold">{pp.problem}</p>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">{pp.why}</p>
               </div>
@@ -168,12 +169,12 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {OFFERS.map((offer) => (
             <Reveal key={offer.slug}>
               <Link
                 href={`/services/${offer.slug}`}
-                className="group flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 card-glow h-full"
+                className="group flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 card-3d card-sheen h-full tap-active"
               >
                 {offer.featured && (
                   <Badge className="badge-featured self-start text-xs">
@@ -220,11 +221,11 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PROCESS_STEPS.map((step) => (
             <Reveal key={step.num}>
-              <div className="rounded-2xl border border-border bg-card p-6 space-y-3 card-glow h-full">
-                <span className="font-heading text-3xl font-bold text-gradient-brand">
+              <div className="rounded-2xl border border-border bg-card p-6 space-y-4 card-3d h-full">
+                <span className="font-heading text-4xl font-bold text-gradient-brand block leading-none">
                   {step.num}
                 </span>
                 <h3 className="font-heading text-base font-bold">{step.title}</h3>
@@ -238,16 +239,16 @@ export default function Home() {
       {/* ── Social proof ── */}
       <Reveal>
         <section className="px-4 md:px-6 lg:px-8 max-w-4xl mx-auto w-full">
-          <div className="rounded-2xl border border-border bg-card p-8 md:p-12 flex flex-col items-center text-center gap-4 card-glow">
+          <div className="rounded-2xl border border-border bg-card p-8 md:p-12 flex flex-col items-center text-center gap-5 card-3d card-sheen">
             <div className="flex gap-1">
               {[0, 1, 2, 3, 4].map((i) => (
                 <Star key={i} className="h-5 w-5 fill-current text-gold" />
               ))}
             </div>
-            <blockquote className="font-body text-xl md:text-2xl leading-relaxed max-w-2xl text-balance italic">
+            <blockquote className="font-body text-xl md:text-2xl leading-relaxed max-w-2xl text-balance italic text-foreground">
               &ldquo;We finally have a website that actually brings in customers. It loads fast, looks professional, and I can update it myself. Worth every dollar.&rdquo;
             </blockquote>
-            <p className="text-sm text-muted-foreground font-semibold">— Gulf Coast Retailer · Website Rebuild project</p>
+            <p className="text-sm text-muted-foreground font-semibold tracking-wide">— Gulf Coast Retailer &middot; Website Rebuild</p>
           </div>
         </section>
       </Reveal>
@@ -255,41 +256,50 @@ export default function Home() {
       {/* ── Standards teaser ── */}
       <Reveal>
         <section
-          className="mx-4 md:mx-6 lg:mx-8 rounded-2xl px-8 md:px-16 py-16 text-center space-y-6 max-w-5xl lg:mx-auto glow-sky bg-navy text-cream"
+          className="mx-4 md:mx-6 lg:mx-8 rounded-2xl px-8 md:px-16 py-16 md:py-20 text-center space-y-6 max-w-5xl lg:mx-auto section-callout"
         >
           <Badge className="badge-sky uppercase tracking-wider text-xs font-semibold border">
             Our Guarantee
           </Badge>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-callout">
             We don&apos;t ship until it&apos;s right.
           </h2>
-          <p className="font-body text-base opacity-75 max-w-2xl mx-auto">
+          <p className="font-body text-base max-w-2xl mx-auto leading-relaxed text-callout-muted">
             Every project passes the same checklist: sub-2s load time, OWASP security hardening,
             WCAG accessibility compliance, and zero known defects at handoff. Not aspirational — contractual.
           </p>
-          <Button
-            asChild
-            variant="outline"
-            className="rounded-full border-white/20 hover:bg-white/10 hover:border-white/40 transition-colors text-cream"
-          >
-            <Link href="/standards">See our engineering standards →</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-3 items-center justify-center pt-2">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full btn-sky-glow btn-callout-primary tap-active px-8 font-semibold"
+            >
+              <Link href="/standards">See Engineering Standards</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full btn-callout-outline tap-active px-8 font-medium"
+            >
+              <Link href="/start-audit">Start Free Audit →</Link>
+            </Button>
+          </div>
         </section>
       </Reveal>
 
       {/* ── Final CTA ── */}
-      <section className="px-4 md:px-6 lg:px-8 max-w-3xl mx-auto w-full text-center space-y-6">
+      <section className="px-4 md:px-6 lg:px-8 max-w-3xl mx-auto w-full">
         <Reveal>
-          <div className="space-y-4">
+          <div className="rounded-3xl border border-border bg-surface-50 dark:bg-surface-100 card-3d p-10 md:p-16 text-center space-y-6">
             <span className="accent-bar mx-auto" />
-            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight">
-              Ready to stop losing customers<br className="hidden md:block" /> to a slow, outdated site?
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
+              Ready to stop losing customers to a slow, outdated site?
             </h2>
-            <p className="font-body text-muted-foreground text-lg leading-relaxed">
+            <p className="font-body text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
               A free audit is the fastest way to see exactly what your site needs — and what it will cost to fix.
               Written report in five business days. No sales pressure.
             </p>
-            <Button asChild size="lg" className="rounded-full px-12 font-semibold btn-sky-glow">
+            <Button asChild size="lg" className="rounded-full px-12 h-14 text-base font-semibold btn-sky-glow tap-active">
               <Link href="/start-audit">Start Your Free Audit</Link>
             </Button>
           </div>

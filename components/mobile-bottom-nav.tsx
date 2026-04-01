@@ -45,11 +45,11 @@ export function MobileBottomNav() {
   return (
     <div 
       className={cn(
-        "md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-t border-border/50 pb-safe transition-transform duration-300 ease-in-out",
+        "md:hidden fixed bottom-0 left-0 right-0 z-50 frosted-nav pb-safe transition-transform duration-300 ease-in-out",
         isVisible ? "translate-y-0" : "translate-y-full"
       )}
     >
-      <div className="flex items-center justify-around h-16 px-2">
+      <div className="flex items-stretch justify-around h-16 px-1">
         {siteConfig.mobileNav.map((item) => {
           const isActive = pathname === item.href;
           const Icon = icons[item.icon as keyof typeof icons] || Home;
@@ -60,15 +60,34 @@ export function MobileBottomNav() {
               href={item.href}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "flex flex-col items-center justify-center w-full h-full gap-1 active:scale-95 transition-transform duration-150 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                "relative flex flex-col items-center justify-center flex-1 min-h-[44px] py-2 gap-0.5",
+                "rounded-xl mx-0.5 my-1 transition-all duration-150",
+                "active:scale-[0.90] active:opacity-80",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--vantus-sky)] focus-visible:ring-offset-1",
+                isActive
+                  ? "text-[var(--vantus-sky)]"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
-              <span className="text-[10px] font-medium tracking-tight">{item.title}</span>
-              {isActive && (
-                <span className="absolute top-1 w-1 h-1 bg-primary rounded-full" />
-              )}
+              {/* Active pill indicator bar at top */}
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "absolute top-0 left-1/2 -translate-x-1/2 rounded-full transition-all duration-200 h-[2px]",
+                  isActive
+                    ? "w-6 bg-[var(--vantus-sky)] opacity-100"
+                    : "w-0 opacity-0"
+                )}
+              />
+              <Icon
+                size={22}
+                strokeWidth={isActive ? 2.5 : 1.8}
+                className={isActive ? "nav-icon-active" : ""}
+              />
+              <span className={cn(
+                "text-[10px] tracking-tight font-medium",
+                isActive ? "font-semibold" : ""
+              )}>{item.title}</span>
             </Link>
           );
         })}

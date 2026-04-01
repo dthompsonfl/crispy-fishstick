@@ -1,0 +1,649 @@
+{
+  "version": "1.0.0",
+  "generated_for": "Vantus Systems",
+  "generated_on": "2026-03-19",
+  "strategy": "Option A - Gulf Coast Leader",
+  "target_market": "Gulf Coast SMBs (Fort Walton, Pensacola, Mobile)",
+  "commercial_rules": {
+    "default_deposit_pct": 40,
+    "minimum_deposit_usd": 2500,
+    "discount_cap_without_approval_pct": 5,
+    "discount_cap_with_founder_approval_pct": 15,
+    "gross_margin_floor_pct": 50,
+    "pricing_note": "Final pricing is confirmed after discovery, complexity scoring, and written scope. Out-of-scope work is handled through formal change requests."
+  },
+  "public_positioning_rules": {
+    "lead_with": "Website + CMS",
+    "do_not_position_as": [
+      "cheap web design",
+      "generic branding agency",
+      "social-media retainer shop",
+      "broad ad-buying shop"
+    ],
+    "proof_standard": "No unsupported superlatives. Claims must be backed by evidence, context, or attributable proof.",
+    "ownership_story": [
+      "Client owns code",
+      "Client owns credentials",
+      "Client owns infrastructure",
+      "Documentation and handoff are part of delivery"
+    ]
+  },
+  "families": [
+    {
+      "family": "Research & Roadmaps",
+      "offers": [
+        {
+          "name": "Website Reality Check",
+          "sku": "VS-LEAD-WRC",
+          "public_price": "CTA",
+          "negative_scope": [
+            "Not a bait-and-switch quote form",
+            "Not a build project"
+          ]
+        },
+        {
+          "name": "Discovery + Solution Blueprint",
+          "sku": "VS-ADD-DISC-BLUP",
+          "price_range_usd": [
+            5000,
+            20000
+          ],
+          "negative_scope": [
+            "Not ongoing advisory",
+            "Not implementation"
+          ]
+        },
+        {
+          "name": "Security Assessment",
+          "sku": "VS-ASR-SEC-ASMT",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              7500,
+              18000
+            ],
+            "Advanced": [
+              15000,
+              35000
+            ],
+            "Sovereign": [
+              30000,
+              75000
+            ]
+          }
+        },
+        {
+          "name": "Performance Audit",
+          "sku": "VS-ASR-PERF-AUDT",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              6000,
+              18000
+            ],
+            "Advanced": [
+              15000,
+              40000
+            ],
+            "Sovereign": [
+              30000,
+              80000
+            ]
+          }
+        },
+        {
+          "name": "Disaster Recovery Planning",
+          "sku": "VS-ASR-DR-PLAN",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              7500,
+              18000
+            ],
+            "Advanced": [
+              15000,
+              40000
+            ],
+            "Sovereign": [
+              35000,
+              90000
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "family": "Digital Footprint & Websites",
+      "offers": [
+        {
+          "name": "Website Rebuild (Modern + Complete)",
+          "sku": "VS-PKG-WEB-REBLD",
+          "slug": "/services/website-rebuild",
+          "starting_price_usd": 15000,
+          "typical_range_usd": [
+            15000,
+            55000
+          ],
+          "recommended": false,
+          "summary": "Replace the site that makes your business look dated, hard to trust, or difficult to use. This package gives you a serious public foundation without overcomplicating the scope.",
+          "best_for": "Businesses whose main problem is public credibility.",
+          "includes": [
+            "Responsive design implementation",
+            "Content completion support",
+            "Technical SEO baseline",
+            "Analytics instrumentation",
+            "Deployment hardening",
+            "Launch readiness checks",
+            "Ownership handoff package"
+          ],
+          "not_included": [
+            "CMS functionality",
+            "User login or portal workflows",
+            "Complex integrations",
+            "Ongoing content updates after handoff",
+            "Open-ended custom application work"
+          ],
+          "upsell": "Website + CMS",
+          "cross_sell": [
+            "Cloud Deployment Baseline",
+            "On-Prem Install + Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint"
+          ]
+        },
+        {
+          "name": "Website + CMS (Recommended)",
+          "sku": "VS-PKG-WEB-CMS",
+          "slug": "/services/website-plus-cms",
+          "starting_price_usd": 32000,
+          "typical_range_usd": [
+            32000,
+            125000
+          ],
+          "recommended": true,
+          "summary": "This is the best-fit package for most growing businesses. It gives you the public credibility of a modern rebuild plus the internal control to manage content without waiting on a developer.",
+          "best_for": "Growing teams that need publishing control and content velocity.",
+          "includes": [
+            "Everything in Website Rebuild",
+            "CMS implementation",
+            "Content model architecture",
+            "Editorial workflow setup",
+            "Role-based publishing controls",
+            "Media and publishing governance",
+            "Operator training and handoff"
+          ],
+          "not_included": [
+            "User-facing portal workflows",
+            "Customer authentication",
+            "Complex business process automation",
+            "Third-party system integrations unless added",
+            "Ongoing content creation or copywriting"
+          ],
+          "upsell": "Website + Business Portal",
+          "cross_sell": [
+            "Data and Content Migration",
+            "Analytics & Dashboarding",
+            "Localization Framework",
+            "Integration (per system)",
+            "Vantus Care Advanced"
+          ]
+        },
+        {
+          "name": "Website + Business Portal",
+          "sku": "VS-PKG-PORTAL-MVP",
+          "slug": "/services/website-plus-portal",
+          "starting_price_usd": 90000,
+          "typical_range_usd": [
+            90000,
+            400000
+          ],
+          "recommended": false,
+          "summary": "When the real problem is not just the website but the workflow behind it, this package moves you from public presence into operational software.",
+          "best_for": "Businesses whose operations are already breaking on spreadsheets and manual handoffs.",
+          "includes": [
+            "Everything in Website + CMS",
+            "Secure authentication",
+            "Portal MVP scope",
+            "RBAC baseline",
+            "Audit trail for key actions",
+            "One primary workflow implementation",
+            "Integration foundation"
+          ],
+          "not_included": [
+            "Unlimited workflow development",
+            "Enterprise-wide replatforming",
+            "Unscoped multi-system modernization",
+            "Mobile app development",
+            "Ongoing helpdesk support inside project scope"
+          ],
+          "upsell": "Enterprise Systems Program",
+          "cross_sell": [
+            "Integration (per system)",
+            "SSO + RBAC Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint",
+            "Vantus Care Sovereign"
+          ]
+        },
+        {
+          "name": "Animation & 3D Production",
+          "sku": "VS-BLD-MED-ANIM",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              3500,
+              12000
+            ],
+            "Advanced": [
+              10000,
+              35000
+            ],
+            "Sovereign": [
+              25000,
+              90000
+            ]
+          },
+          "negative_scope": [
+            "Not a standalone brand-retainer replacement"
+          ]
+        }
+      ]
+    },
+    {
+      "family": "Business Systems & Portals",
+      "offers": [
+        {
+          "name": "Website + Business Portal",
+          "sku": "VS-PKG-PORTAL-MVP",
+          "slug": "/services/website-plus-portal",
+          "starting_price_usd": 90000,
+          "typical_range_usd": [
+            90000,
+            400000
+          ],
+          "recommended": false,
+          "summary": "When the real problem is not just the website but the workflow behind it, this package moves you from public presence into operational software.",
+          "best_for": "Businesses whose operations are already breaking on spreadsheets and manual handoffs.",
+          "includes": [
+            "Everything in Website + CMS",
+            "Secure authentication",
+            "Portal MVP scope",
+            "RBAC baseline",
+            "Audit trail for key actions",
+            "One primary workflow implementation",
+            "Integration foundation"
+          ],
+          "not_included": [
+            "Unlimited workflow development",
+            "Enterprise-wide replatforming",
+            "Unscoped multi-system modernization",
+            "Mobile app development",
+            "Ongoing helpdesk support inside project scope"
+          ],
+          "upsell": "Enterprise Systems Program",
+          "cross_sell": [
+            "Integration (per system)",
+            "SSO + RBAC Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint",
+            "Vantus Care Sovereign"
+          ]
+        },
+        {
+          "name": "Enterprise Systems Program",
+          "sku": "VS-PROG-ENTR-SYS",
+          "price_range_usd": [
+            250000,
+            1200000
+          ],
+          "public_price": "Contact sales"
+        },
+        {
+          "name": "Integrations Engineering",
+          "sku": "VS-BLD-INT-INTG",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              7500,
+              25000
+            ],
+            "Advanced": [
+              20000,
+              60000
+            ],
+            "Sovereign": [
+              45000,
+              120000
+            ]
+          }
+        },
+        {
+          "name": "Custom Software Development",
+          "sku": "VS-BLD-APP-CUSD",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              25000,
+              90000
+            ],
+            "Advanced": [
+              60000,
+              180000
+            ],
+            "Sovereign": [
+              120000,
+              350000
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "family": "Infrastructure & Hardware",
+      "offers": [
+        {
+          "name": "Cloud Deployment Baseline",
+          "sku": "VS-BLD-INF-INFR-FND",
+          "price_range_usd": [
+            7000,
+            30000
+          ]
+        },
+        {
+          "name": "On-Prem Install + Hardening",
+          "sku": "VS-BLD-INF-INFR-ADV",
+          "price_range_usd": [
+            15000,
+            70000
+          ],
+          "negative_scope": [
+            "Hardware must be client-purchased",
+            "No leasing or financing"
+          ]
+        },
+        {
+          "name": "Infrastructure Setup & Migration",
+          "sku": "VS-BLD-INF-INFR",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              15000,
+              45000
+            ],
+            "Advanced": [
+              35000,
+              95000
+            ],
+            "Sovereign": [
+              75000,
+              200000
+            ]
+          }
+        },
+        {
+          "name": "Network Engineering",
+          "sku": "VS-BLD-NET-NETW",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              7500,
+              25000
+            ],
+            "Advanced": [
+              20000,
+              60000
+            ],
+            "Sovereign": [
+              45000,
+              120000
+            ]
+          }
+        },
+        {
+          "name": "Workspace Administration",
+          "sku": "VS-OPS-WKS-ADMIN",
+          "tiered_monthly_per_user_usd": {
+            "Foundation": [
+              15,
+              35
+            ],
+            "Advanced": [
+              30,
+              60
+            ],
+            "Sovereign": [
+              55,
+              95
+            ]
+          }
+        },
+        {
+          "name": "Device Management",
+          "sku": "VS-OPS-DEV-MGMT",
+          "tiered_monthly_per_endpoint_usd": {
+            "Foundation": [
+              12,
+              25
+            ],
+            "Advanced": [
+              20,
+              40
+            ],
+            "Sovereign": [
+              35,
+              70
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "family": "Documentation, SOPs & Handoff",
+      "offers": [
+        {
+          "name": "Documentation & Runbooks",
+          "sku": "VS-ENB-DOC-RUNB",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              5000,
+              15000
+            ],
+            "Advanced": [
+              12000,
+              30000
+            ],
+            "Sovereign": [
+              25000,
+              65000
+            ]
+          }
+        },
+        {
+          "name": "Training & Tabletop Exercises",
+          "sku": "VS-ENB-TRN-TTOP",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              2500,
+              7500
+            ],
+            "Advanced": [
+              6000,
+              18000
+            ],
+            "Sovereign": [
+              15000,
+              45000
+            ]
+          }
+        },
+        {
+          "name": "Sovereignty Transfer / Handoff Package",
+          "sku": "VS-ENB-SOV-HOFF",
+          "tiered_ranges_usd": {
+            "Foundation": [
+              7500,
+              20000
+            ],
+            "Advanced": [
+              18000,
+              45000
+            ],
+            "Sovereign": [
+              40000,
+              120000
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "family": "Vantus Care & Governance",
+      "offers": [
+        {
+          "name": "Vantus Care - Foundation",
+          "sku": "VS-CARE-FND",
+          "monthly_per_user_usd": 175,
+          "monthly_minimum_usd": 2500
+        },
+        {
+          "name": "Vantus Care - Advanced",
+          "sku": "VS-CARE-ADV",
+          "monthly_per_user_usd": 225,
+          "monthly_minimum_usd": 5000,
+          "recommended": true
+        },
+        {
+          "name": "Vantus Care - Sovereign",
+          "sku": "VS-CARE-SOV",
+          "monthly_per_user_usd": 300,
+          "monthly_minimum_usd": 10000
+        },
+        {
+          "name": "Basic Server Management",
+          "sku": "VS-CARE-ADD-SVR-BASIC",
+          "monthly_usd_by_tier": {
+            "Foundation": 129,
+            "Advanced": 99,
+            "Sovereign": 79
+          }
+        },
+        {
+          "name": "Application Server Management",
+          "sku": "VS-CARE-ADD-SVR-APP",
+          "monthly_usd_by_tier": {
+            "Foundation": "Scoped",
+            "Advanced": 99,
+            "Sovereign": 79
+          }
+        },
+        {
+          "name": "Database Server Management",
+          "sku": "VS-CARE-ADD-SVR-DB",
+          "monthly_usd_by_tier": {
+            "Foundation": "Scoped",
+            "Advanced": "Scoped",
+            "Sovereign": 99
+          }
+        },
+        {
+          "name": "Fractional vCIO",
+          "sku": "VS-GOV-LEAD-VCIO",
+          "tiered_monthly_usd": {
+            "Foundation": [
+              3500,
+              6500
+            ],
+            "Advanced": [
+              6500,
+              12000
+            ],
+            "Sovereign": [
+              12000,
+              25000
+            ]
+          }
+        },
+        {
+          "name": "Fractional Admin",
+          "sku": "VS-GOV-OPS-FADM",
+          "tiered_monthly_usd": {
+            "Foundation": [
+              3000,
+              6000
+            ],
+            "Advanced": [
+              6000,
+              11000
+            ],
+            "Sovereign": [
+              11000,
+              20000
+            ]
+          }
+        },
+        {
+          "name": "Fractional Security Officer",
+          "sku": "VS-GOV-SEC-VCSO",
+          "tiered_monthly_usd": {
+            "Foundation": [
+              5000,
+              10000
+            ],
+            "Advanced": [
+              10000,
+              18000
+            ],
+            "Sovereign": [
+              18000,
+              35000
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "cross_sell_paths": [
+    {
+      "name": "Credibility Rebuild",
+      "sequence": [
+        "Website Reality Check",
+        "Website Rebuild (Modern + Complete)",
+        "Cloud Deployment Baseline",
+        "Analytics & Dashboarding",
+        "Vantus Care - Foundation"
+      ]
+    },
+    {
+      "name": "Owner-Control Growth Path",
+      "sequence": [
+        "Website Reality Check",
+        "Discovery + Solution Blueprint",
+        "Website + CMS (Recommended)",
+        "Data and Content Migration",
+        "Analytics & Dashboarding",
+        "Vantus Care - Advanced"
+      ]
+    },
+    {
+      "name": "Spreadsheet Escape Path",
+      "sequence": [
+        "Discovery + Solution Blueprint",
+        "Website + Business Portal",
+        "Integrations Engineering",
+        "SSO and RBAC Hardening",
+        "Vantus Care - Sovereign"
+      ]
+    },
+    {
+      "name": "Sovereignty Path",
+      "sequence": [
+        "On-Prem Install + Hardening",
+        "Documentation & Runbooks",
+        "Training & Tabletop Exercises",
+        "Sovereignty Transfer / Handoff Package"
+      ]
+    },
+    {
+      "name": "Brand Story System Path",
+      "sequence": [
+        "Website + CMS (Recommended)",
+        "Analytics & Dashboarding",
+        "Animation & 3D Production",
+        "Documentation & Runbooks",
+        "Vantus Care - Advanced"
+      ]
+    }
+  ]
+}

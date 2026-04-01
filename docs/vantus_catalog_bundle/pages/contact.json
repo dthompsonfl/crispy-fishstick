@@ -1,0 +1,44 @@
+{
+  "route": "/contact",
+  "seo": {
+    "title": "Contact | Vantus Systems",
+    "meta_description": "Contact Vantus Systems about website rebuilds, CMS modernization, portal delivery, infrastructure, or project fit."
+  },
+  "hero": {
+    "eyebrow": "Contact",
+    "headline": "Talk to Vantus Systems",
+    "subheadline": "Use this form if you have a question, want to discuss fit, or need to reach the team without starting a full audit flow."
+  },
+  "sections": [
+    {
+      "type": "contact_topics",
+      "heading": "What to contact us about",
+      "items": [
+        "Website rebuild and modernization",
+        "CMS and publishing control",
+        "Portal and workflow discussions",
+        "Infrastructure and deployment questions",
+        "Scope fit and next-step questions"
+      ]
+    },
+    {
+      "type": "expectation",
+      "heading": "What happens after you send this",
+      "body": "You will get a direct response or routing to the right next step. If the conversation clearly needs structured scoping, we will point you to Start Audit."
+    },
+    {
+      "type": "trust_note",
+      "heading": "Direct, plain-language communication",
+      "body": "Expect a direct answer, not a bloated nurture sequence. If the fit is weak, we will say so. If the problem is real but the scope is wrong, we will say that too."
+    },
+    {
+      "type": "sidebar",
+      "heading": "Need a scoped recommendation instead?",
+      "body": "Use Start Audit if you want us to review the current situation and point you toward the right public offer.",
+      "cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      }
+    }
+  ]
+}

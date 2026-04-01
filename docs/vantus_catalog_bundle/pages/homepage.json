@@ -1,0 +1,238 @@
+{
+  "route": "/",
+  "seo": {
+    "title": "Enterprise websites and business systems for Gulf Coast small businesses | Vantus Systems",
+    "meta_description": "Vantus Systems builds enterprise-grade websites and business systems for Gulf Coast small businesses that need ownership, proof, performance, and a clean path out of vendor lock-in."
+  },
+  "hero": {
+    "eyebrow": "Enterprise-grade systems for small business",
+    "headline": "Build a website and business system you can actually own",
+    "subheadline": "Vantus Systems designs and delivers modern websites, CMS-backed content systems, and operational tools for small businesses that are done dealing with dated sites, brittle hosting, and vendor lock-in. We build for ownership, performance, and handoff from day one.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Explore Services",
+      "href": "/services"
+    },
+    "support_points": [
+      "You own the code, credentials, and infrastructure.",
+      "Security and documentation are part of the build.",
+      "Clear scope, clear pricing anchors, clear next steps."
+    ]
+  },
+  "sections": [
+    {
+      "type": "problem_band",
+      "heading": "Most small businesses are not losing because they are bad at business. They are losing because the system behind the business is weak.",
+      "body": "A slow site erodes trust. A site nobody can update becomes stale. A tool nobody understands becomes a liability. Too many businesses are paying for technology they do not control, cannot maintain, and are afraid to touch. Vantus exists to replace that pattern with systems that are owned, documented, and built to last."
+    },
+    {
+      "type": "offer_ladder",
+      "heading": "Three public offers. One clear ladder.",
+      "intro": "The public offer set is intentionally narrow. Start with the right level of system depth, then expand only when the business case is real.",
+      "offers": [
+        {
+          "name": "Website Rebuild (Modern + Complete)",
+          "sku": "VS-PKG-WEB-REBLD",
+          "slug": "/services/website-rebuild",
+          "starting_price_usd": 15000,
+          "typical_range_usd": [
+            15000,
+            55000
+          ],
+          "recommended": false,
+          "summary": "Replace the site that makes your business look dated, hard to trust, or difficult to use. This package gives you a serious public foundation without overcomplicating the scope.",
+          "best_for": "Businesses whose main problem is public credibility.",
+          "includes": [
+            "Responsive design implementation",
+            "Content completion support",
+            "Technical SEO baseline",
+            "Analytics instrumentation",
+            "Deployment hardening",
+            "Launch readiness checks",
+            "Ownership handoff package"
+          ],
+          "not_included": [
+            "CMS functionality",
+            "User login or portal workflows",
+            "Complex integrations",
+            "Ongoing content updates after handoff",
+            "Open-ended custom application work"
+          ],
+          "upsell": "Website + CMS",
+          "cross_sell": [
+            "Cloud Deployment Baseline",
+            "On-Prem Install + Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint"
+          ]
+        },
+        {
+          "name": "Website + CMS (Recommended)",
+          "sku": "VS-PKG-WEB-CMS",
+          "slug": "/services/website-plus-cms",
+          "starting_price_usd": 32000,
+          "typical_range_usd": [
+            32000,
+            125000
+          ],
+          "recommended": true,
+          "summary": "This is the best-fit package for most growing businesses. It gives you the public credibility of a modern rebuild plus the internal control to manage content without waiting on a developer.",
+          "best_for": "Growing teams that need publishing control and content velocity.",
+          "includes": [
+            "Everything in Website Rebuild",
+            "CMS implementation",
+            "Content model architecture",
+            "Editorial workflow setup",
+            "Role-based publishing controls",
+            "Media and publishing governance",
+            "Operator training and handoff"
+          ],
+          "not_included": [
+            "User-facing portal workflows",
+            "Customer authentication",
+            "Complex business process automation",
+            "Third-party system integrations unless added",
+            "Ongoing content creation or copywriting"
+          ],
+          "upsell": "Website + Business Portal",
+          "cross_sell": [
+            "Data and Content Migration",
+            "Analytics & Dashboarding",
+            "Localization Framework",
+            "Integration (per system)",
+            "Vantus Care Advanced"
+          ]
+        },
+        {
+          "name": "Website + Business Portal",
+          "sku": "VS-PKG-PORTAL-MVP",
+          "slug": "/services/website-plus-portal",
+          "starting_price_usd": 90000,
+          "typical_range_usd": [
+            90000,
+            400000
+          ],
+          "recommended": false,
+          "summary": "When the real problem is not just the website but the workflow behind it, this package moves you from public presence into operational software.",
+          "best_for": "Businesses whose operations are already breaking on spreadsheets and manual handoffs.",
+          "includes": [
+            "Everything in Website + CMS",
+            "Secure authentication",
+            "Portal MVP scope",
+            "RBAC baseline",
+            "Audit trail for key actions",
+            "One primary workflow implementation",
+            "Integration foundation"
+          ],
+          "not_included": [
+            "Unlimited workflow development",
+            "Enterprise-wide replatforming",
+            "Unscoped multi-system modernization",
+            "Mobile app development",
+            "Ongoing helpdesk support inside project scope"
+          ],
+          "upsell": "Enterprise Systems Program",
+          "cross_sell": [
+            "Integration (per system)",
+            "SSO + RBAC Hardening",
+            "Analytics & Dashboarding",
+            "Discovery + Solution Blueprint",
+            "Vantus Care Sovereign"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "proof_strip",
+      "heading": "Proof matters more than promises",
+      "body": "We do not ask people to trust vague claims. We show what was broken, what was delivered, what evidence exists, and what changed after launch. That is how the proof system works across the site.",
+      "tiles": [
+        "What was the problem?",
+        "What did we deliver?",
+        "What evidence exists?",
+        "What outcome changed?"
+      ],
+      "cta": {
+        "label": "View Proof",
+        "href": "/proof"
+      }
+    },
+    {
+      "type": "process",
+      "heading": "The Client Independence Roadmap",
+      "intro": "We do not sell mystery process. We use a clear delivery path that moves from risk discovery to build to handoff. The goal is not dependence. The goal is capability.",
+      "steps": [
+        {
+          "name": "Audit",
+          "copy": "What do you have, what is at risk, and what is actually holding the business back?"
+        },
+        {
+          "name": "Plan",
+          "copy": "What should be built, what should be left out, and what will the scoped work cost?"
+        },
+        {
+          "name": "Build",
+          "copy": "Delivery with documentation, testing, and visible progress."
+        },
+        {
+          "name": "Handoff",
+          "copy": "Credentials, runbooks, training, and a system the client can operate."
+        },
+        {
+          "name": "Care",
+          "copy": "Optional ongoing support for owners who want a support rhythm after launch."
+        }
+      ]
+    },
+    {
+      "type": "standards_teaser",
+      "heading": "The site has to prove the standard",
+      "body": "If Vantus cannot build a fast, secure, accessible site for itself, the promise fails before the sales conversation starts. Every public page should show control, safety, and practical value. Performance targets, quality gates, accessibility, and security headers are part of the operating standard, not marketing decoration.",
+      "bullets": [
+        "Target Lighthouse 95+ on core public templates",
+        "WCAG 2.1 AA baseline",
+        "Clear next step on every page",
+        "No dark patterns, fake scarcity, or manipulative UI"
+      ],
+      "cta": {
+        "label": "View Standards",
+        "href": "/standards"
+      }
+    },
+    {
+      "type": "self_serve",
+      "heading": "Learn before you talk to us",
+      "body": "Not every visitor is ready for a project conversation. Some need to compare options, validate risk, or understand what good looks like first. The public site supports that path through proof, standards, and learning content.",
+      "links": [
+        {
+          "label": "View Proof",
+          "href": "/proof"
+        },
+        {
+          "label": "View Standards",
+          "href": "/standards"
+        },
+        {
+          "label": "Read Learn",
+          "href": "/learn"
+        }
+      ]
+    },
+    {
+      "type": "final_cta",
+      "heading": "Start with the risk, not the pitch",
+      "body": "The best next step is a Website Reality Check. We review what is weak, what is unclear, and which scope actually fits.",
+      "primary_cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      },
+      "secondary_cta": {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    }
+  ]
+}

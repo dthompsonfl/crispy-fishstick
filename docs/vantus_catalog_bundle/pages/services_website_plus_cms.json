@@ -1,0 +1,104 @@
+{
+  "route": "/services/website-plus-cms",
+  "seo": {
+    "title": "Website + CMS (Recommended) | Vantus Systems",
+    "meta_description": "This is the best-fit package for most growing businesses. It gives you the public credibility of a modern rebuild plus the internal control to manage content without waiting on a developer."
+  },
+  "hero": {
+    "eyebrow": "Recommended public offer",
+    "headline": "Website + CMS (Recommended)",
+    "price_line": {
+      "starting_at_usd": 32000,
+      "typical_range_usd": [
+        32000,
+        125000
+      ]
+    },
+    "subheadline": "This is the best-fit package for most growing businesses. It gives you the public credibility of a modern rebuild plus the internal control to manage content without waiting on a developer.",
+    "primary_cta": {
+      "label": "Start Audit",
+      "href": "/start-audit"
+    },
+    "secondary_cta": {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  },
+  "sections": [
+    {
+      "type": "best_for",
+      "heading": "Best for",
+      "body": "Growing teams that need publishing control and content velocity."
+    },
+    {
+      "type": "included",
+      "heading": "What you get",
+      "items": [
+        "Everything in Website Rebuild",
+        "CMS implementation",
+        "Content model architecture",
+        "Editorial workflow setup",
+        "Role-based publishing controls",
+        "Media and publishing governance",
+        "Operator training and handoff"
+      ]
+    },
+    {
+      "type": "what_changes",
+      "heading": "What changes after launch",
+      "body": "Your team can publish. Case studies and proof pages become maintainable. Services can evolve without rebuilding the site. Approval flow becomes cleaner. And the business stops treating website updates like a technical emergency."
+    },
+    {
+      "type": "not_included",
+      "heading": "What this offer does not include by default",
+      "items": [
+        "User-facing portal workflows",
+        "Customer authentication",
+        "Complex business process automation",
+        "Third-party system integrations unless added",
+        "Ongoing content creation or copywriting"
+      ]
+    },
+    {
+      "type": "next_steps",
+      "heading": "Common add-ons and next moves",
+      "body": "This package is where most businesses should land. From here, the usual next step is either deeper content operations or the move into portal and workflow work.",
+      "related_modules": [
+        "Data and Content Migration",
+        "Analytics & Dashboarding",
+        "Localization Framework",
+        "Integration (per system)",
+        "Vantus Care Advanced"
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "q": "Why is this the recommended package?",
+          "a": "Because it adds recurring operational value. A rebuild improves presentation. A CMS improves presentation and control. That is a better long-term return for most businesses."
+        },
+        {
+          "q": "Can non-technical staff actually use it?",
+          "a": "That is part of the acceptance logic for this offer. Editorial workflow and operator enablement are core scope, not afterthoughts."
+        },
+        {
+          "q": "What if we later need a customer portal?",
+          "a": "That is the next offer tier. The public offer ladder is designed to move from public presence to content control to workflow software as the need becomes real."
+        }
+      ]
+    },
+    {
+      "type": "final_cta",
+      "heading": "This is usually the right place to start if the business plans to grow",
+      "primary_cta": {
+        "label": "Start Audit",
+        "href": "/start-audit"
+      },
+      "secondary_cta": {
+        "label": "View Pricing",
+        "href": "/pricing"
+      }
+    }
+  ]
+}
